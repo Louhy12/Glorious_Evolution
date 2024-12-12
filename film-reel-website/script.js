@@ -9,11 +9,11 @@ function autoScroll() {
 
 setInterval(autoScroll, 50);
 
-// Paths to your GeoJSON files
+// Paths to your GeoJSON files in the 'map' folder
 const geojsonFiles = [
-    "geojson/choropleth_old_movies_(before_1975).geojson",
-    "geojson/choropleth_movies_(1975-1990).geojson",
-    "geojson/choropleth_new_movies_(after_1990).geojson",
+    "map/choropleth_old_movies_(before_1975).geojson",
+    "map/choropleth_movies_(1975-1990).geojson",
+    "map/choropleth_new_movies_(after_1990).geojson",
 ];
 
 // Initialize the map
