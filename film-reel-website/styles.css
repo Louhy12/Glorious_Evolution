@@ -42,6 +42,19 @@ body {
     z-index: 1; /* Ensure the video is above the frame content */
 }
 
+/* Title text in the first frame */
+.title {
+    font-family: 'Cursive', 'Times New Roman', serif; /* Fancy font (You can replace this with any desired fancy font) */
+    font-size: 3rem; /* Huge size for the title */
+    text-align: center;
+    color: #000; /* Black color for the text */
+    position: relative;
+    z-index: 2; /* Ensure the title appears above the video */
+    margin: 0; /* Remove default margins */
+    padding: 0; /* Remove padding */
+    line-height: 1.2; /* Adjust line height if necessary */
+}
+
 /* Sprocket holes on the sides of the frame (film perforation) */
 .frame:before,
 .frame:after {
