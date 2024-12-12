@@ -91,10 +91,10 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 2; /* Ensure the image appears above other content */
+    z-index: 1; /* Ensure the map is behind the video */
 }
 
-/* Noise video styling to ensure it stays on top */
+/* Noise video styling to ensure it stays on top but doesn't block the map */
 .noise-video {
     position: absolute;
     top: 0;
@@ -102,8 +102,8 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    opacity: 0.3;
-    z-index: 4; /* Make sure the video stays below the map */
+    opacity: 0.2; /* Adjust this for less opacity to allow the map to show through */
+    z-index: 2; /* Place video above the map */
 }
 
 /* Slider styling */
@@ -113,7 +113,7 @@ body {
     left: 50%;
     transform: translateX(-50%);
     width: 80%;
-    z-index: 3; /* Make sure the slider is above the video */
+    z-index: 3; /* Ensure the slider is above both the map and video */
 }
 
 /* Optional: Adding hover effect for film frames */
