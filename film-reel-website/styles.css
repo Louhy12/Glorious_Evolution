@@ -15,7 +15,7 @@ body {
     display: flex;
     flex-direction: column;  /* Stack frames vertically */
     align-items: center;
-    margin-top: 50px; /* Adjust as needed */
+    margin-top: 20px; /* Adjust as needed */
 }
 
 /* Styling for each film frame */
