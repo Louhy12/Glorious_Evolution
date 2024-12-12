@@ -77,21 +77,16 @@ body {
     pointer-events: none;
 }
 
-/* Styling for the map image */
+/* Map container styling */
 #map-container {
-    text-align: center;
-}
-
-//* Map container inside Frame 2 */
-#map-container {
+    position: relative;
+    z-index: 2; /* Above the noise video */
     width: 90%;
     height: 300px;
     margin: 20px auto;
     border: 2px solid black;
     border-radius: 5px;
     overflow: hidden;
-    position: relative; /* Relative to ensure proper layering */
-    z-index: 2; /* Above the noise video */
 }
 
 #map-image {
@@ -100,12 +95,12 @@ body {
     object-fit: cover;
 }
 
-/* Slider styling */
+/* Slider container styling */
 #slider-container {
+    position: relative;
+    z-index: 2; /* Above noise video */
     text-align: center;
     margin-top: 10px;
-    z-index: 2; /* Above the noise video */
-    position: relative;
 }
 
 #map-slider {
@@ -116,9 +111,6 @@ body {
     display: flex;
     justify-content: space-between;
     margin: 0 10%;
-}
-
-.slider-labels span {
     font-size: 14px;
 }
 
