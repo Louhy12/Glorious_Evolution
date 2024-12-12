@@ -76,6 +76,21 @@ body {
     max-width: 90%;
 }
 
+#map {
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+#slider-container {
+    text-align: center;
+}
+
+.slider-labels span {
+    margin: 0 15px;
+    font-size: 14px;
+    display: inline-block;
+    text-align: center;
+}
 
 /* Optional: Adding hover effect for film frames */
 .frame:hover {
