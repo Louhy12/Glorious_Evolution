@@ -81,6 +81,11 @@ body {
     text-align: center;
 }
 
+/* Styling for the map image */
+#map-container {
+    text-align: center;
+}
+
 #map-image {
     width: 100%; /* Make the image responsive */
     max-height: 350px; /* Limit the image height */
