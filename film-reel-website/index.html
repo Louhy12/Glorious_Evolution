@@ -26,8 +26,10 @@
     <div class="film-reel">
         <!-- Frame 1 -->
         <div class="frame first-frame">
+            <!-- Noise video for the entire frame -->
             <video class="noise-video" autoplay loop muted>
-                <source src="videos/noise.mp4" type="video/mp4">
+                <source src="videos/noise.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
             </video>
             <div class="sprocket"></div>
             <div class="frame-content">
@@ -35,16 +37,16 @@
             </div>
         </div>
 
-        <!-- Frame 2 -->
+        <!-- Frame 2 (Map with slider) -->
         <div class="frame">
+            <!-- Noise video for the entire frame -->
+            <video class="noise-video" autoplay loop muted>
+                <source src="videos/noise.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+            </video>
             <div id="map-container">
                 <!-- Map image -->
                 <img id="map-image" src="map/map1.png" alt="Map 1" />
-                <!-- Noise video -->
-                <video id="noise-video" autoplay muted loop>
-                    <source src="videos/noise.mp4" type="video/mp4" />
-                    Your browser does not support the video tag.
-                </video>
             </div>
             <div id="slider-container">
                 <!-- Slider -->
@@ -59,8 +61,10 @@
 
         <!-- Frame 3 -->
         <div class="frame">
+            <!-- Noise video for the entire frame -->
             <video class="noise-video" autoplay loop muted>
-                <source src="videos/noise.mp4" type="video/mp4"> <!-- Path to your noise video -->
+                <source src="videos/noise.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
             </video>
             <div class="sprocket"></div>
             <div class="frame-content">
@@ -70,8 +74,6 @@
 
         <!-- Add more frames as needed -->
     </div>
-
-    <script src="script.js"></script> <!-- Link to JavaScript file -->
 </body>
 </html>
 
