@@ -103,7 +103,7 @@ body {
     height: 100%;
     object-fit: cover;
     opacity: 0.3;
-    z-index: 1; /* Make sure the video stays below the map */
+    z-index: 4; /* Make sure the video stays below the map */
 }
 
 /* Slider styling */
