@@ -76,29 +76,43 @@ body {
     max-width: 90%;
 }
 
-/* Styling for the map container */
-#map {
-    width: 100%; /* Make the map take up the full width of the frame */
-    height: 350px; /* Set a height for the map */
+/* Styling for the map image */
+#map-container {
+    text-align: center;
+}
+
+#map-image {
+    width: 100%; /* Make the image responsive */
+    max-height: 350px; /* Limit the image height */
+    object-fit: cover; /* Ensure the image fits without distortion */
     border: 2px solid black;
     border-radius: 5px;
-    margin: 20px 0; /* Add some margin to separate it from other elements */
+    margin-bottom: 20px; /* Add spacing between the image and slider */
 }
 
 /* Styling for the slider container */
 #slider-container {
     text-align: center;
-    margin-top: 10px; /* Add spacing between the slider and the map */
+    margin-top: 10px;
 }
 
-/* Styling for the slider labels */
+/* Styling for the slider input */
+#map-slider {
+    width: 80%; /* Adjust slider width */
+    margin: 10px 0;
+}
+
+/* Styling for slider labels */
+.slider-labels {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 10%;
+}
+
 .slider-labels span {
-    margin: 0 15px;
     font-size: 14px;
-    display: inline-block;
     text-align: center;
 }
-
 
 /* Optional: Adding hover effect for film frames */
 .frame:hover {
