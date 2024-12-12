@@ -46,7 +46,7 @@ body {
 /* Title text in the first frame */
 .first-frame .title {
     font-family: 'Cursive', 'Times New Roman', serif; /* Fancy font (You can replace this with any desired fancy font) */
-    font-size: 6rem; /* Huge size for the title (adjust as needed) */
+    font-size: 3rem; /* Huge size for the title (adjust as needed) */
     text-align: center;
     color: #000; /* Black color for the text */
     position: absolute;
