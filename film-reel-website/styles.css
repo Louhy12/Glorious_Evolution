@@ -76,21 +76,29 @@ body {
     max-width: 90%;
 }
 
+/* Styling for the map container */
 #map {
+    width: 100%; /* Make the map take up the full width of the frame */
+    height: 350px; /* Set a height for the map */
     border: 2px solid black;
     border-radius: 5px;
+    margin: 20px 0; /* Add some margin to separate it from other elements */
 }
 
+/* Styling for the slider container */
 #slider-container {
     text-align: center;
+    margin-top: 10px; /* Add spacing between the slider and the map */
 }
 
+/* Styling for the slider labels */
 .slider-labels span {
     margin: 0 15px;
     font-size: 14px;
     display: inline-block;
     text-align: center;
 }
+
 
 /* Optional: Adding hover effect for film frames */
 .frame:hover {
