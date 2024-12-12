@@ -15,9 +15,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Define the image paths
     const mapImages = [
-        "map/map1.png", // Before 1975
-        "map/map2.png", // 1975-1990
-        "map/map3.png", // After 1990
+        "map/map1.jpeg", // Before 1975
+        "map/map2.jpeg", // 1975-1990
+        "map/map3.jpeg", // After 1990
     ];
 
     // Change image based on slider value
