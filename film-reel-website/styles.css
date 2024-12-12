@@ -55,25 +55,6 @@ body {
     line-height: 1.2; /* Adjust line height if necessary */
 }
 
-/* Sprocket holes on the sides of the frame (film perforation) */
-.frame:before,
-.frame:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    width: 10px; /* Width of sprocket holes */
-    height: 100%;
-    background: url('images/sprocket.png') repeat-y; /* Perforation pattern */
-}
-
-.frame:before {
-    left: -10px;
-}
-
-.frame:after {
-    right: -10px;
-}
-
 /* Content inside the frame */
 .frame-content {
     padding: 20px;
