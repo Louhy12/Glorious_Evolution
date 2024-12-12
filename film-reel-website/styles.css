@@ -2,7 +2,7 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Abril Fatface', cursive; /* Apply to the whole body (optional) */
     background-image: url('images/film_stock.png'); /* Set film stock image as background */
     background-size: cover; /* Make sure the background covers the entire page */
     background-position: center; /* Center the background image */
@@ -43,20 +43,19 @@ body {
 }
 
 /* Title text in the first frame */
-/* Title text in the first frame */
 .first-frame .title {
-    font-family: 'Cursive', 'Times New Roman', serif; /* Fancy font (You can replace this with any desired fancy font) */
-    font-size: 3.5rem; /* Huge size for the title (adjust as needed) */
+    font-family: 'Abril Fatface', cursive; /* Apply Abril Fatface font */
+    font-size: 3.5rem; /* Huge size for the title */
     text-align: center;
-    color: #000; /* Black color for the text */
+    color: #000;
     position: absolute;
-    top: 50%; /* Position it in the center vertically */
-    left: 50%; /* Position it in the center horizontally */
-    transform: translate(-50%, -50%); /* Adjust position to center it exactly */
-    z-index: 2; /* Ensure the title appears above the video */
-    margin: 0; /* Remove default margins */
-    padding: 0; /* Remove padding */
-    line-height: 1.2; /* Adjust line height if necessary */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    margin: 0;
+    padding: 0;
+    line-height: 1.2;
 }
 
 /* Content inside the frame */
