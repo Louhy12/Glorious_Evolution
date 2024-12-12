@@ -3,7 +3,11 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0; /* Light gray background for overall page */
+    background-image: url('images/film_stock.png'); /* Set film stock image as background */
+    background-size: cover; /* Make sure the background covers the entire page */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent repeating the background image */
+    height: 100vh; /* Ensure the body takes the full viewport height */
 }
 
 /* Container for the film reel */
@@ -20,7 +24,7 @@ body {
     width: 80%; /* Adjust the width to suit your design */
     height: 400px; /* Adjust the height to suit your design */
     margin: 20px 0;
-    background-color: #bbb; /* Gray background of the film frame */
+    background-color: #f0f0f0; /* Light gray background inside each frame */
     border: 10px solid black; /* Black border around each frame */
     border-radius: 5px; /* Slightly rounded corners */
     overflow: hidden;
@@ -34,7 +38,7 @@ body {
     top: 0;
     width: 10px; /* Width of sprocket holes */
     height: 100%;
-    background: url('sprocket.png') repeat-y; /* Perforation pattern */
+    background: url('images/sprocket.png') repeat-y; /* Perforation pattern */
 }
 
 .frame:before {
@@ -69,7 +73,7 @@ body {
     left: -15px;
     width: 10px; /* Adjust sprocket size */
     height: 100%;
-    background: url('sprocket.png') repeat-y; /* Adjust with actual sprocket image */
+    background: url('images/sprocket.png') repeat-y; /* Adjust with actual sprocket image */
     transform: translateY(-50%);
 }
 
@@ -78,3 +82,4 @@ body {
     transform: scale(1.02); /* Slight zoom on hover */
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
 }
+
