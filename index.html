@@ -3,68 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Film Reel Website</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-        }
-        .film-reel {
-            display: flex;
-            overflow-x: auto;
-            white-space: nowrap;
-            background: #333; /* Background color of reel */
-            padding: 20px;
-            border: 10px solid #000; /* Outer border of the reel */
-        }
-        .frame {
-            display: inline-block;
-            background: #fff;
-            width: 300px;
-            height: 200px;
-            margin-right: 20px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-            border-radius: 10px;
-            text-align: center;
-        }
-        .frame img {
-            width: 100%;
-            height: 150px;
-            object-fit: cover;
-            border-bottom: 2px solid #000;
-        }
-        .frame h3 {
-            margin: 10px 0 0;
-        }
-        .film-reel::-webkit-scrollbar {
-            height: 12px;
-        }
-        .film-reel::-webkit-scrollbar-thumb {
-            background: #888;
-            border-radius: 6px;
-        }
-        .film-reel::-webkit-scrollbar-track {
-            background: #555;
-        }
-    </style>
+    <title>Vertical Film Reel Website</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to the CSS file -->
 </head>
 <body>
     <div class="film-reel">
+        <!-- Frame 1 -->
         <div class="frame">
-            <img src="frame1.jpg" alt="Frame 1">
-            <h3>Frame 1</h3>
-            <p>This is some content.</p>
+            <div class="sprocket"></div>
+            <div class="frame-content">
+                <p>Page 1: This is the first frame's content</p>
+            </div>
         </div>
+
+        <!-- Frame 2 -->
         <div class="frame">
-            <img src="frame2.jpg" alt="Frame 2">
-            <h3>Frame 2</h3>
-            <p>More content here.</p>
+            <div class="sprocket"></div>
+            <div class="frame-content">
+                <p>Page 2: This is the second frame's content</p>
+            </div>
         </div>
+
+        <!-- Frame 3 -->
         <div class="frame">
-            <img src="frame3.jpg" alt="Frame 3">
-            <h3>Frame 3</h3>
-            <p>Even more content!</p>
+            <div class="sprocket"></div>
+            <div class="frame-content">
+                <p>Page 3: This is the third frame's content</p>
+            </div>
         </div>
+
+        <!-- Add more frames as necessary -->
     </div>
+    
+    <script src="script.js"></script> <!-- Link to the JavaScript file -->
 </body>
 </html>
+
