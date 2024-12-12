@@ -9,7 +9,7 @@ function autoScroll() {
 
 setInterval(autoScroll, 50);
 
- document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => {
     const mapSlider = document.getElementById("map-slider");
     const mapImage = document.getElementById("map-image");
 
@@ -26,5 +26,6 @@ setInterval(autoScroll, 50);
         mapImage.src = mapImages[selectedIndex];
     });
 });
+
 
 
