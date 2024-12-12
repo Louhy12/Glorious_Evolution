@@ -6,7 +6,8 @@ body {
     background-image: url('images/film_stock.png'); /* Set film stock image as background */
     background-size: cover; /* Make sure the background covers the entire page */
     background-position: center; /* Center the background image */
-    background-repeat: no-repeat; /* Prevent repeating the background image */
+    background-repeat: repeat-y; /* Repeating the background image */
+    background-size: auto; /* Keep the original size of the image */
     height: 100vh; /* Ensure the body takes the full viewport height */
 }
 
