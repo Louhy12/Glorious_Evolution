@@ -24,7 +24,7 @@ body {
     width: 80%; /* Adjust the width to suit your design */
     height: 400px; /* Adjust the height to suit your design */
     margin: 20px 0;
-    background-color: #e8e8e8; /* Light gray background inside each frame */
+    background-color: #f0f0f0; /* Light gray background inside each frame */
     border: 10px solid black; /* Black border around each frame */
     border-radius: 5px; /* Slightly rounded corners */
     overflow: hidden;
@@ -64,7 +64,7 @@ body {
 /* Content inside the frame */
 .frame-content {
     padding: 20px;
-    background-color: #e8e8e8; /* Light gray background for content */
+    background-color: #f0f0f0; /* Light gray background for content */
     height: 100%;
     overflow: auto; /* If content exceeds frame, scroll */
 }
