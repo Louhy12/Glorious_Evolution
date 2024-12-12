@@ -1,0 +1,79 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+}
+
+/* Film Reel Container */
+.film-reel {
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll; /* Vertical scrolling */
+    height: 100vh; /* Full viewport height */
+    width: 250px; /* Reel width */
+    margin: 0 auto;
+    border: 10px solid #000; /* Outer border of the reel */
+    background: #222;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    padding: 20px;
+}
+
+/* Frames inside the film reel */
+.frame {
+    background-color: #fff;
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 200px; /* Set a fixed height for the frame */
+}
+
+/* Style for the content (each frame content) */
+.frame-content {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    text-align: center;
+}
+
+/* Film reel sprocket holes for realism */
+.sprocket {
+    position: absolute;
+    left: -10px;
+    top: 50%;
+    width: 20px;
+    height: 20px;
+    background: #333;
+    border-radius: 50%;
+}
+
+/* Make the sprockets alternate positions for effect */
+.sprocket:nth-child(odd) {
+    top: calc(50% - 25px);
+}
+
+.sprocket:nth-child(even) {
+    top: calc(50% + 5px);
+}
+
+/* Film Reel Scrollbar customization */
+.film-reel::-webkit-scrollbar {
+    width: 12px;
+}
+
+.film-reel::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 6px;
+}
+
+.film-reel::-webkit-scrollbar-track {
+    background: #555;
+}
