@@ -64,57 +64,54 @@ body {
     max-width: 90%;
 }
 
-/* Styling for the map image */
-#map-container {
-    text-align: center;
-}
-
-/* Styling for the map container */
-#map-container {
-    position: relative; /* Ensure noise video is positioned on top */
-    width: 90%; /* Adjust width */
-    height: 300px; /* Adjust height */
-    margin: 20px auto; /* Center the map container */
-    border: 2px solid black;
-    border-radius: 5px;
-    overflow: hidden; /* Clip the video to fit the container */
-}
-
-/* Styling for the map image */
-#map-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ensure the image fills the container */
-    z-index: 1; /* Image should be behind the noise video */
-    position: relative;
-}
-
-/* Styling for the noise video */
-#noise-video {
+/* Noise video for the entire frame */
+.noise-video {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensure the video fills the container */
-    opacity: 0.3; /* Adjust opacity to make it semi-transparent */
-    z-index: 2; /* Video should appear on top of the image */
-    pointer-events: none; /* Make the video unclickable */
+    object-fit: cover;
+    opacity: 0.3; /* Transparency */
+    z-index: 1;
+    pointer-events: none;
 }
 
-/* Styling for the slider container */
+/* Styling for the map image */
+#map-container {
+    text-align: center;
+}
+
+//* Map container inside Frame 2 */
+#map-container {
+    width: 90%;
+    height: 300px;
+    margin: 20px auto;
+    border: 2px solid black;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative; /* Relative to ensure proper layering */
+    z-index: 2; /* Above the noise video */
+}
+
+#map-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Slider styling */
 #slider-container {
     text-align: center;
     margin-top: 10px;
+    z-index: 2; /* Above the noise video */
+    position: relative;
 }
 
-/* Styling for the slider input */
 #map-slider {
-    width: 80%; /* Adjust slider width */
-    margin: 10px 0;
+    width: 80%;
 }
 
-/* Styling for slider labels */
 .slider-labels {
     display: flex;
     justify-content: space-between;
@@ -123,7 +120,6 @@ body {
 
 .slider-labels span {
     font-size: 14px;
-    text-align: center;
 }
 
 /* Optional: Adding hover effect for film frames */
