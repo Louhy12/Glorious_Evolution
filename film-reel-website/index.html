@@ -5,67 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Film Reel Website</title>
     <link rel="stylesheet" href="styles.css"> <!-- Link to CSS file -->
-    
-    <!-- Leaflet CSS -->
-    <link
-        rel="stylesheet"
-        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-        integrity="sha256-xwE9Mc4fW5v2Ii6INxdqTNCu3RBzmr1Yf+UVZ6ToOck="
-        crossorigin=""
-    />
-    
-    <!-- Leaflet JavaScript -->
-    <script
-        src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-        integrity="sha256-oLwwGQpvhStLn8t2EYjAigKKOG2Ncg2zCOUlN4GMDuw="
-        crossorigin=""
-    ></script>
-<head>
-     
+</head>
 <body>
     <div class="film-reel">
         <!-- Frame 1 -->
         <div class="frame first-frame">
             <video class="noise-video" autoplay loop muted>
-                <source src="videos/noise.mp4" type="video/mp4" />
+                <source src="videos/noise.mp4" type="video/mp4">
             </video>
             <div class="sprocket"></div>
             <div class="frame-content">
-                <p class="title">Get Woke, Go Broke? <br> ... Really?</p>
+                <p class="title">Get Woke, Go Broke? <br> ... Really?</p> <!-- Title inside first frame -->
             </div>
         </div>
 
         <!-- Frame 2 -->
         <div class="frame">
             <video class="noise-video" autoplay loop muted>
-                <source src="videos/noise.mp4" type="video/mp4" />
+                <source src="videos/noise.mp4" type="video/mp4"> <!-- Path to your noise video -->
             </video>
-            <div id="map-container">
-                <img id="map-image" src="map/map1.png" alt="Map 1" />
-            </div>
-            <div id="slider-container">
-                <input type="range" id="map-slider" min="1" max="3" value="1" />
-                <div class="slider-labels">
-                    <span>Before 1975</span>
-                    <span>1975-1990</span>
-                    <span>After 1990</span>
-                </div>
+            <div class="sprocket"></div>
+            <div class="frame-content">
+                <p>Page 2: This is the second frame's content</p>
             </div>
         </div>
 
         <!-- Frame 3 -->
         <div class="frame">
             <video class="noise-video" autoplay loop muted>
-                <source src="videos/noise.mp4" type="video/mp4" />
+                <source src="videos/noise.mp4" type="video/mp4"> <!-- Path to your noise video -->
             </video>
             <div class="sprocket"></div>
             <div class="frame-content">
                 <p>Page 3: This is the third frame's content</p>
             </div>
         </div>
-    </div>
-</body>
 
+        <!-- Add more frames as needed -->
+    </div>
+
+    <script src="script.js"></script> <!-- Link to JavaScript file -->
+</body>
 </html>
 
 

@@ -30,6 +30,18 @@ body {
     overflow: hidden;
 }
 
+/* Video noise effect inside the frame */
+.noise-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Make sure the video covers the entire frame */
+    opacity: 0.3; /* Adjust this value for transparency (0 = fully transparent, 1 = opaque) */
+    z-index: 1; /* Ensure the video is above the frame content */
+}
+
 /* Title text in the first frame */
 /* Title text in the first frame */
 .first-frame .title {
@@ -64,55 +76,6 @@ body {
     max-width: 90%;
 }
 
-/* Noise video for the entire frame */
-.noise-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0.3; /* Transparency */
-    z-index: 1;
-    pointer-events: none;
-}
-
-/* Map container styling */
-#map-container {
-    position: relative;
-    z-index: 2; /* Above the noise video */
-    width: 90%;
-    height: 300px;
-    margin: 20px auto;
-    border: 2px solid black;
-    border-radius: 5px;
-    overflow: hidden;
-}
-
-#map-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/* Slider container styling */
-#slider-container {
-    position: relative;
-    z-index: 2; /* Above noise video */
-    text-align: center;
-    margin-top: 10px;
-}
-
-#map-slider {
-    width: 80%;
-}
-
-.slider-labels {
-    display: flex;
-    justify-content: space-between;
-    margin: 0 10%;
-    font-size: 14px;
-}
 
 /* Optional: Adding hover effect for film frames */
 .frame:hover {
