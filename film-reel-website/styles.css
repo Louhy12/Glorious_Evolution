@@ -66,16 +66,6 @@ body {
     max-width: 90%;
 }
 
-/* Adjustments for the sprocket image */
-.sprocket {
-    position: absolute;
-    top: 50%;
-    left: -15px;
-    width: 10px; /* Adjust sprocket size */
-    height: 100%;
-    background: url('images/sprocket.png') repeat-y; /* Adjust with actual sprocket image */
-    transform: translateY(-50%);
-}
 
 /* Optional: Adding hover effect for film frames */
 .frame:hover {
