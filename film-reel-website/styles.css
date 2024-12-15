@@ -28,6 +28,8 @@ body {
     border: 10px solid black; /* Black border around each frame */
     border-radius: 5px; /* Slightly rounded corners */
     overflow: hidden;
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
 }
 
 /* Title text in the first frame */
@@ -191,4 +193,39 @@ body {
     text-decoration: underline;
 }
 
+/* List styling for the diversity criteria */
+ul {
+    margin: 20px 0;
+    padding-left: 20px;
+}
+
+/* Sub-list styling for nested items */
+ul ul {
+    margin-top: 10px;
+}
+
+/* Strong emphasis for sub-headings in lists */
+ul li strong {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+/* General paragraph styling */
+p {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+/* Apply Arial font to the specific sections */
+.arial-font {
+    font-family: 'Arial', sans-serif;
+}
+
+/* Optional: Add a hover effect for the frame */
+.frame:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
 
