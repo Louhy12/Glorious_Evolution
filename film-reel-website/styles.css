@@ -52,6 +52,7 @@ body {
     top: 0;
     left: 0;
     z-index: 1; /* Map behind the video */
+    pointer-events: none;
 }
 
 /* Title text in the first frame */
@@ -106,6 +107,7 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 5; /* Ensure links are above everything else */
+    pointer-events: auto; /* Enable pointer events for links */
 }
 
 /* Styling individual links */
@@ -168,3 +170,6 @@ body {
     margin-bottom: 10px;
 }
 
+* {
+    box-sizing: border-box; /* Consistent sizing for all elements */
+}
