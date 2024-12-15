@@ -30,18 +30,6 @@ body {
     overflow: hidden;
 }
 
-/* Video noise effect inside the frame */
-.noise-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Make sure the video covers the entire frame */
-    opacity: 0.3; /* Adjust this value for transparency (0 = fully transparent, 1 = opaque) */
-    z-index: 1; /* Ensure the video is above the frame content */
-}
-
 /* Title text in the first frame */
 .first-frame .title {
     font-family: 'Abril Fatface', cursive; /* Apply Abril Fatface font */
