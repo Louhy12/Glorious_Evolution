@@ -152,3 +152,37 @@ body {
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
 }
 
+/* Related articles title */
+.frame-content h3 {
+    font-family: Arial, sans-serif; /* Match with body text */
+    font-size: 1.2rem;
+    color: #444; /* Slightly darker gray for emphasis */
+    margin-top: 20px; /* Add spacing above */
+    margin-bottom: 10px;
+}
+
+/* Styling the links list */
+.links-list {
+    list-style-type: none; /* Remove default list bullets */
+    padding: 0; /* Remove padding */
+    margin: 0;
+}
+
+/* Styling individual links */
+.links-list li {
+    margin-bottom: 10px; /* Add space between links */
+}
+
+.links-list a {
+    font-family: Arial, sans-serif; /* Simple and readable font */
+    font-size: 1rem;
+    color: #0066cc; /* Blue link color */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s ease; /* Smooth hover effect */
+}
+
+.links-list a:hover {
+    color: #003366; /* Darker blue on hover */
+    text-decoration: underline; /* Add underline on hover */
+}
+
