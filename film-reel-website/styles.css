@@ -22,7 +22,7 @@ body {
 .frame {
     position: relative;
     width: 80%; /* Adjust the width to suit your design */
-    height: 400px; /* Adjust the height to suit your design */
+    height: 500px; /* Adjust the height to suit your design */
     margin: 20px 0;
     background-color: #ffffff; /* Light gray background inside each frame */
     border: 10px solid black; /* Black border around each frame */
