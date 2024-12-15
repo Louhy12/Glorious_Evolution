@@ -133,7 +133,6 @@ body {
     border-radius: 5px;
 }
 
-
 /* Optional: Adding hover effect for film frames */
 .frame:hover {
     transform: scale(1.02); /* Slight zoom on hover */
@@ -154,7 +153,6 @@ body {
     list-style-type: none; /* Remove default list bullets */
     padding: 0; /* Remove padding */
     margin: 0;
-    z-index: 5
 }
 
 /* Styling individual links */
@@ -162,16 +160,32 @@ body {
     margin-bottom: 10px; /* Add space between links */
 }
 
-.links-list a {
-    font-family: Arial, sans-serif; /* Simple and readable font */
-    font-size: 1rem;
-    color: #0066cc; /* Blue link color */
-    text-decoration: none; /* Remove underline */
-    transition: color 0.3s ease; /* Smooth hover effect */
+/* Styling individual links container */
+.links-container {
+    position: absolute; /* Absolute positioning relative to the frame */
+    top: 10px; /* Adjust position from the top */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3; /* Ensure links are above the video */
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.7); /* Optional: background with transparency */
+    border-radius: 5px;
+    width: 90%; /* Adjust width as needed */
+    text-align: center;
 }
 
-.links-list a:hover {
-    color: #003366; /* Darker blue on hover */
-    text-decoration: underline; /* Add underline on hover */
+/* Styling individual links */
+.links-container a {
+    font-family: Arial, sans-serif;
+    font-size: 1.2rem;
+    color: #0066cc; /* Link color */
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
+
+.links-container a:hover {
+    color: #003366; /* Darker blue on hover */
+    text-decoration: underline;
+}
+
 
