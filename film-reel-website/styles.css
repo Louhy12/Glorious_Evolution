@@ -13,7 +13,7 @@ body {
 /* Container for the film reel */
 .film-reel {
     display: flex;
-    flex-direction: column;  /* Stack frames vertically */
+    flex-direction: column; /* Stack frames vertically */
     align-items: center;
     margin-top: 20px; /* Adjust as needed */
 }
@@ -39,8 +39,19 @@ body {
     height: 100%;
     object-fit: cover; /* Make sure the video covers the entire frame */
     opacity: 0.3; /* Adjust this value for transparency (0 = fully transparent, 1 = opaque) */
-    z-index: 1; /* Ensure the video stays beneath the frame content */
+    z-index: 2; /* Ensure the video appears above the map but below content and links */
     pointer-events: none; /* Disables pointer events on the video */
+}
+
+/* Map styling to ensure it appears below the video */
+.map-image {
+    width: 100%;
+    height: 100%; /* Make the map fill the container */
+    object-fit: contain; /* Ensures the map retains its aspect ratio */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1; /* Map behind the video */
 }
 
 /* Title text in the first frame */
@@ -53,16 +64,16 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 2;
+    z-index: 3;
     margin: 0;
     padding: 0;
     line-height: 1.2;
 }
 
-/* Adjust frame content to ensure links are clickable */
+/* Frame content (e.g., links and text) */
 .frame-content {
     position: relative;
-    z-index: 2; /* Place content above the video */
+    z-index: 4; /* Place content above the video */
     padding: 20px;
     background-color: #f0f0f0; /* Light gray background for content */
     height: 100%;
@@ -77,7 +88,6 @@ body {
     color: #000; /* Black text color */
     text-align: center; /* Center the title */
     margin-bottom: 20px; /* Add space below the title */
-    z-index: 2; /* Ensure it appears above the noise video */
 }
 
 /* Styling for the frame content */
@@ -87,79 +97,15 @@ body {
     color: #333; /* Dark gray text color */
     line-height: 1.6; /* Improve readability */
     text-align: justify; /* Justify text for a cleaner look */
-    z-index: 2; /* Ensure text appears above the video */
 }
 
-/* Styling for the map-slider container */
-.map-slider {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* Position the map image inside the slider container */
-.map-image {
-    width: 100%;
-    height: 100%; /* Make the map fill the container */
-    object-fit: contain; /* Ensures the map retains its aspect ratio */
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1; /* Map behind the video */
-}
-
-/* Slider styling */
-#map-slider {
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80%;
-    z-index: 3; /* Ensure slider stays above both map and video */
-    max-width: 500px; /* Optional: Set max width for the slider */
-}
-
-/* Optional: Adjust slider thumb and track appearance */
-#map-slider::-webkit-slider-thumb {
-    background-color: #000;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    cursor: pointer;
-}
-
-#map-slider::-webkit-slider-runnable-track {
-    background: #ccc;
-    height: 8px;
-    border-radius: 5px;
-}
-
-
-/* Optional: Adding hover effect for film frames */
-.frame:hover {
-    transform: scale(1.02); /* Slight zoom on hover */
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-}
-
-/* Related articles title */
-.frame-content h3 {
-    font-family: Arial, sans-serif; /* Match with body text */
-    font-size: 1.2rem;
-    color: #444; /* Slightly darker gray for emphasis */
-    margin-top: 20px; /* Add spacing above */
-    margin-bottom: 10px;
-}
-
-/* Container for the links to ensure they are clickable */
+/* Container for the links */
 .links-list {
     position: absolute;
     top: 50%; /* Position links in the center of the frame */
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 5; /* Position links above everything else */
+    z-index: 5; /* Ensure links are above everything else */
 }
 
 /* Styling individual links */
@@ -180,3 +126,45 @@ body {
 .links-list a:hover {
     text-decoration: underline; /* Add a hover effect for the links */
 }
+
+/* Slider styling */
+#map-slider {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    z-index: 4; /* Ensure slider stays above video but below links */
+    max-width: 500px; /* Optional: Set max width for the slider */
+}
+
+/* Optional: Adjust slider thumb and track appearance */
+#map-slider::-webkit-slider-thumb {
+    background-color: #000;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#map-slider::-webkit-slider-runnable-track {
+    background: #ccc;
+    height: 8px;
+    border-radius: 5px;
+}
+
+/* Optional: Adding hover effect for film frames */
+.frame:hover {
+    transform: scale(1.02); /* Slight zoom on hover */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Related articles title */
+.frame-content h3 {
+    font-family: Arial, sans-serif; /* Match with body text */
+    font-size: 1.2rem;
+    color: #444; /* Slightly darker gray for emphasis */
+    margin-top: 20px; /* Add spacing above */
+    margin-bottom: 10px;
+}
+
