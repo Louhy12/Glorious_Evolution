@@ -111,18 +111,6 @@ body {
     z-index: 1; /* Map behind the video */
 }
 
-/* Noise video styling to ensure it stays on top but doesn't block the map */
-.noise-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Make sure the video covers the entire frame */
-    opacity: 0.2; /* Adjust opacity to allow map visibility */
-    z-index: 2; /* Video above the map */
-}
-
 /* Slider styling */
 #map-slider {
     position: absolute;
