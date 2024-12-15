@@ -2,90 +2,187 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Abril Fatface', cursive; /* Apply the Abril Fatface font globally */
-    background-image: url('images/film_stock.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: repeat-y;
-    height: 100vh;
+    font-family: 'Abril Fatface', cursive; /* Apply to the whole body (optional) */
+    background-image: url('images/film_stock.png'); /* Set film stock image as background */
+    background-size: cover; /* Make sure the background covers the entire page */
+    background-position: center; /* Center the background image */
+    background-repeat: repeat-y; /* Repeating the background image */
+    height: 100vh; /* Ensure the body takes the full viewport height */
 }
 
-/* Styling for frame titles (h1, h2, h3, etc.) */
-.frame-title, .frame-content h2, .frame-content h3, .frame-content p.title {
-    font-family: 'Abril Fatface', cursive; /* Set font for all titles */
-    color: #000; /* Set title color */
+/* Container for the film reel */
+.film-reel {
+    display: flex;
+    flex-direction: column;  /* Stack frames vertically */
+    align-items: center;
+    margin-top: 20px; /* Adjust as needed */
 }
 
-/* Specific styling for the first frame's title (centered in the frame) */
+/* Styling for each film frame */
+.frame {
+    position: relative;
+    width: 80%; /* Adjust the width to suit your design */
+    height: 400px; /* Adjust the height to suit your design */
+    margin: 20px 0;
+    background-color: #ffffff; /* Light gray background inside each frame */
+    border: 10px solid black; /* Black border around each frame */
+    border-radius: 5px; /* Slightly rounded corners */
+    overflow: hidden;
+}
+
+/* Video noise effect inside the frame */
+.noise-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Make sure the video covers the entire frame */
+    opacity: 0.3; /* Adjust this value for transparency (0 = fully transparent, 1 = opaque) */
+    z-index: 1; /* Ensure the video is above the frame content */
+}
+
+/* Title text in the first frame */
 .first-frame .title {
-    font-size: 3.5rem;
+    font-family: 'Abril Fatface', cursive; /* Apply Abril Fatface font */
+    font-size: 3.5rem; /* Huge size for the title */
     text-align: center;
+    color: #000;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 3;
-    pointer-events: none; /* Non-interactive */
+    z-index: 2;
+    margin: 0;
+    padding: 0;
+    line-height: 1.2;
 }
 
-/* Styling for other frame titles (h2, h3, etc.) */
-.frame .frame-title {
-    font-size: 2rem; /* You can adjust the size based on your preference */
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-/* Frame content (text and links) */
+/* Content inside the frame */
 .frame-content {
-    position: relative;
-    z-index: 4; /* Above video */
     padding: 20px;
-    background: none;
-    color: black; /* Ensure visibility */
+    background-color: #ffffff; /* Light gray background for content */
     height: 100%;
-    overflow: auto; /* Scroll if content overflows */
+    overflow: auto; /* If content exceeds frame, scroll */
 }
 
-/* Change font for non-title text to Arial */
-.frame-content p,
-.frame-content li,
-.frame-content h2,
-.frame-content h3 {
-    font-family: Arial, sans-serif; /* Set all text content to Arial */
-    color: #333; /* Optional: Ensure the text is dark for readability */
+/* Styling for the frame title */
+.frame-title {
+    font-family: 'Abril Fatface', cursive; /* Use Abril Fatface for the title */
+    font-size: 2rem; /* Adjust title size */
+    color: #000; /* Black text color */
+    text-align: center; /* Center the title */
+    margin-bottom: 20px; /* Add space below the title */
+    z-index: 2; /* Ensure it appears above the noise video */
 }
 
-/* Styling for links */
-.links-list {
+/* Styling for the frame content */
+.frame-content p {
+    font-family: Arial, sans-serif; /* Use a readable font for the paragraph */
+    font-size: 1rem; /* Adjust paragraph font size */
+    color: #333; /* Dark gray text color */
+    line-height: 1.6; /* Improve readability */
+    text-align: justify; /* Justify text for a cleaner look */
+    z-index: 2; /* Ensure text appears above the video */
+}
+
+/* Styling for the map-slider container */
+.map-slider {
     position: relative;
-    z-index: 5; /* Ensure links are on top of everything */
-    pointer-events: auto; /* Make links interactive */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.links-list li {
-    margin-bottom: 10px;
+/* Position the map image inside the slider container */
+.map-image {
+    width: 100%;
+    height: 100%; /* Make the map fill the container */
+    object-fit: contain; /* Ensures the map retains its aspect ratio */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1; /* Map behind the video */
 }
 
-.links-list a {
-    display: inline-block;
-    font-size: 16px;
-    color: #007bff;
-    text-decoration: none;
+/* Noise video styling to ensure it stays on top but doesn't block the map */
+.noise-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Make sure the video covers the entire frame */
+    opacity: 0.2; /* Adjust opacity to allow map visibility */
+    z-index: 2; /* Video above the map */
 }
 
-.links-list a:hover {
-    text-decoration: underline;
-}
-
-/* Slider (positioned below links) */
+/* Slider styling */
 #map-slider {
     position: absolute;
     bottom: 10px;
     left: 50%;
     transform: translateX(-50%);
     width: 80%;
-    z-index: 4; /* Below links but above video */
-    max-width: 500px;
+    z-index: 3; /* Ensure slider stays above both map and video */
+    max-width: 500px; /* Optional: Set max width for the slider */
 }
 
+/* Optional: Adjust slider thumb and track appearance */
+#map-slider::-webkit-slider-thumb {
+    background-color: #000;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#map-slider::-webkit-slider-runnable-track {
+    background: #ccc;
+    height: 8px;
+    border-radius: 5px;
+}
+
+
+/* Optional: Adding hover effect for film frames */
+.frame:hover {
+    transform: scale(1.02); /* Slight zoom on hover */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Related articles title */
+.frame-content h3 {
+    font-family: Arial, sans-serif; /* Match with body text */
+    font-size: 1.2rem;
+    color: #444; /* Slightly darker gray for emphasis */
+    margin-top: 20px; /* Add spacing above */
+    margin-bottom: 10px;
+}
+
+/* Styling the links list */
+.links-list {
+    list-style-type: none; /* Remove default list bullets */
+    padding: 0; /* Remove padding */
+    margin: 0;
+}
+
+/* Styling individual links */
+.links-list li {
+    margin-bottom: 10px; /* Add space between links */
+}
+
+.links-list a {
+    font-family: Arial, sans-serif; /* Simple and readable font */
+    font-size: 1rem;
+    color: #0066cc; /* Blue link color */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s ease; /* Smooth hover effect */
+}
+
+.links-list a:hover {
+    color: #003366; /* Darker blue on hover */
+    text-decoration: underline; /* Add underline on hover */
+}
 
