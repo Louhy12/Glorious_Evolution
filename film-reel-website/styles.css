@@ -105,6 +105,7 @@ body {
     object-fit: cover; /* Make sure the video covers the entire frame */
     opacity: 0.2; /* Adjust opacity to allow map visibility */
     z-index: 2; /* Video above the map */
+    pointer-events: none; /* Make sure the video does not block the links */
 }
 
 /* Slider styling */
@@ -172,6 +173,7 @@ body {
     border-radius: 5px;
     width: 90%; /* Adjust width as needed */
     text-align: center;
+    z-index: 3; /* Ensure links are above the video */
 }
 
 /* Styling individual links */
@@ -181,6 +183,7 @@ body {
     color: #0066cc; /* Link color */
     text-decoration: none;
     transition: color 0.3s ease;
+    z-index: 4; /* Ensure links have the highest z-index */
 }
 
 .links-container a:hover {
