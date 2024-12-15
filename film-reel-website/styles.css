@@ -66,13 +66,24 @@ body {
     overflow: auto; /* If content exceeds frame, scroll */
 }
 
-/* Optional: For scrollable text content */
+/* Styling for the frame title */
+.frame-title {
+    font-family: 'Abril Fatface', cursive; /* Use Abril Fatface for the title */
+    font-size: 2rem; /* Adjust title size */
+    color: #000; /* Black text color */
+    text-align: center; /* Center the title */
+    margin-bottom: 20px; /* Add space below the title */
+    z-index: 2; /* Ensure it appears above the noise video */
+}
+
+/* Styling for the frame content */
 .frame-content p {
-    margin: 0;
-    color: #333; /* Text color */
-    font-size: 16px;
-    line-height: 1.5;
-    max-width: 90%;
+    font-family: Arial, sans-serif; /* Use a readable font for the paragraph */
+    font-size: 1rem; /* Adjust paragraph font size */
+    color: #333; /* Dark gray text color */
+    line-height: 1.6; /* Improve readability */
+    text-align: justify; /* Justify text for a cleaner look */
+    z-index: 2; /* Ensure text appears above the video */
 }
 
 /* Styling for the map-slider container */
