@@ -39,7 +39,8 @@ body {
     height: 100%;
     object-fit: cover; /* Make sure the video covers the entire frame */
     opacity: 0.3; /* Adjust this value for transparency (0 = fully transparent, 1 = opaque) */
-    z-index: 1; /* Ensure the video is above the frame content */
+    z-index: 1; /* Ensure the video stays beneath the frame content */
+    pointer-events: none; /* Disables pointer events on the video */
 }
 
 /* Title text in the first frame */
@@ -58,12 +59,15 @@ body {
     line-height: 1.2;
 }
 
-/* Content inside the frame */
+/* Adjust frame content to ensure links are clickable */
 .frame-content {
+    position: relative;
+    z-index: 2; /* Place content above the video */
     padding: 20px;
-    background-color: #ffffff; /* Light gray background for content */
+    background-color: #f0f0f0; /* Light gray background for content */
     height: 100%;
     overflow: auto; /* If content exceeds frame, scroll */
+    pointer-events: auto; /* Ensure the content (links) is clickable */
 }
 
 /* Styling for the frame title */
@@ -179,6 +183,9 @@ body {
     color: #0066cc; /* Blue link color */
     text-decoration: none; /* Remove underline */
     transition: color 0.3s ease; /* Smooth hover effect */
+    position: relative;
+    z-index: 3; /* Ensure the links are clickable above everything else */
+    pointer-events: auto; /* Ensure links are clickable */
 }
 
 .links-list a:hover {
