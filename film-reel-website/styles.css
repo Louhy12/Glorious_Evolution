@@ -184,7 +184,7 @@ body {
     text-decoration: none; /* Remove underline */
     transition: color 0.3s ease; /* Smooth hover effect */
     position: relative;
-    z-index: 3; /* Ensure the links are clickable above everything else */
+    z-index: 4; /* Ensure the links are clickable above everything else */
     pointer-events: auto; /* Ensure links are clickable */
 }
 
