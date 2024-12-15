@@ -38,7 +38,7 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover; /* Make sure the video covers the entire frame */
-    opacity: 0.3; /* Adjust this value for transparency (0 = fully transparent, 1 = opaque) */
+    opacity: 0.2; /* Adjust this value for transparency (0 = fully transparent, 1 = opaque) */
     z-index: 2; /* Ensure the video appears above the map but below content and links */
     pointer-events: none; /* Disables pointer events on the video */
 }
