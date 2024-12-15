@@ -22,7 +22,7 @@ body {
 .frame {
     position: relative;
     width: 80%;
-    height: 500px;
+    height: 500px; /* Adjust the height as necessary */
     margin: 20px 0;
     background-color: #ffffff;
     border: 10px solid black;
@@ -55,7 +55,7 @@ body {
     pointer-events: none; /* Prevent interaction */
 }
 
-/* Title text (above video, non-interactive) */
+/* Title text (centered in the middle of the first frame) */
 .first-frame .title {
     font-family: 'Abril Fatface', cursive;
     font-size: 3.5rem;
@@ -78,6 +78,15 @@ body {
     color: black; /* Ensure visibility */
     height: 100%;
     overflow: auto; /* Scroll if content overflows */
+}
+
+/* Change font for non-title text to Arial */
+.frame-content p,
+.frame-content li,
+.frame-content h2,
+.frame-content h3 {
+    font-family: Arial, sans-serif; /* Set all text content to Arial */
+    color: #333; /* Optional: Ensure the text is dark for readability */
 }
 
 /* Styling for links */
@@ -112,4 +121,5 @@ body {
     z-index: 4; /* Below links but above video */
     max-width: 500px;
 }
+
 
