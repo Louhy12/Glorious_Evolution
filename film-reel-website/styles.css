@@ -159,7 +159,7 @@ body {
     top: 50%; /* Position links in the center of the frame */
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 3; /* Position links above everything else */
+    z-index: 5; /* Position links above everything else */
 }
 
 /* Styling individual links */
@@ -174,7 +174,7 @@ body {
     color: #007bff; /* Blue color for links */
     text-decoration: none;
     margin: 10px 0;
-    z-index: 3; /* Ensure links are above the video */
+    z-index: 5; /* Ensure links are above the video */
 }
 
 .links-list a:hover {
