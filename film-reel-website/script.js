@@ -26,16 +26,29 @@ function autoScroll() {
 }
 
 
-// Get the slider and image elements
-const slider = document.getElementById('map-slider');
-const mapImage = document.getElementById('map-image');
+// Get the slider, image, and slider value display elements
+    const slider = document.getElementById('map-slider');
+    const mapImage = document.getElementById('map-image');
+    const sliderValue = document.getElementById('slider-value');
 
-// Add an event listener to update the image based on slider value
-slider.addEventListener('input', function () {
-    const commentNumber = this.value; // Get current slider value
-    mapImage.src = `comments/comment${commentNumber}.png`; // Update the image source
-    mapImage.alt = `Comment ${commentNumber}`; // Update the alt text
-});
+    // Add an event listener to update the image and label based on slider value
+    slider.addEventListener('input', function () {
+        const commentNumber = this.value; // Get current slider value
+        const imagePath = `comments/comment${commentNumber}.png`;
+
+        // Check if the image exists (optional, prevents broken images)
+        fetch(imagePath, { method: 'HEAD' })
+            .then((response) => {
+                if (response.ok) {
+                    mapImage.src = imagePath; // Update the image source
+                    mapImage.alt = `Comment ${commentNumber}`; // Update the alt text
+                    sliderValue.textContent = `Comment ${commentNumber}`; // Update slider value display
+                } else {
+                    console.error(`Image not found: ${imagePath}`);
+                }
+            })
+            .catch((err) => console.error(`Error fetching image: ${err}`));
+    });
 
 
 setInterval(autoScroll, 50);
