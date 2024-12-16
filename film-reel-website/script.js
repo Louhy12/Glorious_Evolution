@@ -62,10 +62,6 @@ mapSlider.addEventListener('input', function() {
         case '11':
             mapImage.src = 'comments/comment11.png';
             break;
-        case '12':
-            mapImage.src = 'comments/comment12.png';
-            break;
-    }
 });
 
 
