@@ -26,29 +26,47 @@ function autoScroll() {
 }
 
 
-// Get the slider, image, and slider value display elements
-    const slider = document.getElementById('map-slider');
-    const mapImage = document.getElementById('map-image');
-    const sliderValue = document.getElementById('slider-value');
-
-    // Add an event listener to update the image and label based on slider value
-    slider.addEventListener('input', function () {
-        const commentNumber = this.value; // Get current slider value
-        const imagePath = `comments/comment${commentNumber}.png`;
-
-        // Check if the image exists (optional, prevents broken images)
-        fetch(imagePath, { method: 'HEAD' })
-            .then((response) => {
-                if (response.ok) {
-                    mapImage.src = imagePath; // Update the image source
-                    mapImage.alt = `Comment ${commentNumber}`; // Update the alt text
-                    sliderValue.textContent = `Comment ${commentNumber}`; // Update slider value display
-                } else {
-                    console.error(`Image not found: ${imagePath}`);
-                }
-            })
-            .catch((err) => console.error(`Error fetching image: ${err}`));
-    });
+mapSlider.addEventListener('input', function() {
+    const mapIndex = mapSlider.value;
+    switch(mapIndex) {
+        case '1':
+            mapImage.src = 'comments/comment1.png';
+            break;
+        case '2':
+            mapImage.src = 'comments/comment2.png';
+            break;
+        case '3':
+            mapImage.src = 'comments/comment3.png';
+            break;
+        case '4':
+            mapImage.src = 'comments/comment4.png';
+            break;
+        case '5':
+            mapImage.src = 'comments/comment5.png';
+            break;
+        case '6':
+            mapImage.src = 'comments/comment6.png';
+            break;
+        case '7':
+            mapImage.src = 'comments/comment7.png';
+            break;
+        case '8':
+            mapImage.src = 'comments/comment8.png';
+            break;
+        case '9':
+            mapImage.src = 'comments/comment9.png';
+            break;
+        case '10':
+            mapImage.src = 'comments/comment10.png';
+            break;
+        case '11':
+            mapImage.src = 'comments/comment11.png';
+            break;
+        case '12':
+            mapImage.src = 'comments/comment12.png';
+            break;
+    }
+});
 
 
 setInterval(autoScroll, 50);
