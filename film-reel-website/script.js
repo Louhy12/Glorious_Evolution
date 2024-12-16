@@ -25,5 +25,18 @@ function autoScroll() {
     if (scrollAmount >= filmReel.scrollHeight) scrollAmount = 0;
 }
 
+
+// Get the slider and image elements
+const slider = document.getElementById('map-slider');
+const mapImage = document.getElementById('map-image');
+
+// Add an event listener to update the image based on slider value
+slider.addEventListener('input', function () {
+    const commentNumber = this.value; // Get current slider value
+    mapImage.src = `comments/comment${commentNumber}.png`; // Update the image source
+    mapImage.alt = `Comment ${commentNumber}`; // Update the alt text
+});
+
+
 setInterval(autoScroll, 50);
 
