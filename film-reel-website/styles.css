@@ -319,14 +319,14 @@ p {
     cursor: pointer;
     border: none;
     border-radius: 5px;
-    background-color: #4CAF50;  /* Green button (unchanged) */
+    background-color: #303030;  
     color: white;
     transition: background-color 0.3s;
     z-index: 1; /* Ensure buttons stay above the noise video */
 }
 
 .quiz-btn:hover {
-    background-color: #303030; /* Darker green on hover */
+    background-color:  #FFFFFF; /* Darker green on hover */
 }
 
 /* Style for the image container */
