@@ -278,49 +278,58 @@ p {
 }
 
 
+/* Quiz frame styling */
 .quiz-frame {
     margin: 20px auto;
     padding: 20px;
     width: 60%;
     border: 3px solid black;
     border-radius: 10px;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: #000; /* Change background to black */
+    color: white; /* Ensure text is visible */
     text-align: center;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
+/* Quiz question styling */
 .quiz-question p {
     font-size: 1.5rem;
     margin-bottom: 20px;
+    color: white; /* Keep text readable on black background */
 }
 
+/* Quiz button styling */
 .quiz-btn {
     font-size: 1rem;
     padding: 10px 20px;
     margin: 10px;
     border: none;
     border-radius: 5px;
-    background-color: #4CAF50;
-    color: white;
+    background-color: #333; /* Dark gray for buttons */
+    color: white; /* White text */
     cursor: pointer;
     transition: background-color 0.3s;
 }
 
 .quiz-btn:hover {
-    background-color: #45a049;
+    background-color: #444; /* Slightly lighter gray on hover */
 }
 
+/* Results container styling */
 .results-container {
     margin-top: 20px;
     text-align: left;
+    background-color: #000; /* Black background for results */
+    color: white; /* White text */
 }
 
+/* Result bars styling */
 .result-bar {
     font-size: 1rem;
     padding: 5px;
     margin: 5px 0;
     color: white;
-    background-color: #4CAF50;
+    background-color: #333; /* Dark gray bars */
     border-radius: 5px;
     text-align: center;
     transition: width 0.5s;
