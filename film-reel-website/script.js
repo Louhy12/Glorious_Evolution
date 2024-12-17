@@ -42,6 +42,10 @@ function initializeSliders() {
     });
 }
 
+function answer(choice) {
+            alert('You chose: ' + choice);
+}
+
 // Initialize sliders on DOM load
 document.addEventListener("DOMContentLoaded", initializeSliders);
 
