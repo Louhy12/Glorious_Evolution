@@ -282,6 +282,7 @@ p {
     background-color: #000000; 
     text-align: center;        /* Center text inside the frame */
     position: relative;        /* Ensure we can position the results above this */
+    z-index: 1;
 }
 
 /* Style for the results container */
@@ -323,7 +324,7 @@ p {
     background-color: #303030;  
     color: white;
     transition: background-color 0.3s;
-    z-index: 1; /* Ensure buttons stay above the noise video */
+    z-index: 3; 
 }
 
 .quiz-btn:hover {
@@ -333,6 +334,7 @@ p {
 /* Style for the image container */
 .image-container {
     margin-top: 20px;           /* Space above the image */
+    z-index:1;
 }
 
 .image {
@@ -344,5 +346,5 @@ p {
 /* Ensure the quiz buttons are clickable over the video */
 .quiz-frame, .quiz-btn {
     position: relative;
-    z-index: 3; /* Ensure clickable over noise video */
+    z-index: 3; 
 }
