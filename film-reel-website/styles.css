@@ -76,6 +76,27 @@ body {
     z-index: 2; /* Ensure text appears above the video */
 }
 
+/* Styling for the map-slider container */
+.map-slider {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Position the map image inside the slider container */
+.map-image {
+    width: 100%;
+    height: 100%; /* Make the map fill the container */
+    object-fit: contain; /* Ensures the map retains its aspect ratio */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1; /* Map behind the video */
+}
+
 /* Noise video styling to ensure it stays on top but doesn't block the map */
 .noise-video {
     position: absolute;
@@ -100,19 +121,6 @@ body {
     max-width: 500px; /* Optional: Set max width for the slider */
 }
 
-/* Position the map image inside the slider container */
-.map-image {
-    width: 100%;
-    height: 100%; /* Make the map fill the container */
-    object-fit: contain; /* Ensures the map retains its aspect ratio */
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1; /* Map behind the video */
-}
 /* Optional: Adjust slider thumb and track appearance */
 #map-slider::-webkit-slider-thumb {
     background-color: #000;
@@ -334,3 +342,34 @@ p {
     height: auto;               /* Maintain aspect ratio of the image */
     border-radius: 5px;         /* Optional: Round corners of the image */
 }
+
+/* Scroll indicator container */
+.scroll-indicator {
+    text-align: center;
+    margin-top: 10px; /* Space above the indicator */
+    animation: fadeInOut 2s infinite; /* Add a pulsing animation for visibility */
+}
+
+/* Scroll text styling */
+.scroll-text {
+    font-size: 1rem;
+    color: #333; /* Dark gray for readability */
+    margin-bottom: 5px;
+}
+
+/* Arrow styling */
+.arrow {
+    font-size: 2rem; /* Larger font for visibility */
+    color: #333; /* Match the text color */
+}
+
+/* Animation for the arrow to fade in and out */
+@keyframes fadeInOut {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
