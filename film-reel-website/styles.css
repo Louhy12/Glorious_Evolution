@@ -342,9 +342,3 @@ p {
     height: auto;               /* Maintain aspect ratio of the image */
     border-radius: 5px;         /* Optional: Round corners of the image */
 }
-
-/* Ensure the quiz buttons are clickable over the video */
-.quiz-frame, .quiz-btn {
-    position: relative;
-    z-index: 3; 
-}
