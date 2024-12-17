@@ -42,6 +42,9 @@ function initializeSliders() {
     });
 }
 
+// Initialize sliders on DOM load
+document.addEventListener("DOMContentLoaded", initializeSliders);
+
 let factCount = 0;
 let fictionCount = 0;
 
@@ -52,6 +55,7 @@ function vote(choice) {
         fictionCount++;
     }
     updateChart();
+    showResults();
 }
 
 function updateChart() {
@@ -69,8 +73,12 @@ function updateChart() {
     fictionBar.textContent = ⁠ Fiction: ${fictionCount} ⁠;
 }
 
-// Initialize sliders on DOM load
-document.addEventListener("DOMContentLoaded", initializeSliders);
+function showResults() {
+    const resultsContainer = document.querySelector('.results-container');
+    resultsContainer.style.display = 'block';
+}
+
+
 
 setInterval(autoScroll, 50);
 
