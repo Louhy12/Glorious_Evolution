@@ -279,7 +279,7 @@ p {
     border: 5px solid #000;    /* Black border around the frame */
     border-radius: 10px;       /* Rounded corners for the frame */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow effect for depth */
-    background-color: #f5f5f5; /* Light gray background */
+    background-color: #000000; 
     text-align: center;        /* Center text inside the frame */
     position: relative;        /* Ensure we can position the results above this */
 }
@@ -300,7 +300,7 @@ p {
     padding: 5px;
     margin: 5px 0;
     color: white;
-    background-color: #333; /* Keep the dark background for result bars */
+    background-color: #606060;
     border-radius: 5px;
     text-align: center;
     transition: width 0.5s;
@@ -326,7 +326,7 @@ p {
 }
 
 .quiz-btn:hover {
-    background-color: #45a049; /* Darker green on hover */
+    background-color: #303030; /* Darker green on hover */
 }
 
 /* Style for the image container */
