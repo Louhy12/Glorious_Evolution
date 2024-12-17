@@ -13,16 +13,16 @@ function autoScroll() {
 function initializeSliders() {
     // Map of slider IDs to folder paths
     const sliders = [
-        { sliderId: "diversity-slider", imageId: "diversity-image", folder: "map/diversity" },
-        { sliderId: "height-slider", imageId: "height-image", folder: "map/height" },
-        { sliderId: "age-slider", imageId: "age-image", folder: "map/age" },
-        { sliderId: "gender-slider", imageId: "gender-image", folder: "map/gender" },
-        { sliderId: "ethnicity-slider", imageId: "ethnicity-image", folder: "map/ethnicity" },
-        { sliderId: "foreign-slider", imageId: "foreign-image", folder: "map/foreign" },
-        { sliderId: "comment-slider", imageId: "comment-image", folder: "comment" }
+        { sliderId: "diversity-slider", imageId: "diversity-image", folder: "map/diversity", extension: "jpg" },
+        { sliderId: "height-slider", imageId: "height-image", folder: "map/height", extension: "jpg" },
+        { sliderId: "age-slider", imageId: "age-image", folder: "map/age", extension: "jpg" },
+        { sliderId: "gender-slider", imageId: "gender-image", folder: "map/gender", extension: "jpg" },
+        { sliderId: "ethnicity-slider", imageId: "ethnicity-image", folder: "map/ethnicity", extension: "jpg" },
+        { sliderId: "foreign-slider", imageId: "foreign-image", folder: "map/foreign", extension: "jpg" },
+        { sliderId: "comment-slider", imageId: "comment-image", folder: "comment", extension: "png" }
     ];
 
-    sliders.forEach(({ sliderId, imageId, folder }) => {
+    sliders.forEach(({ sliderId, imageId, folder, extension }) => {
         const slider = document.getElementById(sliderId);
         const image = document.getElementById(imageId);
 
@@ -31,7 +31,7 @@ function initializeSliders() {
             console.log(`Initializing slider: ${sliderId}, folder: ${folder}`); // Debugging output
             slider.addEventListener("input", function () {
                 const index = this.value; // Get current slider value
-                const newImagePath = `${folder}/${folder.split('/').pop()}${index}.jpg`; // Build image path
+                const newImagePath = `${folder}/${folder.split('/').pop()}${index}.${extension}`; // Build image path with dynamic extension
                 console.log(`Slider ${sliderId}: Updating to ${newImagePath}`); // Debugging output
                 image.src = newImagePath; // Update image source
                 image.alt = `${folder.split('/').pop()} ${index}`; // Update alt text
@@ -44,11 +44,6 @@ function initializeSliders() {
 
 // Initialize sliders on DOM load
 document.addEventListener("DOMContentLoaded", initializeSliders);
-
-
-// Initialize sliders when the DOM is loaded
-document.addEventListener("DOMContentLoaded", initializeSliders);
-
 
 setInterval(autoScroll, 50);
 
