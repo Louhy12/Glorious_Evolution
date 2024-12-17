@@ -310,6 +310,7 @@ p {
 .quiz-question p {
     font-size: 24px;
     margin-bottom: 20px;
+    color: #FFFFFF;
 }
 
 .quiz-btn {
@@ -326,7 +327,7 @@ p {
 }
 
 .quiz-btn:hover {
-    background-color:  #FFFFFF; /* Darker green on hover */
+    background-color:  #303030;
 }
 
 /* Style for the image container */
