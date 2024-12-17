@@ -309,6 +309,7 @@ p {
     color: white; /* White text */
     cursor: pointer;
     transition: background-color 0.3s;
+    z-index: 4;
 }
 
 .quiz-btn:hover {
