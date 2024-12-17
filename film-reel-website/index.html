@@ -193,19 +193,21 @@
             <!-- Title and description -->
             <h2 class="frame-title"> Is this statement a Fact or a Fiction?</h2>
 
-            <!-- Quiz question at the top -->
-            <div class="quiz-question">
-                <p> What is your opinion?</p>
-                <button class="quiz-btn" onclick="answer('fact')">Fact</button>
-                <button class="quiz-btn" onclick="answer('fiction')">Fiction</button>
-            </div>
+            <div class="quiz-frame">
+                <div class="quiz-question">
+                    <p>Is this statement a Fact or Fiction?</p>
+                    <button class="quiz-btn" onclick="vote('fact')">Fact</button>
+                    <button class="quiz-btn" onclick="vote('fiction')">Fiction</button>
+                </div>
             
-            <!-- Image in the middle of the frame -->
-            <div class="image-container">
-                <img src="images/meme.jpeg" alt="Image" class="image">
-            </div>
-        
-            <div class="frame-content">
+                <div class="image-container">
+                    <img src="images/meme.jpeg" alt="Example Image" class="image">
+                </div>
+            
+                <div class="results-container">
+                    <div class="result-bar" id="fact-bar" style="width: 0%;">Fact: 0</div>
+                    <div class="result-bar" id="fiction-bar" style="width: 0%;">Fiction: 0</div>
+                </div>
             </div>
         </div>
 
