@@ -271,4 +271,8 @@ p {
     color: #333;
 }
 
-
+.image {
+    width: 100%;               /* Make image fill the frame */
+    height: auto;              /* Maintain aspect ratio of the image */
+    border-radius: 5px;        /* Optional: Round the corners of the image */
+}
