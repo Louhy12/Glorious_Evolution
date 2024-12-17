@@ -271,13 +271,6 @@ p {
     color: #333;
 }
 
-.image {
-    width: 100%;               /* Make image fill the frame */
-    height: auto;              /* Maintain aspect ratio of the image */
-    border-radius: 5px;        /* Optional: Round the corners of the image */
-}
-
-
 /* Style for the quiz frame */
 .quiz-frame {
     width: 60%;                /* Adjust the width of the frame */
@@ -288,6 +281,29 @@ p {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow effect for depth */
     background-color: #f5f5f5; /* Light gray background */
     text-align: center;        /* Center text inside the frame */
+    position: relative;        /* Make sure we can position the results above this */
+}
+
+/* Style for the results container */
+.results-container {
+    position: absolute; /* Position the results bar above the quiz content */
+    top: 20px;          /* Space from the top of the frame */
+    left: 0;
+    width: 100%;        /* Full width */
+    display: none;      /* Initially hidden */
+    z-index: 2;         /* Ensures it's above the quiz buttons */
+}
+
+/* Result bars styling */
+.result-bar {
+    font-size: 1rem;
+    padding: 5px;
+    margin: 5px 0;
+    color: white;
+    background-color: #333; /* Dark gray bars */
+    border-radius: 5px;
+    text-align: center;
+    transition: width 0.5s;
 }
 
 /* Style for the quiz question and buttons */
@@ -306,7 +322,7 @@ p {
     background-color: #4CAF50;  /* Green button */
     color: white;
     transition: background-color 0.3s;
-    z-index: 3; /* Ensure slider stays above both map and video */
+    z-index: 1; /* Ensure slider stays above both map and video */
 }
 
 .quiz-btn:hover {
@@ -324,73 +340,8 @@ p {
     border-radius: 5px;         /* Optional: Round corners of the image */
 }
 
-/* Quiz frame styling */
-.quiz-frame {
-    margin: 20px auto;
-    padding: 20px;
-    width: 60%;
-    border: 3px solid black;
-    border-radius: 10px;
-    background-color: #000; /* Change background to black */
-    color: white; /* Ensure text is visible */
-    text-align: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    display: flex;
-    flex-direction: column; /* Stack elements vertically */
-    align-items: center;
-    justify-content: flex-start; /* Ensure content starts at the top */
-    gap: 15px; /* Add space between elements */
-}
-
-/* Quiz question styling */
-.quiz-question p {
-    font-size: 1.5rem;
-    margin-bottom: 20px;
-    color: white; /* Keep text readable on black background */
-}
-
-/* Quiz button styling */
-.quiz-btn {
-    font-size: 1rem;
-    padding: 10px 20px;
-    margin: 10px;
-    border: none;
-    border-radius: 5px;
-    background-color: #333; /* Dark gray for buttons */
-    color: white; /* White text */
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
 /* Ensure the quiz buttons are clickable over the video */
 .quiz-frame, .quiz-btn {
     position: relative;
     z-index: 3; /* Ensure clickable over noise video */
-}
-
-.quiz-btn:hover {
-    background-color: #444; /* Slightly lighter gray on hover */
-}
-
-/* Ensure the results bar is initially hidden */
-.results-container {
-    display: none; /* Hidden by default */
-    margin-bottom: 20px;
-    padding: 10px;
-    background-color: #222; /* Dark background */
-    color: white;
-    border-radius: 5px;
-    text-align: center;
-}
-
-/* Result bars styling */
-.result-bar {
-    font-size: 1rem;
-    padding: 5px;
-    margin: 5px 0;
-    color: white;
-    background-color: #333; /* Dark gray bars */
-    border-radius: 5px;
-    text-align: center;
-    transition: width 0.5s;
 }
