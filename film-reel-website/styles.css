@@ -54,6 +54,12 @@ body {
     background-color: #ffffff; /* Light gray background for content */
     height: 100%;
     overflow: auto; /* If content exceeds frame, scroll */
+    flex-direction: column;
+    justify-content: flex-start; /* Ensures the title and paragraph stay at the top */
+    align-items: center; /* Centers content horizontally */
+    height: 100%; /* Ensures the content takes full height of its container */
+    max-height: 100vh; /* Prevents overflowing the viewport height */
+    overflow-y: auto; /* Allows scrolling if the content exceeds the frame */
 }
 
 /* Styling for the frame title */
