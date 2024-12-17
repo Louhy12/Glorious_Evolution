@@ -54,12 +54,6 @@ body {
     background-color: #ffffff; /* Light gray background for content */
     height: 100%;
     overflow: auto; /* If content exceeds frame, scroll */
-    flex-direction: column;
-    justify-content: flex-start; /* Ensures the title and paragraph stay at the top */
-    align-items: center; /* Centers content horizontally */
-    height: 100%; /* Ensures the content takes full height of its container */
-    max-height: 100vh; /* Prevents overflowing the viewport height */
-    overflow-y: auto; /* Allows scrolling if the content exceeds the frame */
 }
 
 /* Styling for the frame title */
@@ -82,6 +76,27 @@ body {
     z-index: 2; /* Ensure text appears above the video */
 }
 
+/* Styling for the map-slider container */
+.map-slider {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Position the map image inside the slider container */
+.map-image {
+    width: 100%;
+    height: 100%; /* Make the map fill the container */
+    object-fit: contain; /* Ensures the map retains its aspect ratio */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1; /* Map behind the video */
+}
+
 /* Noise video styling to ensure it stays on top but doesn't block the map */
 .noise-video {
     position: absolute;
@@ -95,36 +110,19 @@ body {
     pointer-events: none; /* Make sure the video does not block the links */
 }
 
-/* Styling for the map-slider container */
-.map-slider {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/* Slider styling */
+#map-slider {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    z-index: 3; /* Ensure slider stays above both map and video */
+    max-width: 500px; /* Optional: Set max width for the slider */
 }
 
-/* Map Image Styling */
-.map-image {
-    max-width: 100%;
-    height: auto; /* Ensures aspect ratio is maintained */
-    display: block; /* Centers image within its container */
-    margin-bottom: 20px; /* Adds spacing between the image and the slider */
-}
-
-/* Slider Control Styling */
-.map-slider-input {
-    width: 100%; /* Full width by default */
-    max-width: 800px; /* Optional: Limit the slider's maximum width */
-    margin: 0 auto; /* Centers the slider horizontally */
-    display: block;
-    position: relative;
-    bottom: 0;
-}
-
-/* Customize Slider Thumb and Track Appearance */
-.map-slider-input::-webkit-slider-thumb {
+/* Optional: Adjust slider thumb and track appearance */
+#map-slider::-webkit-slider-thumb {
     background-color: #000;
     width: 20px;
     height: 20px;
@@ -132,7 +130,7 @@ body {
     cursor: pointer;
 }
 
-.map-slider-input::-webkit-slider-runnable-track {
+#map-slider::-webkit-slider-runnable-track {
     background: #ccc;
     height: 8px;
     border-radius: 5px;
