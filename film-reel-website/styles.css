@@ -86,17 +86,6 @@ body {
     align-items: center;
 }
 
-/* Position the map image inside the slider container */
-.map-image {
-    width: 100%;
-    height: 100%; /* Make the map fill the container */
-    object-fit: contain; /* Ensures the map retains its aspect ratio */
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1; /* Map behind the video */
-}
-
 /* Noise video styling to ensure it stays on top but doesn't block the map */
 .noise-video {
     position: absolute;
@@ -119,6 +108,17 @@ body {
     width: 80%;
     z-index: 3; /* Ensure slider stays above both map and video */
     max-width: 500px; /* Optional: Set max width for the slider */
+}
+
+/* Position the map image inside the slider container */
+.map-image {
+    width: 100%;
+    height: 100%; /* Make the map fill the container */
+    object-fit: contain; /* Ensures the map retains its aspect ratio */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1; /* Map behind the video */
 }
 
 /* Optional: Adjust slider thumb and track appearance */
