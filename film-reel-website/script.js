@@ -52,6 +52,101 @@ mapSlider.addEventListener('input', function() {
     }
 });
 
+mapSlider.addEventListener('input', function() {
+    const mapIndex = mapSlider.value;
+    switch(mapIndex) {
+        case '1':
+            mapImage.src = 'map/diversity_score/diversity1.jpeg';
+            break;
+        case '2':
+            mapImage.src = 'map/diversity_score/diversity2.jpeg';
+            break;
+        case '3':
+            mapImage.src = 'map/diversity_score/diversity3.jpeg';
+            break;
+
+    }
+});
+
+mapSlider.addEventListener('input', function() {
+    const mapIndex = mapSlider.value;
+    switch(mapIndex) {
+        case '1':
+            mapImage.src = 'map/height/height1.jpeg';
+            break;
+        case '2':
+            mapImage.src = 'map/height/height2.jpeg';
+            break;
+        case '3':
+            mapImage.src = 'map/height/height3.jpeg';
+            break;
+
+    }
+});
+
+mapSlider.addEventListener('input', function() {
+    const mapIndex = mapSlider.value;
+    switch(mapIndex) {
+        case '1':
+            mapImage.src = 'map/age/age1.jpeg';
+            break;
+        case '2':
+            mapImage.src = 'map/age/age2.jpeg';
+            break;
+        case '3':
+            mapImage.src = 'map/age/age3.jpeg';
+            break;
+
+    }
+});
+
+mapSlider.addEventListener('input', function() {
+    const mapIndex = mapSlider.value;
+    switch(mapIndex) {
+        case '1':
+            mapImage.src = 'map/gender/gender1.jpeg';
+            break;
+        case '2':
+            mapImage.src = 'map/gender/gender2.jpeg';
+            break;
+        case '3':
+            mapImage.src = 'map/gender/gender3.jpeg';
+            break;
+
+    }
+});
+
+mapSlider.addEventListener('input', function() {
+    const mapIndex = mapSlider.value;
+    switch(mapIndex) {
+        case '1':
+            mapImage.src = 'map/ethnicity/ethnicity1.jpeg';
+            break;
+        case '2':
+            mapImage.src = 'map/ethnicity/ethnicity2.jpeg';
+            break;
+        case '3':
+            mapImage.src = 'map/ethnicity/ethnicity3.jpeg';
+            break;
+
+    }
+});
+
+mapSlider.addEventListener('input', function() {
+    const mapIndex = mapSlider.value;
+    switch(mapIndex) {
+        case '1':
+            mapImage.src = 'map/foreign/foreign1.jpeg';
+            break;
+        case '2':
+            mapImage.src = 'map/foreign/foreign2.jpeg';
+            break;
+        case '3':
+            mapImage.src = 'map/foreign/foreign3.jpeg';
+            break;
+
+    }
+});
 
 setInterval(autoScroll, 50);
 
