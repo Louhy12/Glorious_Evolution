@@ -55,24 +55,31 @@ function vote(choice) {
     showResults();
 }
 
-function updateChart() {
-    const total = factCount + fictionCount;
-    const factPercentage = total ? (factCount / total) * 100 : 0;
-    const fictionPercentage = total ? (fictionCount / total) * 100 : 0;
+// Track votes for 'fact' and 'fiction'
+let votes = { fact: 0, fiction: 0 };
 
+function vote(choice) {
+    // Increment the vote for the selected option
+    votes[choice]++;
+
+    // Calculate total votes
+    const totalVotes = votes.fact + votes.fiction;
+
+    // Update the results bar
     const factBar = document.getElementById('fact-bar');
     const fictionBar = document.getElementById('fiction-bar');
 
-    factBar.style.width = factPercentage + '%';
-    factBar.textContent = ⁠ Fact: ${factCount} ⁠;
+    const factPercentage = ((votes.fact / totalVotes) * 100).toFixed(1);
+    const fictionPercentage = ((votes.fiction / totalVotes) * 100).toFixed(1);
 
-    fictionBar.style.width = fictionPercentage + '%';
-    fictionBar.textContent = ⁠ Fiction: ${fictionCount} ⁠;
-}
+    factBar.style.width = `${factPercentage}%`;
+    fictionBar.style.width = `${fictionPercentage}%`;
 
-function showResults() {
-    const resultsContainer = document.querySelector('.results-container');
-    resultsContainer.style.display = 'block';
+    factBar.textContent = `Fact: ${factPercentage}% (${votes.fact})`;
+    fictionBar.textContent = `Fiction: ${fictionPercentage}% (${votes.fiction})`;
+
+    // Make the results bar visible
+    document.querySelector('.results-container').style.display = 'block';
 }
 
 // Initialize sliders on DOM load
