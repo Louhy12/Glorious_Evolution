@@ -183,36 +183,35 @@
             </div>
         </div>
 
-        <!-- Frame 7: Quizz -->
+        <!-- Frame 7: Quiz -->
         <div class="frame">
             <!-- Noise video overlay -->
             <video class="noise-video" autoplay loop muted>
-                <source src="videos/noise.mp4" type="video/mp4"> <!-- Path to your noise video -->
+                <source src="videos/noise.mp4" type="video/mp4">
             </video>
-
-            <!-- Title and description -->
-            <h2 class="frame-title"> Is this statement a Fact or a Fiction?</h2>
-
-             <div class="quiz-frame">
+        
+            <!-- Quiz content -->
+            <div class="quiz-frame">
+                <!-- Results bar (initially hidden) -->
+                <div class="results-container">
+                    <div class="result-bar" id="fact-bar" style="width: 0%;">Fact: 0%</div>
+                    <div class="result-bar" id="fiction-bar" style="width: 0%;">Fiction: 0%</div>
+                </div>
+        
+                <!-- Quiz question -->
                 <div class="quiz-question">
                     <p>What's your opinion?</p>
                     <button class="quiz-btn" onclick="vote('fact')">Fact</button>
                     <button class="quiz-btn" onclick="vote('fiction')">Fiction</button>
                 </div>
-            
+        
+                <!-- Image in the quiz -->
                 <div class="image-container">
                     <img src="images/meme.jpeg" alt="Example Image" class="image">
                 </div>
-            
-                <div class="results-container">
-                    <div class="result-bar" id="fact-bar" style="width: 0%;">Fact: 0</div>
-                    <div class="result-bar" id="fiction-bar" style="width: 0%;">Fiction: 0</div>
-                </div>
-            </div>
-        
-            <div class="frame-content">
             </div>
         </div>
+
 
         <!-- Frame X: Diversity map -->
         <div class="frame">
