@@ -281,7 +281,7 @@ p {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow effect for depth */
     background-color: #f5f5f5; /* Light gray background */
     text-align: center;        /* Center text inside the frame */
-    position: relative;        /* Make sure we can position the results above this */
+    position: relative;        /* Ensure we can position the results above this */
 }
 
 /* Style for the results container */
@@ -294,13 +294,13 @@ p {
     z-index: 2;         /* Ensures it's above the quiz buttons */
 }
 
-/* Result bars styling */
+/* Result bars styling (Restored original color scheme) */
 .result-bar {
     font-size: 1rem;
     padding: 5px;
     margin: 5px 0;
     color: white;
-    background-color: #333; /* Dark gray bars */
+    background-color: #333; /* Keep the dark background for result bars */
     border-radius: 5px;
     text-align: center;
     transition: width 0.5s;
@@ -319,10 +319,10 @@ p {
     cursor: pointer;
     border: none;
     border-radius: 5px;
-    background-color: #4CAF50;  /* Green button */
+    background-color: #4CAF50;  /* Green button (unchanged) */
     color: white;
     transition: background-color 0.3s;
-    z-index: 1; /* Ensure slider stays above both map and video */
+    z-index: 1; /* Ensure buttons stay above the noise video */
 }
 
 .quiz-btn:hover {
