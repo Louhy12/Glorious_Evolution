@@ -306,6 +306,7 @@ p {
     background-color: #4CAF50;  /* Green button */
     color: white;
     transition: background-color 0.3s;
+    z-index: 3; /* Ensure slider stays above both map and video */
 }
 
 .quiz-btn:hover {
