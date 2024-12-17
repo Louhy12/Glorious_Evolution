@@ -13,13 +13,13 @@ function autoScroll() {
 function initializeSliders() {
     // Map of slider IDs to folder paths
     const sliders = [
-        { sliderId: "diversity-slider", imageId: "diversity-image", folder: "map/diversity_score" },
+        { sliderId: "diversity-slider", imageId: "diversity-image", folder: "map/diversity" },
         { sliderId: "height-slider", imageId: "height-image", folder: "map/height" },
         { sliderId: "age-slider", imageId: "age-image", folder: "map/age" },
         { sliderId: "gender-slider", imageId: "gender-image", folder: "map/gender" },
         { sliderId: "ethnicity-slider", imageId: "ethnicity-image", folder: "map/ethnicity" },
         { sliderId: "foreign-slider", imageId: "foreign-image", folder: "map/foreign" },
-        { sliderId: "comments-slider", imageId: "comments-image", folder: "comments" }
+        { sliderId: "comments-slider", imageId: "comments-image", folder: "comment" }
     ];
 
     sliders.forEach(({ sliderId, imageId, folder }) => {
