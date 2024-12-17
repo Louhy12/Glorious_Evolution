@@ -58,6 +58,9 @@ function vote(choice) {
 // Track votes for 'fact' and 'fiction'
 let votes = { fact: 0, fiction: 0 };
 
+// Track votes for 'fact' and 'fiction'
+let votes = { fact: 0, fiction: 0 };
+
 function vote(choice) {
     // Increment the vote for the selected option
     votes[choice]++;
@@ -81,6 +84,7 @@ function vote(choice) {
     // Make the results bar visible
     document.querySelector('.results-container').style.display = 'block';
 }
+
 
 // Initialize sliders on DOM load
 document.addEventListener("DOMContentLoaded", initializeSliders);
