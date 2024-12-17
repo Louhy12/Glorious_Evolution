@@ -276,3 +276,50 @@ p {
     height: auto;              /* Maintain aspect ratio of the image */
     border-radius: 5px;        /* Optional: Round the corners of the image */
 }
+
+
+/* Style for the quiz frame */
+.quiz-frame {
+    width: 60%;                /* Adjust the width of the frame */
+    margin: 30px auto;         /* Center the frame horizontally */
+    padding: 20px;             /* Space inside the frame */
+    border: 5px solid #000;    /* Black border around the frame */
+    border-radius: 10px;       /* Rounded corners for the frame */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow effect for depth */
+    background-color: #f5f5f5; /* Light gray background */
+    text-align: center;        /* Center text inside the frame */
+}
+
+/* Style for the quiz question and buttons */
+.quiz-question p {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.quiz-btn {
+    font-size: 18px;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50;  /* Green button */
+    color: white;
+    transition: background-color 0.3s;
+}
+
+.quiz-btn:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+/* Style for the image container */
+.image-container {
+    margin-top: 20px;           /* Space above the image */
+}
+
+.image {
+    max-width: 100%;            /* Make image fill the width of its container */
+    height: auto;               /* Maintain aspect ratio of the image */
+    border-radius: 5px;         /* Optional: Round corners of the image */
+}
+
