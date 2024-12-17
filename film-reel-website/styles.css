@@ -289,7 +289,7 @@ p {
     position: absolute; /* Position the results bar above the quiz content */
     top: 20px;          /* Space from the top of the frame */
     left: 0;
-    width: 100%;        /* Full width */
+    width: 80%;        /* Full width */
     display: none;      /* Initially hidden */
     z-index: 2;         /* Ensures it's above the quiz buttons */
 }
