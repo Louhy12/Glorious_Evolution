@@ -59,16 +59,18 @@ function vote(choice) {
 }
 
 function updateChart() {
-    const total = factCount + fictionCount;
-    const factPercentage = total ? (factCount / total) * 100 : 0;
-    const fictionPercentage = total ? (fictionCount / total) * 100 : 0;
+    // Calculate the percentages
+    const totalVotes = factCount + fictionCount;
+    const factPercentage = totalVotes ? (factCount / totalVotes) * 100 : 0;
+    const fictionPercentage = totalVotes ? (fictionCount / totalVotes) * 100 : 0;
 
+    // Update the fact bar
     const factBar = document.getElementById('fact-bar');
-    const fictionBar = document.getElementById('fiction-bar');
-
     factBar.style.width = factPercentage + '%';
     factBar.textContent = ⁠ Fact: ${factCount} ⁠;
 
+    // Update the fiction bar
+    const fictionBar = document.getElementById('fiction-bar');
     fictionBar.style.width = fictionPercentage + '%';
     fictionBar.textContent = ⁠ Fiction: ${fictionCount} ⁠;
 }
