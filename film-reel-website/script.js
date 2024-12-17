@@ -42,45 +42,12 @@ function initializeSliders() {
     });
 }
 
+function answer(choice) {
+            alert('You chose: ' + choice);
+}
+
 // Initialize sliders on DOM load
 document.addEventListener("DOMContentLoaded", initializeSliders);
-
-let factCount = 0;
-let fictionCount = 0;
-
-function vote(choice) {
-    if (choice === 'fact') {
-        factCount++;
-    } else if (choice === 'fiction') {
-        fictionCount++;
-    }
-    updateChart();
-    showResults();
-}
-
-function updateChart() {
-    // Calculate the percentages
-    const totalVotes = factCount + fictionCount;
-    const factPercentage = totalVotes ? (factCount / totalVotes) * 100 : 0;
-    const fictionPercentage = totalVotes ? (fictionCount / totalVotes) * 100 : 0;
-
-    // Update the fact bar
-    const factBar = document.getElementById('fact-bar');
-    factBar.style.width = factPercentage + '%';
-    factBar.textContent = ⁠ Fact: ${factCount} ⁠;
-
-    // Update the fiction bar
-    const fictionBar = document.getElementById('fiction-bar');
-    fictionBar.style.width = fictionPercentage + '%';
-    fictionBar.textContent = ⁠ Fiction: ${fictionCount} ⁠;
-}
-
-function showResults() {
-    const resultsContainer = document.querySelector('.results-container');
-    resultsContainer.style.display = 'block';
-}
-
-
 
 setInterval(autoScroll, 50);
 
