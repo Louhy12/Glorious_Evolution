@@ -342,34 +342,3 @@ p {
     height: auto;               /* Maintain aspect ratio of the image */
     border-radius: 5px;         /* Optional: Round corners of the image */
 }
-
-/* Scroll indicator container */
-.scroll-indicator {
-    text-align: center;
-    margin-top: 10px; /* Space above the indicator */
-    animation: fadeInOut 2s infinite; /* Add a pulsing animation for visibility */
-}
-
-/* Scroll text styling */
-.scroll-text {
-    font-size: 1rem;
-    color: #333; /* Dark gray for readability */
-    margin-bottom: 5px;
-}
-
-/* Arrow styling */
-.arrow {
-    font-size: 2rem; /* Larger font for visibility */
-    color: #333; /* Match the text color */
-}
-
-/* Animation for the arrow to fade in and out */
-@keyframes fadeInOut {
-    0%, 100% {
-        opacity: 1;
-    }
-    50% {
-        opacity: 0.5;
-    }
-}
-
