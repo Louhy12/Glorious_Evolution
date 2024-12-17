@@ -335,6 +335,11 @@ p {
     color: white; /* Ensure text is visible */
     text-align: center;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center;
+    justify-content: flex-start; /* Ensure content starts at the top */
+    gap: 15px; /* Add space between elements */
 }
 
 /* Quiz question styling */
@@ -357,16 +362,25 @@ p {
     transition: background-color 0.3s;
 }
 
+/* Ensure the quiz buttons are clickable over the video */
+.quiz-frame, .quiz-btn {
+    position: relative;
+    z-index: 3; /* Ensure clickable over noise video */
+}
+
 .quiz-btn:hover {
     background-color: #444; /* Slightly lighter gray on hover */
 }
 
-/* Results container styling */
+/* Ensure the results bar is initially hidden */
 .results-container {
-    margin-top: 20px;
-    text-align: left;
-    background-color: #000; /* Black background for results */
-    color: white; /* White text */
+    display: none; /* Hidden by default */
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #222; /* Dark background */
+    color: white;
+    border-radius: 5px;
+    text-align: center;
 }
 
 /* Result bars styling */
