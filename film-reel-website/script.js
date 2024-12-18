@@ -37,24 +37,11 @@ function initializeSliders() {
                 image.src = newImagePath; // Update image source
                 image.alt = `${folder.split('/').pop()} ${index}`; // Update alt text
             });
-
-            // Dynamically change the thumb color of the slider
-            const thumb = slider.querySelector('::-webkit-slider-thumb');
-            if (thumb) {
-                thumb.style.backgroundColor = 'black'; // Set the thumb to black
-            }
-
-            // For Firefox and other browsers, use similar approach if needed:
-            const mozThumb = slider.querySelector('::-moz-range-thumb');
-            if (mozThumb) {
-                mozThumb.style.backgroundColor = 'black'; // Set the thumb to black for Firefox
-            }
         } else {
             console.error(`Slider or image not found for ID: ${sliderId}`); // Debugging output
         }
     });
 }
-
 
 let factCount = 0;
 let fictionCount = 0;
