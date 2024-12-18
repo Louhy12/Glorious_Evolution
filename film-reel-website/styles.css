@@ -121,20 +121,55 @@ body {
     z-index: 1; /* Map behind the video */
 }
 
-/* Optional: Adjust slider thumb and track appearance */
+/* Adjust slider thumb appearance */
 #map-slider::-webkit-slider-thumb {
-    background-color: #606060;
+    background-color: #ff4500; /* Change the thumb color */
+    width: 20px; /* Thumb width */
+    height: 20px; /* Thumb height */
+    border-radius: 50%; /* Make it round */
+    border: 2px solid #fff; /* Optional: Add a white border */
+    cursor: pointer; /* Show pointer cursor */
+}
+
+/* Adjust slider track appearance */
+#map-slider::-webkit-slider-runnable-track {
+    background: linear-gradient(90deg, #4caf50, #2196f3); /* Gradient track color */
+    height: 8px; /* Track height */
+    border-radius: 5px; /* Rounded edges */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Optional: Add shadow */
+}
+
+/* Firefox-specific styles */
+#map-slider::-moz-range-thumb {
+    background-color: #ff4500; /* Change the thumb color */
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    cursor: pointer;
+}
+
+#map-slider::-moz-range-track {
+    background: linear-gradient(90deg, #4caf50, #2196f3);
+    height: 8px;
+    border-radius: 5px;
+}
+
+/* Optional: Adjust appearance for Internet Explorer */
+#map-slider::-ms-thumb {
+    background-color: #ff4500;
     width: 20px;
     height: 20px;
     border-radius: 50%;
     cursor: pointer;
 }
 
-#map-slider::-webkit-slider-runnable-track {
-    background: #ccc;
+#map-slider::-ms-track {
+    background: linear-gradient(90deg, #4caf50, #2196f3);
     height: 8px;
     border-radius: 5px;
 }
+
 
 /* Optional: Adding hover effect for film frames */
 .frame:hover {
