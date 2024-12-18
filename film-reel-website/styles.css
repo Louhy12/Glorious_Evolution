@@ -151,6 +151,34 @@ body {
     border: 2px solid #fff; /* Optional: Add a white border for visibility */
 }
 
+input[type="range"]::-webkit-slider-thumb {
+    background: url('effect/clap.png') no-repeat center;
+    background-size: cover;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+input[type="range"]::-moz-range-thumb {
+    background: url('effect/clap.png') no-repeat center;
+    background-size: cover;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+input[type="range"]::-ms-thumb {
+    background: url('effect/clap.png') no-repeat center;
+    background-size: cover;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
 
 /* Optional: Adding hover effect for film frames */
 .frame:hover {
