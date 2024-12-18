@@ -160,11 +160,7 @@ body {
     border-radius: 50%;
     cursor: pointer;
     border: 2px solid #fff;
-    background-color: black !important;
-}
-
-#map-slider::-webkit-slider-runnable-track {
-    background-color: #ddd; /* Add color to the track if needed */
+    background-color: black !important; /* Added !important to force style */
 }
 
 /* For Firefox */
@@ -174,11 +170,7 @@ body {
     border-radius: 50%;
     cursor: pointer;
     border: 2px solid #fff;
-    background-color: black !important;
-}
-
-#map-slider::-moz-range-track {
-    background-color: #ddd; /* Add color to the track */
+    background-color: black !important; /* Added !important to force style */
 }
 
 /* For Internet Explorer/Edge */
@@ -188,12 +180,7 @@ body {
     border-radius: 50%;
     cursor: pointer;
     border: 2px solid #fff;
-    background-color: black !important;
-}
-
-#map-slider::-ms-track {
-    background-color: #ddd; /* Add color to the track */
-    border: none;
+    background-color: black !important; /* Added !important to force style */
 }
 
 /* Optional: Adding hover effect for film frames */
