@@ -130,6 +130,7 @@ body {
     border-radius: 50%; /* Make it round */
     cursor: pointer; /* Interactive cursor */
     border: 2px solid #fff; /* Optional: Add a white border for visibility */
+    background-color: red; /* Add a background color for debugging */
 }
 
 /* Slider thumb styling with clap.png for Firefox */
@@ -141,6 +142,7 @@ body {
     border-radius: 50%; /* Round thumb */
     cursor: pointer;
     border: 2px solid #fff; /* Optional: Add a white border for visibility */
+    background-color: red; /* Add a background color for debugging */
 }
 
 /* Slider thumb styling with clap.png for Internet Explorer/Edge */
@@ -152,6 +154,7 @@ body {
     border-radius: 50%; /* Round thumb */
     cursor: pointer;
     border: 2px solid #fff; /* Optional: Add a white border for visibility */
+    background-color: red; /* Add a background color for debugging */
 }
 
 
