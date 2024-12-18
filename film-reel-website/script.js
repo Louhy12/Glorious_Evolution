@@ -20,7 +20,7 @@ function initializeSliders() {
         { sliderId: "ethnicity-slider", imageId: "ethnicity-image", folder: "map/ethnicity", extension: "jpg" },
         { sliderId: "foreign-slider", imageId: "foreign-image", folder: "map/foreign", extension: "jpg" },
         { sliderId: "comment-slider", imageId: "comment-image", folder: "comment", extension: "png" },
-        { sliderId: "movie-slider", imageID: "movie-image", folder: "movie", extension: "png"}
+        { sliderId: "movie-slider", imageId: "movie-image", folder: "movie", extension: "png"} 
     ];
 
     sliders.forEach(({ sliderId, imageId, folder, extension }) => {
