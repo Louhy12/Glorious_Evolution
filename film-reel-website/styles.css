@@ -120,44 +120,32 @@ body {
     left: 0;
     z-index: 1; /* Map behind the video */
 }
-
-/* Slider thumb styling with clap.png for WebKit browsers (Chrome, Safari, Edge) */
 #map-slider::-webkit-slider-thumb {
-    background: url('effect/red-dot.png') no-repeat center center;
-    background-size: 100% 100%;
+    background-color: red; /* Add a visible background color for debugging */
+    border: 2px solid #fff; /* Optional: Add a white border */
     width: 20px;
     height: 20px;
-    border-radius: 50%;
+    border-radius: 50%; /* Round thumb */
     cursor: pointer;
-    border: 2px solid #fff;
 }
 
-
-
-/* Slider thumb styling with clap.png for Firefox */
 #map-slider::-moz-range-thumb {
-    background: url('effect/red-dot.png') no-repeat center center;
-    background-size: 100% 100%; /* Scale down image to fit inside thumb */
-    width: 20px; /* Set the desired thumb width */
-    height: 20px; /* Set the desired thumb height */
+    background-color: red; /* Add a visible background color for debugging */
+    border: 2px solid #fff; /* Optional: Add a white border */
+    width: 20px;
+    height: 20px;
     border-radius: 50%; /* Round thumb */
     cursor: pointer;
-    border: 2px solid #fff; /* Optional: Add a white border for visibility */
-    background-color: red; /* Add a background color for debugging */
 }
 
-/* Slider thumb styling with clap.png for Internet Explorer/Edge */
 #map-slider::-ms-thumb {
-    background: url('effect/red-dot.png') no-repeat center center;
-    background-size: 100% 100%; /* Scale down image to fit inside thumb */
-    width: 20px; /* Set the desired thumb width */
-    height: 20px; /* Set the desired thumb height */
+    background-color: red; /* Add a visible background color for debugging */
+    border: 2px solid #fff; /* Optional: Add a white border */
+    width: 20px;
+    height: 20px;
     border-radius: 50%; /* Round thumb */
     cursor: pointer;
-    border: 2px solid #fff; /* Optional: Add a white border for visibility */
-    background-color: red; /* Add a background color for debugging */
 }
-
 
 /* Optional: Adding hover effect for film frames */
 .frame:hover {
