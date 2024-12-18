@@ -123,10 +123,10 @@ body {
 
 /* Slider thumb styling with clap.png for WebKit browsers (Chrome, Safari, Edge) */
 #map-slider::-webkit-slider-thumb {
-    background-image: url('effect/clap.png'); /* Use clap.png image */
-    background-size: cover; /* Ensure the image covers the thumb */
-    width: 20px; /* Thumb width */
-    height: 20px; /* Thumb height */
+    background: url('effect/clap.png') no-repeat center center; /* Use clap.png image */
+    background-size: contain; /* Ensure the image fits within the thumb */
+    width: 30px; /* Increased width */
+    height: 30px; /* Increased height */
     border-radius: 50%; /* Make it round */
     cursor: pointer; /* Interactive cursor */
     border: 2px solid #fff; /* Optional: Add a white border for visibility */
@@ -134,10 +134,10 @@ body {
 
 /* Slider thumb styling with clap.png for Firefox */
 #map-slider::-moz-range-thumb {
-    background-image: url('effect/clap.png'); /* Use clap.png image */
-    background-size: cover; /* Ensure the image covers the thumb */
-    width: 20px; /* Thumb width */
-    height: 20px; /* Thumb height */
+    background: url('effect/clap.png') no-repeat center center; /* Use clap.png image */
+    background-size: contain; /* Ensure the image fits within the thumb */
+    width: 30px; /* Increased width */
+    height: 30px; /* Increased height */
     border-radius: 50%; /* Round thumb */
     cursor: pointer;
     border: 2px solid #fff; /* Optional: Add a white border for visibility */
@@ -145,10 +145,10 @@ body {
 
 /* Slider thumb styling with clap.png for Internet Explorer/Edge */
 #map-slider::-ms-thumb {
-    background-image: url('effect/clap.png'); /* Use clap.png image */
-    background-size: cover; /* Ensure the image covers the thumb */
-    width: 20px; /* Thumb width */
-    height: 20px; /* Thumb height */
+    background: url('effect/clap.png') no-repeat center center; /* Use clap.png image */
+    background-size: contain; /* Ensure the image fits within the thumb */
+    width: 30px; /* Increased width */
+    height: 30px; /* Increased height */
     border-radius: 50%; /* Round thumb */
     cursor: pointer;
     border: 2px solid #fff; /* Optional: Add a white border for visibility */
