@@ -123,19 +123,19 @@ body {
 
 /* Slider thumb styling with clap.png for WebKit browsers (Chrome, Safari, Edge) */
 #map-slider::-webkit-slider-thumb {
-    background: url('effect/clap.png') no-repeat center center; /* Use clap.png image */
-    background-size: 100% 100%; /* Scale down image to fit inside thumb */
-    width: 20px; /* Set the desired thumb width */
-    height: 20px; /* Set the desired thumb height */
-    border-radius: 50%; /* Make it round */
-    cursor: pointer; /* Interactive cursor */
-    border: 2px solid #fff; /* Optional: Add a white border for visibility */
-    background-color: red; /* Add a background color for debugging */
+    background: url('file:///Users/lou/Documents/GitHub/Louhy12.github.io/film-reel-website/effect/clap.png') no-repeat center center;
+    background-size: 100% 100%; /* Use a larger image scale to make it more visible */
+    width: 50px; /* Increase the thumb size temporarily */
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid #fff;
 }
+
 
 /* Slider thumb styling with clap.png for Firefox */
 #map-slider::-moz-range-thumb {
-    background: url('effect/clap.png') no-repeat center center; /* Use clap.png image */
+    background: url('file:///Users/lou/Documents/GitHub/Louhy12.github.io/film-reel-website/effect/clap.png') no-repeat center center;
     background-size: 100% 100%; /* Scale down image to fit inside thumb */
     width: 20px; /* Set the desired thumb width */
     height: 20px; /* Set the desired thumb height */
@@ -147,7 +147,7 @@ body {
 
 /* Slider thumb styling with clap.png for Internet Explorer/Edge */
 #map-slider::-ms-thumb {
-    background: url('effect/clap.png') no-repeat center center; /* Use clap.png image */
+    background: url('file:///Users/lou/Documents/GitHub/Louhy12.github.io/film-reel-website/effect/clap.png') no-repeat center center;
     background-size: 100% 100%; /* Scale down image to fit inside thumb */
     width: 20px; /* Set the desired thumb width */
     height: 20px; /* Set the desired thumb height */
