@@ -128,6 +128,7 @@ body {
     border-radius: 50%; /* Make it round */
     cursor: pointer; /* Interactive cursor */
     border: 2px solid #fff; /* Optional: Add a white border for visibility */
+    background-color: black; /* Set the thumb color to black */
 }
 
 /* Black slider thumb for Firefox */
@@ -137,6 +138,7 @@ body {
     border-radius: 50%; /* Round thumb */
     cursor: pointer;
     border: 2px solid #fff; /* Optional: Add a white border for visibility */
+    background-color: black; /* Set the thumb color to black */
 }
 
 /* Black slider thumb for Internet Explorer/Edge */
@@ -146,8 +148,8 @@ body {
     border-radius: 50%; /* Round thumb */
     cursor: pointer;
     border: 2px solid #fff; /* Optional: Add a white border for visibility */
+    background-color: black; /* Set the thumb color to black */
 }
-
 
 /* Optional: Adding hover effect for film frames */
 .frame:hover {
