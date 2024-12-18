@@ -122,6 +122,11 @@ body {
 }
 
 /* Black slider thumb for WebKit browsers (Chrome, Safari, Edge) */
+<<<<<<< Updated upstream
+#map-slider input[type="range"]::-webkit-slider-thumb {
+    background: url('effect/clap.png') no-repeat center;
+    background-size: contain; /* or cover, depending on your preference */
+=======
 #map-slider::-webkit-slider-thumb {
     background-color: #000; /* Black thumb */
     width: 20px; /* Thumb width */
@@ -150,6 +155,72 @@ body {
     cursor: pointer;
     border: 2px solid #fff; /* Optional: Add a white border for visibility */
 }
+
+input[type="range"]::-webkit-slider-thumb {
+    background: url('images/Barbie.png') no-repeat center;
+    background-size: contain;
+>>>>>>> Stashed changes
+    border: none;
+    border-radius: 50%;
+    width: 30px; /* Adjust to fit image size */
+    height: 30px; /* Adjust to fit image size */
+    cursor: pointer;
+    z-index: 2; /* Ensure thumb stays on top */
+}
+<<<<<<< Updated upstream
+
+/* Black slider thumb for Firefox */
+#map-slider input[type="range"]::-moz-range-thumb {
+    background: url('effect/clap.png') no-repeat center;
+    background-size: contain; /* or cover, depending on your preference */
+=======
+input[type="range"]::-moz-range-thumb {
+    background: url('images/Barbie.png') no-repeat center;
+    background-size: contain;
+>>>>>>> Stashed changes
+    border: none;
+    border-radius: 50%;
+    width: 30px; /* Adjust to fit image size */
+    height: 30px; /* Adjust to fit image size */
+    cursor: pointer;
+    z-index: 2; /* Ensure thumb stays on top */
+}
+<<<<<<< Updated upstream
+
+/* Black slider thumb for Internet Explorer/Edge */
+#map-slider input[type="range"]::-ms-thumb {
+    background: url('effect/clap.png') no-repeat center;
+    background-size: contain; /* or cover, depending on your preference */
+=======
+input[type="range"]::-ms-thumb {
+    background: url('images/Barbie.png') no-repeat center;
+    background-size: contain;
+>>>>>>> Stashed changes
+    border: none;
+    border-radius: 50%;
+    width: 30px; /* Adjust to fit image size */
+    height: 30px; /* Adjust to fit image size */
+    cursor: pointer;
+    z-index: 2; /* Ensure thumb stays on top */
+}
+
+/* Optional: Styling the range input itself */
+#map-slider input[type="range"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 10px; /* Adjust range height */
+    background: #ddd; /* Slider track color */
+    border-radius: 5px;
+    outline: none;
+    z-index: 1; /* Keep it below the thumb */
+}
+
+#map-slider input[type="range"]:focus {
+    outline: none; /* Remove focus outline */
+}
+
 
 
 /* Optional: Adding hover effect for film frames */
