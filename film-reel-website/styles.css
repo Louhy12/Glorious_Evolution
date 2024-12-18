@@ -121,9 +121,10 @@ body {
     z-index: 1; /* Map behind the video */
 }
 
-/* Black slider thumb for WebKit browsers (Chrome, Safari, Edge) */
+/* Slider thumb styling with clap.png for WebKit browsers (Chrome, Safari, Edge) */
 #map-slider::-webkit-slider-thumb {
-    background-color: #000; /* Black thumb */
+    background-image: url('effect/clap.png'); /* Use clap.png image */
+    background-size: cover; /* Ensure the image covers the thumb */
     width: 20px; /* Thumb width */
     height: 20px; /* Thumb height */
     border-radius: 50%; /* Make it round */
@@ -131,9 +132,10 @@ body {
     border: 2px solid #fff; /* Optional: Add a white border for visibility */
 }
 
-/* Black slider thumb for Firefox */
+/* Slider thumb styling with clap.png for Firefox */
 #map-slider::-moz-range-thumb {
-    background-color: #000; /* Black thumb */
+    background-image: url('effect/clap.png'); /* Use clap.png image */
+    background-size: cover; /* Ensure the image covers the thumb */
     width: 20px; /* Thumb width */
     height: 20px; /* Thumb height */
     border-radius: 50%; /* Round thumb */
@@ -141,16 +143,16 @@ body {
     border: 2px solid #fff; /* Optional: Add a white border for visibility */
 }
 
-/* Black slider thumb for Internet Explorer/Edge */
+/* Slider thumb styling with clap.png for Internet Explorer/Edge */
 #map-slider::-ms-thumb {
-    background-color: #000; /* Black thumb */
+    background-image: url('effect/clap.png'); /* Use clap.png image */
+    background-size: cover; /* Ensure the image covers the thumb */
     width: 20px; /* Thumb width */
     height: 20px; /* Thumb height */
     border-radius: 50%; /* Round thumb */
     cursor: pointer;
     border: 2px solid #fff; /* Optional: Add a white border for visibility */
 }
-
 
 /* Optional: Adding hover effect for film frames */
 .frame:hover {
