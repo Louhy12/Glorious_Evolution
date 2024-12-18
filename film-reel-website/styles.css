@@ -373,3 +373,22 @@ p {
     }
 }
 
+* Trend Images Styling */
+.trend-images {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+    justify-content: center;
+}
+
+.trend-images img {
+    max-width: 45%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.trend-images img:hover {
+    transform: scale(1.05);
+}
