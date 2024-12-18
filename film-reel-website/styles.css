@@ -153,7 +153,7 @@ body {
 
 input[type="range"]::-webkit-slider-thumb {
     background: url('effect/clap.png') no-repeat center;
-    background-size: cover;
+    background-size: contain;
     border: none;
     border-radius: 50%;
     width: 30px;
@@ -162,7 +162,7 @@ input[type="range"]::-webkit-slider-thumb {
 }
 input[type="range"]::-moz-range-thumb {
     background: url('effect/clap.png') no-repeat center;
-    background-size: cover;
+    background-size: contain;
     border: none;
     border-radius: 50%;
     width: 30px;
@@ -171,7 +171,7 @@ input[type="range"]::-moz-range-thumb {
 }
 input[type="range"]::-ms-thumb {
     background: url('effect/clap.png') no-repeat center;
-    background-size: cover;
+    background-size: contain;
     border: none;
     border-radius: 50%;
     width: 30px;
