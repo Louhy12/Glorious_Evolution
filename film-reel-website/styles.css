@@ -120,32 +120,61 @@ body {
     left: 0;
     z-index: 1; /* Map behind the video */
 }
-#map-slider::-webkit-slider-thumb {
-    background-color: red; /* Add a visible background color for debugging */
-    border: 2px solid #fff; /* Optional: Add a white border */
+
+/* Simplified styling for the slider thumb with clap.png image */
+#diversity-slider::-webkit-slider-thumb,
+#height-slider::-webkit-slider-thumb,
+#age-slider::-webkit-slider-thumb,
+#gender-slider::-webkit-slider-thumb,
+#ethnicity-slider::-webkit-slider-thumb,
+#foreign-slider::-webkit-slider-thumb,
+#comment-slider::-webkit-slider-thumb,
+#movie-slider::-webkit-slider-thumb {
+    background: url('effect/clap.png') no-repeat center center;
+    background-size: 50% 50%; /* Resize the image to fit the thumb */
     width: 20px;
     height: 20px;
-    border-radius: 50%; /* Round thumb */
+    border-radius: 50%;
     cursor: pointer;
+    border: 2px solid #fff;
 }
 
-#map-slider::-moz-range-thumb {
-    background-color: red; /* Add a visible background color for debugging */
-    border: 2px solid #fff; /* Optional: Add a white border */
+/* For Firefox */
+#diversity-slider::-moz-range-thumb,
+#height-slider::-moz-range-thumb,
+#age-slider::-moz-range-thumb,
+#gender-slider::-moz-range-thumb,
+#ethnicity-slider::-moz-range-thumb,
+#foreign-slider::-moz-range-thumb,
+#comment-slider::-moz-range-thumb,
+#movie-slider::-moz-range-thumb {
+    background: url('effect/clap.png') no-repeat center center;
+    background-size: 50% 50%;
     width: 20px;
     height: 20px;
-    border-radius: 50%; /* Round thumb */
+    border-radius: 50%;
     cursor: pointer;
+    border: 2px solid #fff;
 }
 
-#map-slider::-ms-thumb {
-    background-color: red; /* Add a visible background color for debugging */
-    border: 2px solid #fff; /* Optional: Add a white border */
+/* For IE/Edge */
+#diversity-slider::-ms-thumb,
+#height-slider::-ms-thumb,
+#age-slider::-ms-thumb,
+#gender-slider::-ms-thumb,
+#ethnicity-slider::-ms-thumb,
+#foreign-slider::-ms-thumb,
+#comment-slider::-ms-thumb,
+#movie-slider::-ms-thumb {
+    background: url('effect/clap.png') no-repeat center center;
+    background-size: 50% 50%;
     width: 20px;
     height: 20px;
-    border-radius: 50%; /* Round thumb */
+    border-radius: 50%;
     cursor: pointer;
+    border: 2px solid #fff;
 }
+
 
 /* Optional: Adding hover effect for film frames */
 .frame:hover {
