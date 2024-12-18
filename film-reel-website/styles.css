@@ -174,9 +174,6 @@ body {
     outline: none; /* Remove focus outline */
 }
 
-
-
-
 /* Optional: Adding hover effect for film frames */
 .frame:hover {
     transform: scale(1.02); /* Slight zoom on hover */
