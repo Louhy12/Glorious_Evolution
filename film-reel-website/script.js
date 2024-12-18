@@ -30,6 +30,11 @@ function initializeSliders() {
         // Ensure slider and image elements exist
         if (slider && image) {
             console.log(`Initializing slider: ${sliderId}, folder: ${folder}`); // Debugging output
+
+            // Set the image on slider thumb
+            setSliderThumbImage(sliderId);  // Call function to set thumb image
+
+            // Slider input event to update the image
             slider.addEventListener("input", function () {
                 const index = this.value; // Get current slider value
                 const newImagePath = `${folder}/${folder.split('/').pop()}${index}.${extension}`; // Build image path with dynamic extension
@@ -41,6 +46,24 @@ function initializeSliders() {
             console.error(`Slider or image not found for ID: ${sliderId}`); // Debugging output
         }
     });
+}
+
+// Function to set the custom slider thumb image (clap.png)
+function setSliderThumbImage(sliderId) {
+    const slider = document.getElementById(sliderId);
+
+    if (slider) {
+        const thumbStyle = `url('effect/clap.png') no-repeat center center`; // Path to clap.png
+        const thumbSize = 'background-size: 50% 50%;'; // Size of the image
+        const thumbWidth = 'width: 20px;'; // Set width of thumb
+        const thumbHeight = 'height: 20px;'; // Set height of thumb
+        const thumbCSS = `${thumbStyle} ${thumbSize} ${thumbWidth} ${thumbHeight} border-radius: 50%; cursor: pointer; border: 2px solid #fff;`; // Final style for the thumb
+
+        // Apply styles to the slider thumb
+        slider.style.setProperty('::-webkit-slider-thumb', thumbCSS);
+        slider.style.setProperty('::-moz-range-thumb', thumbCSS);
+        slider.style.setProperty('::-ms-thumb', thumbCSS);
+    }
 }
 
 let factCount = 0;
