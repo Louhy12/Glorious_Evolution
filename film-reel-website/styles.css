@@ -124,9 +124,9 @@ body {
 /* Slider thumb styling with clap.png for WebKit browsers (Chrome, Safari, Edge) */
 #map-slider::-webkit-slider-thumb {
     background: url('effect/clap.png') no-repeat center center; /* Use clap.png image */
-    background-size: contain; /* Ensure the image fits within the thumb */
-    width: 30px; /* Increased width */
-    height: 30px; /* Increased height */
+    background-size: 50% 50%; /* Scale down image to fit inside thumb */
+    width: 20px; /* Set the desired thumb width */
+    height: 20px; /* Set the desired thumb height */
     border-radius: 50%; /* Make it round */
     cursor: pointer; /* Interactive cursor */
     border: 2px solid #fff; /* Optional: Add a white border for visibility */
@@ -135,9 +135,9 @@ body {
 /* Slider thumb styling with clap.png for Firefox */
 #map-slider::-moz-range-thumb {
     background: url('effect/clap.png') no-repeat center center; /* Use clap.png image */
-    background-size: contain; /* Ensure the image fits within the thumb */
-    width: 30px; /* Increased width */
-    height: 30px; /* Increased height */
+    background-size: 50% 50%; /* Scale down image to fit inside thumb */
+    width: 20px; /* Set the desired thumb width */
+    height: 20px; /* Set the desired thumb height */
     border-radius: 50%; /* Round thumb */
     cursor: pointer;
     border: 2px solid #fff; /* Optional: Add a white border for visibility */
@@ -146,13 +146,14 @@ body {
 /* Slider thumb styling with clap.png for Internet Explorer/Edge */
 #map-slider::-ms-thumb {
     background: url('effect/clap.png') no-repeat center center; /* Use clap.png image */
-    background-size: contain; /* Ensure the image fits within the thumb */
-    width: 30px; /* Increased width */
-    height: 30px; /* Increased height */
+    background-size: 50% 50%; /* Scale down image to fit inside thumb */
+    width: 20px; /* Set the desired thumb width */
+    height: 20px; /* Set the desired thumb height */
     border-radius: 50%; /* Round thumb */
     cursor: pointer;
     border: 2px solid #fff; /* Optional: Add a white border for visibility */
 }
+
 
 /* Optional: Adding hover effect for film frames */
 .frame:hover {
