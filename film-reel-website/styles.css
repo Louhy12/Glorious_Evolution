@@ -153,34 +153,31 @@ body {
     z-index: 1; /* Map behind the video */
 }
 
-/* For WebKit browsers (Chrome, Safari, Edge) */
-#map-slider::-webkit-slider-thumb {
+input[type="range"]::-webkit-slider-thumb {
     width: 20px;
     height: 20px;
     border-radius: 50%;
     cursor: pointer;
     border: 2px solid #fff;
-    background-color: black !important; /* Added !important to force style */
+    background-color: var(--slider-thumb-color, black); /* Use the custom property */
 }
 
-/* For Firefox */
-#map-slider::-moz-range-thumb {
+input[type="range"]::-moz-range-thumb {
     width: 20px;
     height: 20px;
     border-radius: 50%;
     cursor: pointer;
     border: 2px solid #fff;
-    background-color: black !important; /* Added !important to force style */
+    background-color: var(--slider-thumb-color, black);
 }
 
-/* For Internet Explorer/Edge */
-#map-slider::-ms-thumb {
+input[type="range"]::-ms-thumb {
     width: 20px;
     height: 20px;
     border-radius: 50%;
     cursor: pointer;
     border: 2px solid #fff;
-    background-color: black !important; /* Added !important to force style */
+    background-color: var(--slider-thumb-color, black);
 }
 
 /* Optional: Adding hover effect for film frames */
