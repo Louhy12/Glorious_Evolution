@@ -153,36 +153,48 @@ body {
     z-index: 1; /* Map behind the video */
 }
 
-/* Black slider thumb for WebKit browsers (Chrome, Safari, Edge) */
+/* For WebKit browsers (Chrome, Safari, Edge) */
 #map-slider::-webkit-slider-thumb {
-    width: 20px; /* Thumb width */
-    height: 20px; /* Thumb height */
-    border-radius: 50%; /* Make it round */
-    cursor: pointer; /* Interactive cursor */
-    border: 2px solid #fff; /* Optional: Add a white border for visibility */
-    background-color: black !important; /* Force black color */
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid #fff;
+    background-color: black !important;
 }
 
-/* Black slider thumb for Firefox */
+#map-slider::-webkit-slider-runnable-track {
+    background-color: #ddd; /* Add color to the track if needed */
+}
+
+/* For Firefox */
 #map-slider::-moz-range-thumb {
-    width: 20px; /* Thumb width */
-    height: 20px; /* Thumb height */
-    border-radius: 50%; /* Round thumb */
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
     cursor: pointer;
-    border: 2px solid #fff; /* Optional: Add a white border for visibility */
-    background-color: black !important; /* Force black color */
+    border: 2px solid #fff;
+    background-color: black !important;
 }
 
-/* Black slider thumb for Internet Explorer/Edge */
+#map-slider::-moz-range-track {
+    background-color: #ddd; /* Add color to the track */
+}
+
+/* For Internet Explorer/Edge */
 #map-slider::-ms-thumb {
-    width: 20px; /* Thumb width */
-    height: 20px; /* Thumb height */
-    border-radius: 50%; /* Round thumb */
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
     cursor: pointer;
-    border: 2px solid #fff; /* Optional: Add a white border for visibility */
-    background-color: black !important; /* Force black color */
+    border: 2px solid #fff;
+    background-color: black !important;
 }
 
+#map-slider::-ms-track {
+    background-color: #ddd; /* Add color to the track */
+    border: none;
+}
 
 /* Optional: Adding hover effect for film frames */
 .frame:hover {
