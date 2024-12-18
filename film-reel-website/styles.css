@@ -121,51 +121,53 @@ body {
     z-index: 1; /* Map behind the video */
 }
 
-/* Adjust slider thumb appearance */
+/* Slider thumb - black */
 #map-slider::-webkit-slider-thumb {
-    background-color: #ff4500; /* Change the thumb color */
+    background-color: #000; /* Black color */
     width: 20px; /* Thumb width */
     height: 20px; /* Thumb height */
-    border-radius: 50%; /* Make it round */
-    border: 2px solid #fff; /* Optional: Add a white border */
-    cursor: pointer; /* Show pointer cursor */
+    border-radius: 50%; /* Round shape */
+    cursor: pointer; /* Interactive pointer */
+    border: 2px solid #333; /* Optional: Slightly lighter black border for contrast */
 }
 
-/* Adjust slider track appearance */
+/* Slider track - black */
 #map-slider::-webkit-slider-runnable-track {
-    background: linear-gradient(90deg, #4caf50, #2196f3); /* Gradient track color */
+    background-color: #000; /* Black color */
     height: 8px; /* Track height */
     border-radius: 5px; /* Rounded edges */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Optional: Add shadow */
 }
 
-/* Firefox-specific styles */
+/* Firefox - Slider thumb */
 #map-slider::-moz-range-thumb {
-    background-color: #ff4500; /* Change the thumb color */
+    background-color: #000; /* Black color */
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    border: 2px solid #fff;
     cursor: pointer;
+    border: 2px solid #333; /* Optional: Slightly lighter black border */
 }
 
+/* Firefox - Slider track */
 #map-slider::-moz-range-track {
-    background: linear-gradient(90deg, #4caf50, #2196f3);
+    background-color: #000; /* Black color */
     height: 8px;
     border-radius: 5px;
 }
 
-/* Optional: Adjust appearance for Internet Explorer */
+/* Internet Explorer - Slider thumb */
 #map-slider::-ms-thumb {
-    background-color: #ff4500;
+    background-color: #000; /* Black color */
     width: 20px;
     height: 20px;
     border-radius: 50%;
     cursor: pointer;
+    border: 2px solid #333; /* Optional */
 }
 
+/* Internet Explorer - Slider track */
 #map-slider::-ms-track {
-    background: linear-gradient(90deg, #4caf50, #2196f3);
+    background-color: #000; /* Black color */
     height: 8px;
     border-radius: 5px;
 }
