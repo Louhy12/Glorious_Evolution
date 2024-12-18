@@ -124,7 +124,7 @@ body {
 /* Slider thumb styling with clap.png for WebKit browsers (Chrome, Safari, Edge) */
 #map-slider::-webkit-slider-thumb {
     background: url('effect/clap.png') no-repeat center center; /* Use clap.png image */
-    background-size: 50% 50%; /* Scale down image to fit inside thumb */
+    background-size: 10% 10%; /* Scale down image to fit inside thumb */
     width: 20px; /* Set the desired thumb width */
     height: 20px; /* Set the desired thumb height */
     border-radius: 50%; /* Make it round */
@@ -136,7 +136,7 @@ body {
 /* Slider thumb styling with clap.png for Firefox */
 #map-slider::-moz-range-thumb {
     background: url('effect/clap.png') no-repeat center center; /* Use clap.png image */
-    background-size: 50% 50%; /* Scale down image to fit inside thumb */
+    background-size: 10% 10%; /* Scale down image to fit inside thumb */
     width: 20px; /* Set the desired thumb width */
     height: 20px; /* Set the desired thumb height */
     border-radius: 50%; /* Round thumb */
@@ -148,7 +148,7 @@ body {
 /* Slider thumb styling with clap.png for Internet Explorer/Edge */
 #map-slider::-ms-thumb {
     background: url('effect/clap.png') no-repeat center center; /* Use clap.png image */
-    background-size: 50% 50%; /* Scale down image to fit inside thumb */
+    background-size: 10% 10%; /* Scale down image to fit inside thumb */
     width: 20px; /* Set the desired thumb width */
     height: 20px; /* Set the desired thumb height */
     border-radius: 50%; /* Round thumb */
