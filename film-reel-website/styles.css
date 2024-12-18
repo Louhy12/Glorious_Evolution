@@ -392,3 +392,9 @@ p {
 .trend-images img:hover {
     transform: scale(1.05);
 }
+
+/* Image Style */
+.frame-image {
+    max-width: 100%; /* Ensure the image fits within the frame */
+    max-height: 100%; /* Ensure the image fits within the frame */
+}
