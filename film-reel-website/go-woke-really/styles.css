@@ -163,7 +163,7 @@ input[type="range"] {
         to right,
         #ddd 0%, /* Default track color */
         #ddd 33%, /* Ticks positioned at steps */
-        #fff 33%, /* Tick color changed to white */
+        #000 33%, /* Tick color changed to white */
         #fff 34%, /* Slight width for tick */
         #ddd 34%,
         #ddd 66%, /* Repeat for additional ticks */
