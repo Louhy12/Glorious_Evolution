@@ -263,6 +263,24 @@ input[type="range"]::-ms-track {
     height: 10px;
 }
 
+.step-indicator {
+    position: absolute;
+    top: 50%; /* Center vertically */
+    transform: translate(-50%, -50%);
+    width: 12px; /* Diameter of the circle */
+    height: 12px;
+    background: #007BFF; /* Color of the indicator */
+    border-radius: 50%; /* Make it circular */
+    z-index: 2; /* Ensure it appears above the track */
+}
+
+/* Adjust positions for each step using nth-child */
+.slider-container .step-indicator:nth-of-type(1) { left: 0%; }
+.slider-container .step-indicator:nth-of-type(2) { left: 25%; }
+.slider-container .step-indicator:nth-of-type(3) { left: 50%; }
+.slider-container .step-indicator:nth-of-type(4) { left: 75%; }
+.slider-container .step-indicator:nth-of-type(5) { left: 100%; }
+
 /* Optional: Adding hover effect for film frames */
 .frame:hover {
     transform: scale(1.02); /* Slight zoom on hover */
