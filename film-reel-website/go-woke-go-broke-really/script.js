@@ -43,75 +43,32 @@ function initializeSliders() {
     });
 }
 
-const BACKEND_URL = 'mongodb+srv://pikapika:Ux8IK6NjjqKbEJd7@quizresponsesada.mdeyb.mongodb.net/?retryWrites=true&w=majority'; // Replace with your backend URL when deployed
+// Track votes for 'fact' and 'fiction'
+let votes = { fact: 0, fiction: 0 };
 
-// Vote function to handle button clicks
 function vote(choice) {
-    console.log(`User selected: ${choice}`); // Debugging log
+    // Increment the vote for the selected option
+    votes[choice]++;
 
-    // Submit the answer to the server
-    fetch('http://localhost:3000/submit', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ answer: choice }),
-    })
-    .then(response => {
-        console.log('Server response to /submit:', response); // Debugging log
-        if (!response.ok) {
-            throw new Error('Failed to submit answer');
-        }
-        console.log('Answer submitted successfully');
-        return response.json();
-    })
-    .then(() => {
-        console.log('Fetching updated stats...'); // Debugging log
-        updateStats(); // Fetch updated stats after submission
-    })
-    .catch(error => {
-        console.error('Error submitting answer:', error);
-    });
+    // Calculate total votes
+    const totalVotes = votes.fact + votes.fiction;
+
+    // Update the results bar
+    const factBar = document.getElementById('fact-bar');
+    const fictionBar = document.getElementById('fiction-bar');
+
+    const factPercentage = ((votes.fact / totalVotes) * 100).toFixed(1);
+    const fictionPercentage = ((votes.fiction / totalVotes) * 100).toFixed(1);
+
+    factBar.style.width = `${factPercentage}%`;
+    fictionBar.style.width = `${fictionPercentage}%`;
+
+    factBar.textContent = `Fact: ${factPercentage}% (${votes.fact})`;
+    fictionBar.textContent = `Fiction: ${fictionPercentage}% (${votes.fiction})`;
+
+    // Make the results bar visible
+    document.querySelector('.results-container').style.display = 'block';
 }
-
-// Function to update the response bars
-function updateStats() {
-    console.log('Requesting stats from the server...'); // Debugging log
-    fetch('http://localhost:3000/stats')
-        .then(response => {
-            console.log('Server response to /stats:', response); // Debugging log
-            if (!response.ok) {
-                throw new Error('Failed to fetch stats');
-            }
-            return response.json();
-        })
-        .then(data => {
-            console.log('Fetched stats from server:', data); // Debugging log
-
-            const factCount = data.find(item => item._id === 'fact')?.count || 0;
-            const fictionCount = data.find(item => item._id === 'fiction')?.count || 0;
-
-            const total = factCount + fictionCount;
-            const factPercentage = total > 0 ? (factCount / total) * 100 : 0;
-            const fictionPercentage = total > 0 ? (fictionCount / total) * 100 : 0;
-
-            console.log(`Fact: ${factCount}, Fiction: ${fictionCount}, Total: ${total}`);
-            console.log(`Fact Percentage: ${factPercentage}%, Fiction Percentage: ${fictionPercentage}%`);
-
-            document.getElementById('fact-bar').style.width = `${factPercentage}%`;
-            document.getElementById('fact-bar').textContent = `Fact: ${factPercentage.toFixed(1)}%`;
-
-            document.getElementById('fiction-bar').style.width = `${fictionPercentage}%`;
-            document.getElementById('fiction-bar').textContent = `Fiction: ${fictionPercentage.toFixed(1)}%`;
-
-            document.querySelector('.results-container').style.display = 'block';
-        })
-        .catch(error => {
-            console.error('Error fetching stats:', error);
-        });
-}
-
-// Fetch initial stats on page load
-console.log('Initializing stats fetch on page load...'); // Debugging log
-window.onload = updateStats;
 
 // Initialize sliders on DOM load
 document.addEventListener("DOMContentLoaded", initializeSliders);
