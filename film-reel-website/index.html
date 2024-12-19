@@ -246,19 +246,30 @@
                 <h2 class="frame-title">Introduction</h2> <!-- Title -->
                 <h3>Dataset introduction</h3>
                 <p>
-                    The dataset is a collection of metadata from movies and their characters, originating from the CMU Movie Summary Corpus and extended with additional attributes. 
-                    It includes over 42,000 movie plot summaries and associated metadata like release dates, box office revenue, languages, and countries, in addition to character-level details such as gender, age, height, and ethnicity.
-                    The enriched dataset further integrates the newly created feature "Actor Country of Origin” to explore foreign actor representation.
+                    The dataset behind this analysis comes from the CMU Movie Summary Corpus, enriched with additional attributes for deeper insights. 
+                    It includes over 42,000 movie plot summaries in addition to metadata like release dates, box office revenue, languages, and countries. 
+                    At the character level, it includes details such as gender, age, height, and ethnicity. 
+                    To further enhance the analysis, we’ve added a new feature: "Actor Country of Origin," enabling a closer look at the representation of foreign actors in film.
                 </p>
-                <h3>Diversity Attributes</h3>
+                <h3>What attributes could define diversity in films?/h3>
                 <p>
-                    Here, we define diversity as variations in actors' attributes, such as gender, height, ethnicity, and age at the movie's release.
-                    Although it would be valuable to study traits like sexual orientation, the available dataset lacks this information. 
-                    To assess diversity's evolution, we created a diversity score to measure how varied actors' characteristics are within a given year.
+                    Diversity in this context refers to variations in actors' attributes, including gender, ethnicity, age at the movie's release and height. 
+                    While exploring traits like sexual orientation would have been insightful, this information isn’t available in the dataset. 
+                    To track how diversity has evolved over time, we developed a diversity score, a metric that captures variation in actors' characteristics over a specific period.
                 </p>
-                <h3>Diversity Score Introduction</h3>
                 <p>
-                    TO BE COMPLETED
+                    Our analysis focuses on several key attributes:
+                    <li>Gender</li>
+                    <li>Ethnicity</li>
+                    <li>Age</li>
+                    <li>Height</li>
+                    <li>Proportion of Foreign Actors</li>
+                </p>
+                <h3>How is the diversity score computed?</h3>
+                <p>
+                    To calculate the diversity scores, we took a comprehensive approach, considering the multiple forms of diversity. 
+                    For gender, a simple formula is used: 1− ∣ Pmen−Pwomen ∣ , which captures the balance between the proportions of men and women in the cast. 
+                    For age and height, we categorize individuals by age decades and height, then apply <a href="https://journals.aps.org/pre/abstract/10.1103/PhysRevE.109.064411" target="_blank">Simpson’s Diversity Index</a> to measure how varied these distributions were. This same index was applied to ethnicity, as it effectively measures the likelihood that two randomly selected individuals belong to different groups.
                 </p>
             </div>
         </div>
