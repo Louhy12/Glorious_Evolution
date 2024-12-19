@@ -207,6 +207,12 @@ input[type="range"]::-webkit-slider-thumb {
     box-shadow: none; /* Remove shadow */
     cursor: pointer; /* Enable interaction */
     position: relative; /* Ensure proper positioning */
+    pointer-events: all; /* Allow mouse events for the thumb */
+}
+
+/* Ensure Thumb Movement on Interaction */
+input[type="range"]:active::-webkit-slider-thumb {
+    transform: scale(1.05); /* Slight scaling during drag (optional) */
 }
 
 /* Track Styling for Firefox */
@@ -248,28 +254,7 @@ input[type="range"]::-ms-thumb {
 
 /* Adjust for Safari Quirks */
 input[type="range"]::-webkit-slider-thumb:active {
-    transform: scale(1.05); /* Slight scale on interaction (optional) */
-    cursor: grabbing; /* Grabbing cursor during drag (optional) */
-}
-
-/* Custom Track Styling */
-input[type="range"]::-webkit-slider-runnable-track {
-    background: #ddd; /* Track background */
-    height: 10px;
-    border-radius: 5px;
-}
-
-input[type="range"]::-moz-range-track {
-    background: #ddd;
-    height: 10px;
-    border-radius: 5px;
-}
-
-input[type="range"]::-ms-track {
-    background: transparent;
-    border-color: transparent;
-    color: transparent;
-    height: 10px;
+    cursor: grabbing; /* Grabbing cursor during drag */
 }
 
 /* Optional: Adding hover effect for film frames */
