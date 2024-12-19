@@ -43,6 +43,28 @@ function initializeSliders() {
     });
 }
 
+const slider = document.querySelector('input[type="range"]');
+const steps = slider.getAttribute('max');  // Get the max value of the slider
+
+// Update the slider with circles
+function updateSliderCircles() {
+    const stepWidth = 100 / steps; // Width of each step in percentage
+    const track = slider.querySelector('::-webkit-slider-runnable-track'); // Find the track
+    let circlesHtml = '';
+
+    // Add circles for each step
+    for (let i = 0; i <= steps; i++) {
+        const position = i * stepWidth;
+        circlesHtml += `<span class="circle" style="left: ${position}%"></span>`;
+    }
+
+    track.innerHTML = circlesHtml; // Add circles to the slider
+}
+
+slider.addEventListener('input', updateSliderCircles);
+updateSliderCircles();
+
+
 let factCount = 0;
 let fictionCount = 0;
 
