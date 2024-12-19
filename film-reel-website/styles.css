@@ -153,13 +153,15 @@ body {
     z-index: 1; /* Map behind the video */
 }
 
-/* Universal Slider Styling */
+/* Custom Track Styling */
 input[type="range"] {
     -webkit-appearance: none; /* Remove default styling for WebKit browsers */
     appearance: none; /* Remove default styling */
     width: 100%; /* Full width */
     height: 10px; /* Height of the track */
-    background: #ddd; /* Track background color */
+    background: linear-gradient(to right, #ddd 0%, #ddd 20%, transparent 20%, transparent 100%);
+    background-size: 10px 100%;
+    background-repeat: repeat-x;
     outline: none; /* Remove outline */
     border-radius: 5px; /* Rounded track edges */
 }
@@ -216,25 +218,28 @@ input[type="range"] {
 
 /* Track Styling for WebKit Browsers */
 input[type="range"]::-webkit-slider-runnable-track {
-    background: #ddd; /* Track background */
-    height: 10px; /* Track height */
-    border-radius: 5px; /* Rounded edges */
-    cursor: pointer; /* Pointer cursor */
+    background: linear-gradient(to right, #ddd 0%, #ddd 20%, transparent 20%, transparent 100%);
+    background-size: 10px 100%;
+    background-repeat: repeat-x;
+    height: 10px;
+    border-radius: 5px;
 }
 
 /* Track Styling for Firefox */
 input[type="range"]::-moz-range-track {
-    background: #ddd; /* Track background */
-    height: 10px; /* Track height */
-    border-radius: 5px; /* Rounded edges */
+    background: linear-gradient(to right, #ddd 0%, #ddd 20%, transparent 20%, transparent 100%);
+    background-size: 10px 100%;
+    background-repeat: repeat-x;
+    height: 10px;
+    border-radius: 5px;
 }
 
 /* Track Styling for Internet Explorer and Edge */
 input[type="range"]::-ms-track {
-    background: transparent; /* Remove default styling */
-    height: 10px; /* Track height */
-    border-color: transparent; /* Remove borders */
-    color: transparent; /* Remove color */
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
+    height: 10px;
 }
 
 /* Adjust for Safari Quirks */
