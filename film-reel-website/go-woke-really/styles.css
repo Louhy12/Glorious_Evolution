@@ -153,13 +153,23 @@ body {
     z-index: 1; /* Map behind the video */
 }
 
-/* Universal Slider Styling */
 input[type="range"] {
     -webkit-appearance: none; /* Remove default styling for WebKit browsers */
     appearance: none; /* Remove default styling */
     width: 100%; /* Full width */
     height: 10px; /* Height of the track */
-    background: #ddd; /* Track background color */
+    background: linear-gradient(to right, 
+        #ddd 0%,        /* Start of track */
+        #ddd 0%,       /* First tick at 10% */
+        transparent 0%, 
+        transparent 50%, 
+        #ddd 50%,       /* Second tick at 30% */
+        transparent 50%, 
+        transparent 100%, 
+        #ddd 100%,       /* Third tick at 60% */
+        transparent 100%, 
+        transparent 100% /* End of track */
+    );
     outline: none; /* Remove outline */
     border-radius: 5px; /* Rounded track edges */
 }
