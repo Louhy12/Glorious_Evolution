@@ -216,25 +216,60 @@ input[type="range"] {
 
 /* Track Styling for WebKit Browsers */
 input[type="range"]::-webkit-slider-runnable-track {
-    background: #ddd; /* Track background */
-    height: 10px; /* Track height */
-    border-radius: 5px; /* Rounded edges */
-    cursor: pointer; /* Pointer cursor */
+    background: linear-gradient(to right, 
+        #ddd 0%, #ddd 10%, 
+        transparent 10%, transparent 20%, 
+        #ddd 20%, #ddd 30%, 
+        transparent 30%, transparent 40%, 
+        #ddd 40%, #ddd 50%, 
+        transparent 50%, transparent 60%, 
+        #ddd 60%, #ddd 70%, 
+        transparent 70%, transparent 80%, 
+        #ddd 80%, #ddd 90%, 
+        transparent 90%, transparent 100%);
+    background-size: 10px 100%; /* Set graduation size */
+    background-repeat: repeat-x;
+    height: 10px;
+    border-radius: 5px;
 }
 
 /* Track Styling for Firefox */
 input[type="range"]::-moz-range-track {
-    background: #ddd; /* Track background */
-    height: 10px; /* Track height */
-    border-radius: 5px; /* Rounded edges */
+    background: linear-gradient(to right, 
+        #ddd 0%, #ddd 10%, 
+        transparent 10%, transparent 20%, 
+        #ddd 20%, #ddd 30%, 
+        transparent 30%, transparent 40%, 
+        #ddd 40%, #ddd 50%, 
+        transparent 50%, transparent 60%, 
+        #ddd 60%, #ddd 70%, 
+        transparent 70%, transparent 80%, 
+        #ddd 80%, #ddd 90%, 
+        transparent 90%, transparent 100%);
+    background-size: 10px 100%; /* Set graduation size */
+    background-repeat: repeat-x;
+    height: 10px;
+    border-radius: 5px;
 }
 
 /* Track Styling for Internet Explorer and Edge */
 input[type="range"]::-ms-track {
-    background: transparent; /* Remove default styling */
-    height: 10px; /* Track height */
-    border-color: transparent; /* Remove borders */
-    color: transparent; /* Remove color */
+    background: linear-gradient(to right, 
+        #ddd 0%, #ddd 10%, 
+        transparent 10%, transparent 20%, 
+        #ddd 20%, #ddd 30%, 
+        transparent 30%, transparent 40%, 
+        #ddd 40%, #ddd 50%, 
+        transparent 50%, transparent 60%, 
+        #ddd 60%, #ddd 70%, 
+        transparent 70%, transparent 80%, 
+        #ddd 80%, #ddd 90%, 
+        transparent 90%, transparent 100%);
+    background-size: 10px 100%; /* Set graduation size */
+    background-repeat: repeat-x;
+    height: 10px;
+    border-color: transparent;
+    color: transparent;
 }
 
 /* Adjust for Safari Quirks */
