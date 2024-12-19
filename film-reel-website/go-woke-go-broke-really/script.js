@@ -47,16 +47,16 @@ const BACKEND_URL = 'mongodb+srv://pikapika:Ux8IK6NjjqKbEJd7@quizresponsesada.md
 
 // Vote function to handle button clicks
 function vote(choice) {
-    console.log(`User selected: ${choice}`); // Log the user's selection for debugging
+    console.log(`User selected: ${choice}`); // Debugging log
 
     // Submit the answer to the server
-    fetch('http://mongodb+srv://pikapika:Ux8IK6NjjqKbEJd7@quizresponsesada.mdeyb.mongodb.net/?retryWrites=true&w=majority/submit', {
+    fetch('http://localhost:3000/submit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ answer: choice }),
     })
     .then(response => {
-        console.log('Server response to /submit:', response); // Log server response for debugging
+        console.log('Server response to /submit:', response); // Debugging log
         if (!response.ok) {
             throw new Error('Failed to submit answer');
         }
@@ -64,27 +64,27 @@ function vote(choice) {
         return response.json();
     })
     .then(() => {
-        console.log('Fetching updated stats...'); // Log before updating stats
+        console.log('Fetching updated stats...'); // Debugging log
         updateStats(); // Fetch updated stats after submission
     })
     .catch(error => {
-        console.error('Error submitting answer:', error); // Log error details
+        console.error('Error submitting answer:', error);
     });
 }
 
 // Function to update the response bars
 function updateStats() {
-    console.log('Requesting stats from the server...'); // Log before fetching stats
-    fetch('http://mongodb+srv://pikapika:Ux8IK6NjjqKbEJd7@quizresponsesada.mdeyb.mongodb.net/?retryWrites=true&w=majority/stats')
+    console.log('Requesting stats from the server...'); // Debugging log
+    fetch('http://localhost:3000/stats')
         .then(response => {
-            console.log('Server response to /stats:', response); // Log server response for debugging
+            console.log('Server response to /stats:', response); // Debugging log
             if (!response.ok) {
                 throw new Error('Failed to fetch stats');
             }
             return response.json();
         })
         .then(data => {
-            console.log('Fetched stats from server:', data); // Log fetched stats for debugging
+            console.log('Fetched stats from server:', data); // Debugging log
 
             const factCount = data.find(item => item._id === 'fact')?.count || 0;
             const fictionCount = data.find(item => item._id === 'fiction')?.count || 0;
@@ -105,12 +105,12 @@ function updateStats() {
             document.querySelector('.results-container').style.display = 'block';
         })
         .catch(error => {
-            console.error('Error fetching stats:', error); // Log error details
+            console.error('Error fetching stats:', error);
         });
 }
 
 // Fetch initial stats on page load
-console.log('Initializing stats fetch on page load...'); // Log at the beginning
+console.log('Initializing stats fetch on page load...'); // Debugging log
 window.onload = updateStats;
 
 // Initialize sliders on DOM load
