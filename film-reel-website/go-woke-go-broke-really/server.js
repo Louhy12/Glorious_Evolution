@@ -1,17 +1,18 @@
-require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const { MongoClient } = require('mongodb');
+require('dotenv').config(); // Load environment variables
 
 const app = express();
 const port = process.env.PORT || 3000;
 
+// MongoDB Connection String from .env
+const mongoURI = process.env.MONGO_URI;
+
+let db;
+
 // Middleware
 app.use(bodyParser.json());
-
-// MongoDB Connection String
-const mongoURI = process.env.MONGO_URI;
-let db;
 
 // Connect to MongoDB
 MongoClient.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
