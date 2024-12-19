@@ -192,19 +192,21 @@ input[type="range"]::-webkit-slider-runnable-track {
     background: #ddd; /* Track background */
     height: 10px; /* Track height */
     border-radius: 5px; /* Rounded edges */
+    cursor: pointer; /* Pointer cursor */
 }
 
 /* Custom Thumb for WebKit Browsers (Chrome, Safari, Edge) */
 input[type="range"]::-webkit-slider-thumb {
     -webkit-appearance: none; /* Override default thumb */
-    appearance: none;
+    appearance: none; /* Override default thumb */
     background: url('effect/clap.png') no-repeat center; /* Use only the image */
     background-size: contain; /* Scale the image to fit the thumb area */
-    width: 40px; /* Set thumb width (match image size) */
-    height: 40px; /* Set thumb height (match image size) */
+    width: 40px; /* Set thumb width */
+    height: 40px; /* Set thumb height */
     border: none; /* Remove border */
     box-shadow: none; /* Remove shadow */
-    cursor: pointer; /* Pointer cursor for interactivity */
+    cursor: pointer; /* Enable interaction */
+    position: relative; /* Ensure proper positioning */
 }
 
 /* Track Styling for Firefox */
@@ -222,7 +224,7 @@ input[type="range"]::-moz-range-thumb {
     height: 40px; /* Set thumb height */
     border: none; /* Remove border */
     box-shadow: none; /* Remove shadow */
-    cursor: pointer; /* Pointer cursor */
+    cursor: pointer; /* Enable interaction */
 }
 
 /* Track Styling for Internet Explorer and Edge */
@@ -241,7 +243,13 @@ input[type="range"]::-ms-thumb {
     height: 40px; /* Set thumb height */
     border: none; /* Remove border */
     box-shadow: none; /* Remove shadow */
-    cursor: pointer; /* Pointer cursor */
+    cursor: pointer; /* Enable interaction */
+}
+
+/* Adjust for Safari Quirks */
+input[type="range"]::-webkit-slider-thumb:active {
+    transform: scale(1.05); /* Slight scale on interaction (optional) */
+    cursor: grabbing; /* Grabbing cursor during drag (optional) */
 }
 
 /* Custom Track Styling */
