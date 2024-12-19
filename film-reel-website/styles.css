@@ -164,60 +164,20 @@ input[type="range"] {
     border-radius: 5px; /* Rounded track edges */
 }
 
-/* Custom Thumb for WebKit Browsers (Chrome, Safari, Edge) */
-input[type="range"]::-webkit-slider-thumb {
-    -webkit-appearance: none; /* Override default thumb */
-    appearance: none; /* Override default thumb */
-    background: url('effect/clap.png') no-repeat center; /* Use only the image */
-    background-size: contain; /* Scale the image to fit the thumb area */
-    width: 40px; /* Set thumb width */
-    height: 40px; /* Set thumb height */
-    margin-top: -15px; /* Adjust to vertically center on the track (half of thumb height - half of track height) */
-    border: none; /* Remove border */
-    box-shadow: none; /* Remove shadow */
-    cursor: pointer; /* Enable interaction */
-    position: relative; /* Ensure proper positioning */
-}
-
-/* Custom Thumb for Firefox */
-input[type="range"]::-moz-range-thumb {
-    background: url('effect/clap.png') no-repeat center; /* Use only the image */
-    background-size: contain; /* Scale the image to fit the thumb area */
-    width: 40px; /* Set thumb width */
-    height: 40px; /* Set thumb height */
-    margin-top: -15px; /* Adjust to vertically center on the track */
-    border: none; /* Remove border */
-    box-shadow: none; /* Remove shadow */
-    cursor: pointer; /* Enable interaction */
-}
-
-/* Custom Thumb for Internet Explorer and Edge */
-input[type="range"]::-ms-thumb {
-    background: url('effect/clap.png') no-repeat center; /* Use only the image */
-    background-size: contain; /* Scale the image to fit the thumb area */
-    width: 40px; /* Set thumb width */
-    height: 40px; /* Set thumb height */
-    margin-top: -15px; /* Adjust to vertically center on the track */
-    border: none; /* Remove border */
-    box-shadow: none; /* Remove shadow */
-    cursor: pointer; /* Enable interaction */
-}
-
-/* Universal Slider Styling */
-input[type="range"] {
-    -webkit-appearance: none; /* Remove default styling for WebKit browsers */
-    appearance: none; /* Remove default styling */
-    width: 100%; /* Full width */
-    height: 10px; /* Height of the track */
-    background: #ddd; /* Track background color */
-    outline: none; /* Remove outline */
-    border-radius: 5px; /* Rounded track edges */
-}
-
 /* Track Styling for WebKit Browsers */
 input[type="range"]::-webkit-slider-runnable-track {
-    background: linear-gradient(to right, #ddd 0%, #ddd 20%, transparent 20%, transparent 100%);
-    background-size: 10px 100%;
+    background: linear-gradient(to right, 
+        #ddd 0%, #ddd 10%, 
+        transparent 10%, transparent 20%, 
+        #ddd 20%, #ddd 30%, 
+        transparent 30%, transparent 40%, 
+        #ddd 40%, #ddd 50%, 
+        transparent 50%, transparent 60%, 
+        #ddd 60%, #ddd 70%, 
+        transparent 70%, transparent 80%, 
+        #ddd 80%, #ddd 90%, 
+        transparent 90%, transparent 100%);
+    background-size: 10px 100%; /* Set graduation size */
     background-repeat: repeat-x;
     height: 10px;
     border-radius: 5px;
@@ -225,8 +185,18 @@ input[type="range"]::-webkit-slider-runnable-track {
 
 /* Track Styling for Firefox */
 input[type="range"]::-moz-range-track {
-    background: linear-gradient(to right, #ddd 0%, #ddd 20%, transparent 20%, transparent 100%);
-    background-size: 10px 100%;
+    background: linear-gradient(to right, 
+        #ddd 0%, #ddd 10%, 
+        transparent 10%, transparent 20%, 
+        #ddd 20%, #ddd 30%, 
+        transparent 30%, transparent 40%, 
+        #ddd 40%, #ddd 50%, 
+        transparent 50%, transparent 60%, 
+        #ddd 60%, #ddd 70%, 
+        transparent 70%, transparent 80%, 
+        #ddd 80%, #ddd 90%, 
+        transparent 90%, transparent 100%);
+    background-size: 10px 100%; /* Set graduation size */
     background-repeat: repeat-x;
     height: 10px;
     border-radius: 5px;
@@ -234,35 +204,44 @@ input[type="range"]::-moz-range-track {
 
 /* Track Styling for Internet Explorer and Edge */
 input[type="range"]::-ms-track {
-    background: transparent;
+    background: linear-gradient(to right, 
+        #ddd 0%, #ddd 10%, 
+        transparent 10%, transparent 20%, 
+        #ddd 20%, #ddd 30%, 
+        transparent 30%, transparent 40%, 
+        #ddd 40%, #ddd 50%, 
+        transparent 50%, transparent 60%, 
+        #ddd 60%, #ddd 70%, 
+        transparent 70%, transparent 80%, 
+        #ddd 80%, #ddd 90%, 
+        transparent 90%, transparent 100%);
+    background-size: 10px 100%; /* Set graduation size */
+    background-repeat: repeat-x;
+    height: 10px;
     border-color: transparent;
     color: transparent;
-    height: 10px;
 }
+
+/* Custom Thumb Styling for All Browsers */
+input[type="range"]::-webkit-slider-thumb,
+input[type="range"]::-moz-range-thumb,
+input[type="range"]::-ms-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    background: url('effect/clap.png') no-repeat center; /* Use only the image */
+    background-size: contain; /* Scale the image to fit the thumb area */
+    width: 40px;
+    height: 40px;
+    margin-top: -15px; /* Vertically center on track */
+    border: none;
+    box-shadow: none;
+    cursor: pointer;
+}
+
 /* Adjust for Safari Quirks */
 input[type="range"]::-webkit-slider-thumb:active {
-    transform: scale(1.05); /* Slight scale on interaction (optional) */
-    cursor: grabbing; /* Grabbing cursor during drag (optional) */
-}
-
-/* Custom Track Styling */
-input[type="range"]::-webkit-slider-runnable-track {
-    background: #ddd; /* Track background */
-    height: 10px;
-    border-radius: 5px;
-}
-
-input[type="range"]::-moz-range-track {
-    background: #ddd;
-    height: 10px;
-    border-radius: 5px;
-}
-
-input[type="range"]::-ms-track {
-    background: transparent;
-    border-color: transparent;
-    color: transparent;
-    height: 10px;
+    transform: scale(1.05);
+    cursor: grabbing;
 }
 
 /* Optional: Adding hover effect for film frames */
