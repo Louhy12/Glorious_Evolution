@@ -268,7 +268,7 @@ input[type="range"]::-ms-track {
     top: 50%; /* Center vertically */
     transform: translate(-50%, -50%);
     width: 12px; /* Diameter of the circle */
-    height: 12px;
+    height: 10px;
     background: #007BFF; /* Color of the indicator */
     border-radius: 50%; /* Make it circular */
     z-index: 2; /* Ensure it appears above the track */
