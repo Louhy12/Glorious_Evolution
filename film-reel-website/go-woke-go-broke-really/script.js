@@ -43,63 +43,45 @@ function initializeSliders() {
     });
 }
 
-// Track votes for 'fact' and 'fiction'
-let votes = { fact: 0, fiction: 0 };
-
-function vote(choice) {
-    // Increment the vote for the selected option
-    votes[choice]++;
-
-    // Calculate total votes
-    const totalVotes = votes.fact + votes.fiction;
-
-    // Update the results bar
-    const factBar = document.getElementById('fact-bar');
-    const fictionBar = document.getElementById('fiction-bar');
-
-    const factPercentage = ((votes.fact / totalVotes) * 100).toFixed(1);
-    const fictionPercentage = ((votes.fiction / totalVotes) * 100).toFixed(1);
-
-    factBar.style.width = `${factPercentage}%`;
-    fictionBar.style.width = `${fictionPercentage}%`;
-
-    factBar.textContent = `Fact: ${factPercentage}% (${votes.fact})`;
-    fictionBar.textContent = `Fiction: ${fictionPercentage}% (${votes.fiction})`;
-
-    // Make the results bar visible
-    document.querySelector('.results-container').style.display = 'block';
-}
-
 const BACKEND_URL = 'mongodb+srv://pikapika:Ux8IK6NjjqKbEJd7@quizresponsesada.mdeyb.mongodb.net/?retryWrites=true&w=majority'; // Replace with your backend URL when deployed
 
-// Function to submit an answer and record it on the server
-const submitAnswer = async (answer) => {
-    try {
-        // Send the answer to the server
-        const response = await fetch(`${BACKEND_URL}/submit`, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ answer }),
-        });
+function vote(choice) {
+    // Log the choice for debugging
+    console.log(`User selected: ${choice}`);
 
-        if (response.ok) {
-            console.log(`Answer "${answer}" submitted successfully.`);
-            fetchStats(); // Update the response bar with server data
-        } else {
-            console.error('Failed to submit the answer to the server.');
+    // Submit the answer to the server
+    fetch(`${BACKEND_URL}/submit`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ answer: choice }),
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Failed to submit answer to server');
         }
-    } catch (error) {
-        console.error('Error submitting the answer:', error);
-    }
-};
+        console.log('Answer submitted successfully');
+        return response.json();
+    })
+    .then(() => {
+        // Fetch updated stats from the server
+        updateStats();
+    })
+    .catch(error => {
+        console.error('Error submitting answer:', error);
+    });
+}
 
-// Function to fetch stats from the server and update the response bar
-const fetchStats = async () => {
-    try {
-        const response = await fetch(`${BACKEND_URL}/stats`);
-        const data = await response.json();
-
-        // Process the stats from the server
+function updateStats() {
+    // Fetch stats from the server
+    fetch(`${BACKEND_URL}/stats`)
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Failed to fetch stats from server');
+        }
+        return response.json();
+    })
+    .then(data => {
+        // Process server data
         const factCount = data.find(item => item._id === 'fact')?.count || 0;
         const fictionCount = data.find(item => item._id === 'fiction')?.count || 0;
 
@@ -107,7 +89,7 @@ const fetchStats = async () => {
         const factPercentage = total > 0 ? (factCount / total) * 100 : 0;
         const fictionPercentage = total > 0 ? (fictionCount / total) * 100 : 0;
 
-        // Update the response bar
+        // Update the response bars
         const factBar = document.getElementById('fact-bar');
         const fictionBar = document.getElementById('fiction-bar');
 
@@ -117,12 +99,13 @@ const fetchStats = async () => {
         fictionBar.style.width = `${fictionPercentage}%`;
         fictionBar.textContent = `Fiction: ${fictionPercentage.toFixed(1)}%`;
 
-        // Ensure the results container is visible
+        // Make the results container visible
         document.querySelector('.results-container').style.display = 'block';
-    } catch (error) {
+    })
+    .catch(error => {
         console.error('Error fetching stats:', error);
-    }
-};
+    });
+}
 
 // Attach event listeners to the buttons
 document.getElementById('fact-button').addEventListener('click', () => {
