@@ -43,6 +43,38 @@ function initializeSliders() {
     });
 }
 
+// Function to add steps dynamically to the slider
+function addSliderSteps(sliderId) {
+    const slider = document.getElementById(sliderId);
+    const stepsContainer = slider.parentElement.querySelector('.slider-steps');
+    const min = parseInt(slider.min, 10);
+    const max = parseInt(slider.max, 10);
+
+    // Clear existing steps if any
+    stepsContainer.innerHTML = '';
+
+    for (let i = min; i <= max; i++) {
+        const step = document.createElement('div');
+        step.classList.add('slider-step');
+
+        // Add step at equal intervals
+        const position = ((i - min) / (max - min)) * 100;
+        step.style.left = `calc(${position}% - 7.5px)`; // Offset to center step on track
+
+        stepsContainer.appendChild(step);
+    }
+}
+
+// Initialize steps for all sliders
+document.addEventListener('DOMContentLoaded', () => {
+    addSliderSteps('diversity-slider');
+    addSliderSteps('height-slider');
+    addSliderSteps('age-slider');
+    addSliderSteps('gender-slider');
+    addSliderSteps('ethnicity-slider');
+    addSliderSteps('foreign-slider');
+});
+
 // Track votes for 'fact' and 'fiction'
 let votes = { fact: 0, fiction: 0 };
 
