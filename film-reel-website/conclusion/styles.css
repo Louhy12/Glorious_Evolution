@@ -162,32 +162,25 @@ input[type="range"] {
     background: #ddd; /* Track background color */
     outline: none; /* Remove outline */
     border-radius: 5px; /* Rounded track edges */
-    position: relative;
 }
 
-/* Custom Step Styling for WebKit Browsers */
-input[type="range"]::-webkit-slider-runnable-track {
-    background: #ddd; /* Track background */
-    height: 10px; /* Track height */
-    border-radius: 5px; /* Rounded edges */
-    cursor: pointer;
-}
-
-input[type="range"]::-webkit-slider-runnable-track::before {
-    content: ''; 
-    position: absolute;
-    top: -4px;
-    left: 0;
-    right: 0;
-    height: 10px;
-    background-image: linear-gradient(to right, #777 1px, transparent 1px);
-    background-size: calc(100% / 5) 100%; /* Adjust the number of steps by changing the divisor */
-    background-repeat: repeat-x;
-}
-
+/* Custom Thumb for WebKit Browsers (Chrome, Safari, Edge) */
 input[type="range"]::-webkit-slider-thumb {
     -webkit-appearance: none; /* Override default thumb */
     appearance: none; /* Override default thumb */
+    background: url('effect/clap.png') no-repeat center; /* Use only the image */
+    background-size: contain; /* Scale the image to fit the thumb area */
+    width: 40px; /* Set thumb width */
+    height: 40px; /* Set thumb height */
+    margin-top: -15px; /* Adjust to vertically center on the track (half of thumb height - half of track height) */
+    border: none; /* Remove border */
+    box-shadow: none; /* Remove shadow */
+    cursor: pointer; /* Enable interaction */
+    position: relative; /* Ensure proper positioning */
+}
+
+/* Custom Thumb for Firefox */
+input[type="range"]::-moz-range-thumb {
     background: url('effect/clap.png') no-repeat center; /* Use only the image */
     background-size: contain; /* Scale the image to fit the thumb area */
     width: 40px; /* Set thumb width */
@@ -198,26 +191,45 @@ input[type="range"]::-webkit-slider-thumb {
     cursor: pointer; /* Enable interaction */
 }
 
-/* Step markers styling for Firefox */
+/* Custom Thumb for Internet Explorer and Edge */
+input[type="range"]::-ms-thumb {
+    background: url('effect/clap.png') no-repeat center; /* Use only the image */
+    background-size: contain; /* Scale the image to fit the thumb area */
+    width: 40px; /* Set thumb width */
+    height: 40px; /* Set thumb height */
+    margin-top: -15px; /* Adjust to vertically center on the track */
+    border: none; /* Remove border */
+    box-shadow: none; /* Remove shadow */
+    cursor: pointer; /* Enable interaction */
+}
+
+/* Universal Slider Styling */
+input[type="range"] {
+    -webkit-appearance: none; /* Remove default styling for WebKit browsers */
+    appearance: none; /* Remove default styling */
+    width: 100%; /* Full width */
+    height: 10px; /* Height of the track */
+    background: #ddd; /* Track background color */
+    outline: none; /* Remove outline */
+    border-radius: 5px; /* Rounded track edges */
+}
+
+/* Track Styling for WebKit Browsers */
+input[type="range"]::-webkit-slider-runnable-track {
+    background: #ddd; /* Track background */
+    height: 10px; /* Track height */
+    border-radius: 5px; /* Rounded edges */
+    cursor: pointer; /* Pointer cursor */
+}
+
+/* Track Styling for Firefox */
 input[type="range"]::-moz-range-track {
     background: #ddd; /* Track background */
     height: 10px; /* Track height */
     border-radius: 5px; /* Rounded edges */
 }
 
-input[type="range"]::-moz-range-track::before {
-    content: '';
-    position: absolute;
-    top: -4px;
-    left: 0;
-    right: 0;
-    height: 10px;
-    background-image: linear-gradient(to right, #777 1px, transparent 1px);
-    background-size: calc(100% / 5) 100%;
-    background-repeat: repeat-x;
-}
-
-/* Step markers for Internet Explorer and Edge */
+/* Track Styling for Internet Explorer and Edge */
 input[type="range"]::-ms-track {
     background: transparent; /* Remove default styling */
     height: 10px; /* Track height */
@@ -225,19 +237,31 @@ input[type="range"]::-ms-track {
     color: transparent; /* Remove color */
 }
 
-/* Add round shapes on the track at intervals */
-input[type="range"]::-ms-track::before {
-    content: '';
-    position: absolute;
-    top: -4px;
-    left: 0;
-    right: 0;
-    height: 10px;
-    background-image: linear-gradient(to right, #777 1px, transparent 1px);
-    background-size: calc(100% / 5) 100%;
-    background-repeat: repeat-x;
+/* Adjust for Safari Quirks */
+input[type="range"]::-webkit-slider-thumb:active {
+    transform: scale(1.05); /* Slight scale on interaction (optional) */
+    cursor: grabbing; /* Grabbing cursor during drag (optional) */
 }
 
+/* Custom Track Styling */
+input[type="range"]::-webkit-slider-runnable-track {
+    background: #ddd; /* Track background */
+    height: 10px;
+    border-radius: 5px;
+}
+
+input[type="range"]::-moz-range-track {
+    background: #ddd;
+    height: 10px;
+    border-radius: 5px;
+}
+
+input[type="range"]::-ms-track {
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
+    height: 10px;
+}
 
 /* Optional: Adding hover effect for film frames */
 .frame:hover {
