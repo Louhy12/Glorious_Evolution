@@ -43,19 +43,6 @@ function initializeSliders() {
     });
 }
 
-let factCount = 0;
-let fictionCount = 0;
-
-function vote(choice) {
-    if (choice === 'fact') {
-        factCount++;
-    } else if (choice === 'fiction') {
-        fictionCount++;
-    }
-    updateChart();
-    showResults();
-}
-
 // Track votes for 'fact' and 'fiction'
 let votes = { fact: 0, fiction: 0 };
 
