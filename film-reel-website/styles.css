@@ -176,50 +176,72 @@ body {
     z-index: 1; /* Map behind the video */
 }
 
-/* Universal Slider Thumb Styling */
+/* Universal Slider Styling */
 input[type="range"] {
-    -webkit-appearance: none; /* Remove default styles for WebKit */
-    appearance: none; /* Remove default styles */
-    width: 100%; /* Slider width */
-    height: 10px; /* Track height */
-    background: #ddd; /* Track background */
+    -webkit-appearance: none; /* Remove default styling for WebKit browsers */
+    appearance: none; /* Remove default styling */
+    width: 100%; /* Full width */
+    height: 10px; /* Height of the track */
+    background: #ddd; /* Track background color */
     outline: none; /* Remove outline */
-    border-radius: 5px; /* Rounded corners for the track */
+    border-radius: 5px; /* Rounded track edges */
 }
 
-/* WebKit browsers (Chrome, Safari, Edge) */
+/* Track Styling for WebKit Browsers */
+input[type="range"]::-webkit-slider-runnable-track {
+    background: #ddd; /* Track background */
+    height: 10px; /* Track height */
+    border-radius: 5px; /* Rounded edges */
+}
+
+/* Custom Thumb for WebKit Browsers (Chrome, Safari, Edge) */
 input[type="range"]::-webkit-slider-thumb {
-    -webkit-appearance: none; /* Override default WebKit thumb */
+    -webkit-appearance: none; /* Override default thumb */
     appearance: none;
-    background-image: url('effect/clap.png'); /* Thumb image */
-    background-size: cover; /* Ensure image covers the thumb */
-    width: 40px; /* Thumb width */
-    height: 40px; /* Thumb height */
-    border-radius: 50%; /* Round shape */
-    border: 2px solid #fff; /* Optional: White border for visibility */
+    background: url('effect/clap.png') no-repeat center; /* Use only the image */
+    background-size: contain; /* Scale the image to fit the thumb area */
+    width: 40px; /* Set thumb width (match image size) */
+    height: 40px; /* Set thumb height (match image size) */
+    border: none; /* Remove border */
+    box-shadow: none; /* Remove shadow */
+    cursor: pointer; /* Pointer cursor for interactivity */
+}
+
+/* Track Styling for Firefox */
+input[type="range"]::-moz-range-track {
+    background: #ddd; /* Track background */
+    height: 10px; /* Track height */
+    border-radius: 5px; /* Rounded edges */
+}
+
+/* Custom Thumb for Firefox */
+input[type="range"]::-moz-range-thumb {
+    background: url('effect/clap.png') no-repeat center; /* Use only the image */
+    background-size: contain; /* Scale the image to fit the thumb area */
+    width: 40px; /* Set thumb width */
+    height: 40px; /* Set thumb height */
+    border: none; /* Remove border */
+    box-shadow: none; /* Remove shadow */
     cursor: pointer; /* Pointer cursor */
 }
 
-/* Firefox */
-input[type="range"]::-moz-range-thumb {
-    background-image: url('effect/clap.png'); /* Thumb image */
-    background-size: cover;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    border: 2px solid #fff;
-    cursor: pointer;
+/* Track Styling for Internet Explorer and Edge */
+input[type="range"]::-ms-track {
+    background: transparent; /* Remove default styling */
+    height: 10px; /* Track height */
+    border-color: transparent; /* Remove borders */
+    color: transparent; /* Remove color */
 }
 
-/* Internet Explorer and Edge */
+/* Custom Thumb for Internet Explorer and Edge */
 input[type="range"]::-ms-thumb {
-    background-image: url('effect/clap.png'); /* Thumb image */
-    background-size: cover;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    border: 2px solid #fff;
-    cursor: pointer;
+    background: url('effect/clap.png') no-repeat center; /* Use only the image */
+    background-size: contain; /* Scale the image to fit the thumb area */
+    width: 40px; /* Set thumb width */
+    height: 40px; /* Set thumb height */
+    border: none; /* Remove border */
+    box-shadow: none; /* Remove shadow */
+    cursor: pointer; /* Pointer cursor */
 }
 
 /* Custom Track Styling */
