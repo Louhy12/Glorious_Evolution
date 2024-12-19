@@ -217,17 +217,14 @@ input[type="range"] {
 /* Track Styling for WebKit Browsers */
 input[type="range"]::-webkit-slider-runnable-track {
     background: linear-gradient(to right, 
-        #ddd 0%, #ddd 10%, 
-        transparent 10%, transparent 20%, 
-        #ddd 20%, #ddd 30%, 
-        transparent 30%, transparent 40%, 
-        #ddd 40%, #ddd 50%, 
-        transparent 50%, transparent 60%, 
-        #ddd 60%, #ddd 70%, 
-        transparent 70%, transparent 80%, 
-        #ddd 80%, #ddd 90%, 
-        transparent 90%, transparent 100%);
-    background-size: 10px 100%; /* Set graduation size */
+        #ddd 0%, #ddd 5%, transparent 5%, transparent 15%, 
+        #ddd 15%, #ddd 20%, transparent 20%, transparent 30%, 
+        #ddd 30%, #ddd 35%, transparent 35%, transparent 45%, 
+        #ddd 45%, #ddd 50%, transparent 50%, transparent 60%, 
+        #ddd 60%, #ddd 65%, transparent 65%, transparent 75%, 
+        #ddd 75%, #ddd 80%, transparent 80%, transparent 90%, 
+        #ddd 90%, #ddd 95%, transparent 95%, transparent 100%);
+    background-size: 10px 100%; /* Set the size of each gradient step */
     background-repeat: repeat-x;
     height: 10px;
     border-radius: 5px;
@@ -236,17 +233,14 @@ input[type="range"]::-webkit-slider-runnable-track {
 /* Track Styling for Firefox */
 input[type="range"]::-moz-range-track {
     background: linear-gradient(to right, 
-        #ddd 0%, #ddd 10%, 
-        transparent 10%, transparent 20%, 
-        #ddd 20%, #ddd 30%, 
-        transparent 30%, transparent 40%, 
-        #ddd 40%, #ddd 50%, 
-        transparent 50%, transparent 60%, 
-        #ddd 60%, #ddd 70%, 
-        transparent 70%, transparent 80%, 
-        #ddd 80%, #ddd 90%, 
-        transparent 90%, transparent 100%);
-    background-size: 10px 100%; /* Set graduation size */
+        #ddd 0%, #ddd 5%, transparent 5%, transparent 15%, 
+        #ddd 15%, #ddd 20%, transparent 20%, transparent 30%, 
+        #ddd 30%, #ddd 35%, transparent 35%, transparent 45%, 
+        #ddd 45%, #ddd 50%, transparent 50%, transparent 60%, 
+        #ddd 60%, #ddd 65%, transparent 65%, transparent 75%, 
+        #ddd 75%, #ddd 80%, transparent 80%, transparent 90%, 
+        #ddd 90%, #ddd 95%, transparent 95%, transparent 100%);
+    background-size: 10px 100%; /* Set the size of each gradient step */
     background-repeat: repeat-x;
     height: 10px;
     border-radius: 5px;
@@ -254,22 +248,55 @@ input[type="range"]::-moz-range-track {
 
 /* Track Styling for Internet Explorer and Edge */
 input[type="range"]::-ms-track {
-    background: linear-gradient(to right, 
-        #ddd 0%, #ddd 10%, 
-        transparent 10%, transparent 20%, 
-        #ddd 20%, #ddd 30%, 
-        transparent 30%, transparent 40%, 
-        #ddd 40%, #ddd 50%, 
-        transparent 50%, transparent 60%, 
-        #ddd 60%, #ddd 70%, 
-        transparent 70%, transparent 80%, 
-        #ddd 80%, #ddd 90%, 
-        transparent 90%, transparent 100%);
-    background-size: 10px 100%; /* Set graduation size */
-    background-repeat: repeat-x;
-    height: 10px;
+    background: transparent;
     border-color: transparent;
     color: transparent;
+    height: 10px;
+}
+
+/* Custom Track Styling */
+input[type="range"]::-webkit-slider-runnable-track {
+    background: linear-gradient(to right, 
+        #ddd 0%, #ddd 5%, transparent 5%, transparent 15%, 
+        #ddd 15%, #ddd 20%, transparent 20%, transparent 30%, 
+        #ddd 30%, #ddd 35%, transparent 35%, transparent 45%, 
+        #ddd 45%, #ddd 50%, transparent 50%, transparent 60%, 
+        #ddd 60%, #ddd 65%, transparent 65%, transparent 75%, 
+        #ddd 75%, #ddd 80%, transparent 80%, transparent 90%, 
+        #ddd 90%, #ddd 95%, transparent 95%, transparent 100%);
+    background-size: 10px 100%; /* Set the size of each gradient step */
+    height: 10px;
+    border-radius: 5px;
+}
+
+input[type="range"]::-moz-range-track {
+    background: linear-gradient(to right, 
+        #ddd 0%, #ddd 5%, transparent 5%, transparent 15%, 
+        #ddd 15%, #ddd 20%, transparent 20%, transparent 30%, 
+        #ddd 30%, #ddd 35%, transparent 35%, transparent 45%, 
+        #ddd 45%, #ddd 50%, transparent 50%, transparent 60%, 
+        #ddd 60%, #ddd 65%, transparent 65%, transparent 75%, 
+        #ddd 75%, #ddd 80%, transparent 80%, transparent 90%, 
+        #ddd 90%, #ddd 95%, transparent 95%, transparent 100%);
+    background-size: 10px 100%; /* Set the size of each gradient step */
+    height: 10px;
+    border-radius: 5px;
+}
+
+/* Track Styling for Internet Explorer and Edge */
+input[type="range"]::-ms-track {
+    background: linear-gradient(to right, 
+        #ddd 0%, #ddd 5%, transparent 5%, transparent 15%, 
+        #ddd 15%, #ddd 20%, transparent 20%, transparent 30%, 
+        #ddd 30%, #ddd 35%, transparent 35%, transparent 45%, 
+        #ddd 45%, #ddd 50%, transparent 50%, transparent 60%, 
+        #ddd 60%, #ddd 65%, transparent 65%, transparent 75%, 
+        #ddd 75%, #ddd 80%, transparent 80%, transparent 90%, 
+        #ddd 90%, #ddd 95%, transparent 95%, transparent 100%);
+    background-size: 10px 100%; /* Set the size of each gradient step */
+    border-color: transparent;
+    color: transparent;
+    height: 10px;
 }
 
 /* Adjust for Safari Quirks */
