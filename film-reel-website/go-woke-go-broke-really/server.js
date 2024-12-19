@@ -10,7 +10,7 @@ const port = process.env.PORT || 3000;
 app.use(bodyParser.json());
 
 // MongoDB Connection String
-const mongoURI = 'mongodb+srv://pikapika:Ux8IK6NjjqKbEJd7@quizresponsesada.mdeyb.mongodb.net/QuizResponsesADA?retryWrites=true&w=majority';
+const mongoURI = process.env.MONGO_URI;
 let db;
 
 // Connect to MongoDB
