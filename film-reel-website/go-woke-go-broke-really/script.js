@@ -45,79 +45,63 @@ function initializeSliders() {
 
 const BACKEND_URL = 'mongodb+srv://pikapika:Ux8IK6NjjqKbEJd7@quizresponsesada.mdeyb.mongodb.net/?retryWrites=true&w=majority'; // Replace with your backend URL when deployed
 
+// Vote function to handle button clicks
 function vote(choice) {
-    // Log the choice for debugging
-    console.log(`User selected: ${choice}`);
+    console.log(`User selected: ${choice}`); // Debugging log
 
     // Submit the answer to the server
-    fetch(`${BACKEND_URL}/submit`, {
+    fetch(BACKEND_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ answer: choice }),
     })
     .then(response => {
         if (!response.ok) {
-            throw new Error('Failed to submit answer to server');
+            throw new Error('Failed to submit answer');
         }
         console.log('Answer submitted successfully');
         return response.json();
     })
     .then(() => {
-        // Fetch updated stats from the server
-        updateStats();
+        updateStats(); // Fetch updated stats after submission
     })
     .catch(error => {
         console.error('Error submitting answer:', error);
     });
 }
 
+// Function to update the response bars
 function updateStats() {
-    // Fetch stats from the server
-    fetch(`${BACKEND_URL}/stats`)
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Failed to fetch stats from server');
-        }
-        return response.json();
-    })
-    .then(data => {
-        // Process server data
-        const factCount = data.find(item => item._id === 'fact')?.count || 0;
-        const fictionCount = data.find(item => item._id === 'fiction')?.count || 0;
+    fetch(BACKEND_URL)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Failed to fetch stats');
+            }
+            return response.json();
+        })
+        .then(data => {
+            const factCount = data.find(item => item._id === 'fact')?.count || 0;
+            const fictionCount = data.find(item => item._id === 'fiction')?.count || 0;
 
-        const total = factCount + fictionCount;
-        const factPercentage = total > 0 ? (factCount / total) * 100 : 0;
-        const fictionPercentage = total > 0 ? (fictionCount / total) * 100 : 0;
+            const total = factCount + fictionCount;
+            const factPercentage = total > 0 ? (factCount / total) * 100 : 0;
+            const fictionPercentage = total > 0 ? (fictionCount / total) * 100 : 0;
 
-        // Update the response bars
-        const factBar = document.getElementById('fact-bar');
-        const fictionBar = document.getElementById('fiction-bar');
+            document.getElementById('fact-bar').style.width = `${factPercentage}%`;
+            document.getElementById('fact-bar').textContent = `Fact: ${factPercentage.toFixed(1)}%`;
 
-        factBar.style.width = `${factPercentage}%`;
-        factBar.textContent = `Fact: ${factPercentage.toFixed(1)}%`;
+            document.getElementById('fiction-bar').style.width = `${fictionPercentage}%`;
+            document.getElementById('fiction-bar').textContent = `Fiction: ${fictionPercentage.toFixed(1)}%`;
 
-        fictionBar.style.width = `${fictionPercentage}%`;
-        fictionBar.textContent = `Fiction: ${fictionPercentage.toFixed(1)}%`;
-
-        // Make the results container visible
-        document.querySelector('.results-container').style.display = 'block';
-    })
-    .catch(error => {
-        console.error('Error fetching stats:', error);
-    });
+            document.querySelector('.results-container').style.display = 'block';
+        })
+        .catch(error => {
+            console.error('Error fetching stats:', error);
+        });
 }
 
-// Attach event listeners to the buttons
-document.getElementById('fact-button').addEventListener('click', () => {
-    submitAnswer('fact');
-});
-
-document.getElementById('fiction-button').addEventListener('click', () => {
-    submitAnswer('fiction');
-});
-
-// Fetch stats when the page loads
-window.onload = fetchStats;
+// Fetch initial stats on page load
+window.onload = updateStats;
 // Initialize sliders on DOM load
 document.addEventListener("DOMContentLoaded", initializeSliders);
 
