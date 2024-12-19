@@ -214,6 +214,13 @@ input[type="range"] {
     border-radius: 5px; /* Rounded track edges */
 }
 
+/* Slider Container */
+.slider-container {
+    position: relative;
+    width: 80%; /* Adjust based on your design */
+    margin: 20px auto;
+}
+
 /* Track Styling for WebKit Browsers */
 input[type="range"]::-webkit-slider-runnable-track {
     background: #ddd; /* Track background */
