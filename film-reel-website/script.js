@@ -30,6 +30,8 @@ function initializeSliders() {
         // Ensure slider and image elements exist
         if (slider && image) {
             console.log(`Initializing slider: ${sliderId}, folder: ${folder}`); // Debugging output
+
+            // Update image on slider input
             slider.addEventListener("input", function () {
                 const index = this.value; // Get current slider value
                 const newImagePath = `${folder}/${folder.split('/').pop()}${index}.${extension}`; // Build image path with dynamic extension
@@ -37,11 +39,42 @@ function initializeSliders() {
                 image.src = newImagePath; // Update image source
                 image.alt = `${folder.split('/').pop()} ${index}`; // Update alt text
             });
+
+            // Add mouse and touch drag functionality
+            let isDragging = false;
+
+            slider.addEventListener("mousedown", () => { isDragging = true; });
+            slider.addEventListener("mousemove", (event) => {
+                if (isDragging) {
+                    const sliderRect = slider.getBoundingClientRect();
+                    const mouseX = event.clientX || event.touches?.[0]?.clientX;
+                    const value = Math.round(
+                        ((mouseX - sliderRect.left) / sliderRect.width) * (slider.max - slider.min) + parseInt(slider.min, 10)
+                    );
+                    slider.value = Math.min(Math.max(value, slider.min), slider.max); // Clamp value
+                    slider.dispatchEvent(new Event("input")); // Trigger input event to update the image
+                }
+            });
+            slider.addEventListener("mouseup", () => { isDragging = false; });
+            slider.addEventListener("touchstart", () => { isDragging = true; });
+            slider.addEventListener("touchmove", (event) => {
+                if (isDragging) {
+                    const sliderRect = slider.getBoundingClientRect();
+                    const touchX = event.touches[0].clientX;
+                    const value = Math.round(
+                        ((touchX - sliderRect.left) / sliderRect.width) * (slider.max - slider.min) + parseInt(slider.min, 10)
+                    );
+                    slider.value = Math.min(Math.max(value, slider.min), slider.max); // Clamp value
+                    slider.dispatchEvent(new Event("input")); // Trigger input event to update the image
+                }
+            });
+            slider.addEventListener("touchend", () => { isDragging = false; });
         } else {
             console.error(`Slider or image not found for ID: ${sliderId}`); // Debugging output
         }
     });
 }
+
 
 let factCount = 0;
 let fictionCount = 0;
