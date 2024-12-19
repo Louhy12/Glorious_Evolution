@@ -70,7 +70,7 @@ function vote(choice) {
     document.querySelector('.results-container').style.display = 'block';
 }
 
-const BACKEND_URL = 'http://localhost:3000'; // Replace with your backend URL when deployed
+const BACKEND_URL = 'mongodb+srv://pikapika:Ux8IK6NjjqKbEJd7@quizresponsesada.mdeyb.mongodb.net/?retryWrites=true&w=majority'; // Replace with your backend URL when deployed
 
 // Submit an answer to the backend
 const submitAnswer = async (answer) => {
