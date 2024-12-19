@@ -263,12 +263,6 @@ input[type="range"]::-ms-track {
     height: 10px;
 }
 
-/* Add a specific style for the circles as step markers */
-input[type="range"]:focus::-webkit-slider-runnable-track::before,
-input[type="range"]:focus::-moz-range-track::before {
-    background: #ff0; /* Change circle color on focus */
-}
-
 /* Optional: Adding hover effect for film frames */
 .frame:hover {
     transform: scale(1.02); /* Slight zoom on hover */
