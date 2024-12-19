@@ -203,65 +203,86 @@ input[type="range"]::-ms-thumb {
     cursor: pointer; /* Enable interaction */
 }
 
-/* Universal Slider Styling */
+/* Slider Container */
+.slider-container {
+    position: relative;
+    width: 80%; /* Adjust width */
+    margin: 20px auto;
+}
+
+/* Custom Range Slider */
 input[type="range"] {
-    -webkit-appearance: none; /* Remove default styling for WebKit browsers */
-    appearance: none; /* Remove default styling */
-    width: 100%; /* Full width */
-    height: 10px; /* Height of the track */
-    background: #ddd; /* Track background color */
-    outline: none; /* Remove outline */
-    border-radius: 5px; /* Rounded track edges */
+    -webkit-appearance: none; /* Remove default styling */
+    appearance: none;
+    width: 100%;
+    height: 10px; /* Height of the slider track */
+    background: linear-gradient(
+        to right,
+        #ddd 0%,
+        #ddd 33%,
+        #000 33%,
+        #000 34%,
+        #ddd 34%,
+        #ddd 66%,
+        #000 66%,
+        #000 67%,
+        #ddd 67%,
+        #ddd 100%
+    ); /* Add ticks */
+    outline: none;
+    border-radius: 5px; /* Rounded edges for the track */
+    cursor: pointer;
 }
 
-/* Track Styling for WebKit Browsers */
+/* Slider Thumb */
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    background: #000; /* Thumb color */
+    width: 20px;
+    height: 20px;
+    border-radius: 50%; /* Round thumb */
+    cursor: pointer;
+    margin-top: -5px; /* Center thumb vertically */
+}
+
+input[type="range"]::-moz-range-thumb {
+    background: #000;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+input[type="range"]::-ms-thumb {
+    background: #000;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* Track Styling for Other Browsers */
 input[type="range"]::-webkit-slider-runnable-track {
-    background: #ddd; /* Track background */
-    height: 10px; /* Track height */
-    border-radius: 5px; /* Rounded edges */
-    cursor: pointer; /* Pointer cursor */
-}
-
-/* Track Styling for Firefox */
-input[type="range"]::-moz-range-track {
-    background: #ddd; /* Track background */
-    height: 10px; /* Track height */
-    border-radius: 5px; /* Rounded edges */
-}
-
-/* Track Styling for Internet Explorer and Edge */
-input[type="range"]::-ms-track {
-    background: transparent; /* Remove default styling */
-    height: 10px; /* Track height */
-    border-color: transparent; /* Remove borders */
-    color: transparent; /* Remove color */
-}
-
-/* Adjust for Safari Quirks */
-input[type="range"]::-webkit-slider-thumb:active {
-    transform: scale(1.05); /* Slight scale on interaction (optional) */
-    cursor: grabbing; /* Grabbing cursor during drag (optional) */
-}
-
-/* Custom Track Styling */
-input[type="range"]::-webkit-slider-runnable-track {
-    background: #ddd; /* Track background */
+    background: transparent; /* Track is already styled above */
     height: 10px;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 input[type="range"]::-moz-range-track {
-    background: #ddd;
+    background: transparent;
     height: 10px;
     border-radius: 5px;
 }
 
 input[type="range"]::-ms-track {
     background: transparent;
+    height: 10px;
     border-color: transparent;
     color: transparent;
-    height: 10px;
 }
+
 
 /* Optional: Adding hover effect for film frames */
 .frame:hover {
