@@ -72,9 +72,10 @@ function vote(choice) {
 
 const BACKEND_URL = 'mongodb+srv://pikapika:Ux8IK6NjjqKbEJd7@quizresponsesada.mdeyb.mongodb.net/?retryWrites=true&w=majority'; // Replace with your backend URL when deployed
 
-// Submit an answer to the backend
+// Function to submit an answer and record it on the server
 const submitAnswer = async (answer) => {
     try {
+        // Send the answer to the server
         const response = await fetch(`${BACKEND_URL}/submit`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -82,53 +83,48 @@ const submitAnswer = async (answer) => {
         });
 
         if (response.ok) {
-            console.log('Answer submitted successfully');
-            fetchStats(); // Update stats after submission
+            console.log(`Answer "${answer}" submitted successfully.`);
+            fetchStats(); // Update the response bar with server data
         } else {
-            console.error('Failed to submit answer');
+            console.error('Failed to submit the answer to the server.');
         }
     } catch (error) {
-        console.error('Error submitting answer:', error);
+        console.error('Error submitting the answer:', error);
     }
 };
 
+// Function to fetch stats from the server and update the response bar
 const fetchStats = async () => {
     try {
         const response = await fetch(`${BACKEND_URL}/stats`);
         const data = await response.json();
 
-        // Extract counts for fact and fiction
+        // Process the stats from the server
         const factCount = data.find(item => item._id === 'fact')?.count || 0;
         const fictionCount = data.find(item => item._id === 'fiction')?.count || 0;
 
-        // Calculate total and percentages
         const total = factCount + fictionCount;
         const factPercentage = total > 0 ? (factCount / total) * 100 : 0;
         const fictionPercentage = total > 0 ? (fictionCount / total) * 100 : 0;
 
-        // Update progress bars dynamically
+        // Update the response bar
         const factBar = document.getElementById('fact-bar');
+        const fictionBar = document.getElementById('fiction-bar');
+
         factBar.style.width = `${factPercentage}%`;
         factBar.textContent = `Fact: ${factPercentage.toFixed(1)}%`;
 
-        const fictionBar = document.getElementById('fiction-bar');
         fictionBar.style.width = `${fictionPercentage}%`;
         fictionBar.textContent = `Fiction: ${fictionPercentage.toFixed(1)}%`;
+
+        // Ensure the results container is visible
+        document.querySelector('.results-container').style.display = 'block';
     } catch (error) {
         console.error('Error fetching stats:', error);
-        // Handle error by displaying a default message
-        document.getElementById('fact-bar').textContent = 'Fact: Error';
-        document.getElementById('fiction-bar').textContent = 'Fiction: Error';
     }
 };
 
-
-// Debugging: Simpler `submitAnswer` function
-const submitAnswer = (answer) => {
-    console.log(`Answer submitted: ${answer}`);
-};
-
-// Attach event listeners to buttons
+// Attach event listeners to the buttons
 document.getElementById('fact-button').addEventListener('click', () => {
     submitAnswer('fact');
 });
@@ -137,11 +133,8 @@ document.getElementById('fiction-button').addEventListener('click', () => {
     submitAnswer('fiction');
 });
 
-
 // Fetch stats when the page loads
 window.onload = fetchStats;
-
-
 // Initialize sliders on DOM load
 document.addEventListener("DOMContentLoaded", initializeSliders);
 
