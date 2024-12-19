@@ -153,89 +153,64 @@ body {
     z-index: 1; /* Map behind the video */
 }
 
-/* Universal Slider Styling */
-input[type="range"] {
-    -webkit-appearance: none; /* Remove default styling for WebKit browsers */
-    appearance: none; /* Remove default styling */
-    width: 100%; /* Full width */
-    height: 10px; /* Height of the track */
-    background: #ddd; /* Track background color */
-    outline: none; /* Remove outline */
-    border-radius: 5px; /* Rounded track edges */
+.__range input {
+    outline: none;
+    -webkit-appearance: none;
+    background-color: #aaa; /* Default track color */
+    height: 3px;
+    width: 100%;
+    margin: 10px auto;
+}
+
+.__range input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 30px; /* Adjust for your clap thumb */
+    height: 30px;
+    background: url('clap-thumb-icon.png') no-repeat center center; /* Replace with your clap-thumb */
+    background-size: contain;
+    border: none;
+    cursor: pointer;
     position: relative;
 }
 
-/* Custom Step Styling for WebKit Browsers */
-input[type="range"]::-webkit-slider-runnable-track {
-    background: #ddd; /* Track background */
-    height: 10px; /* Track height */
-    border-radius: 5px; /* Rounded edges */
+.__range input::-moz-range-thumb,
+.__range input::-ms-thumb {
+    width: 30px; /* Match the clap thumb size */
+    height: 30px;
+    background: url('clap-thumb-icon.png') no-repeat center center;
+    background-size: contain;
+    border: none;
     cursor: pointer;
+    position: relative;
 }
 
-input[type="range"]::-webkit-slider-runnable-track::before {
-    content: ''; 
+.__range-step-popup output {
     position: absolute;
-    top: -4px;
+    background-color: green;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    color: white;
+    border-radius: 100%;
+    display: inline-block;
+    font-size: 12px;
+    bottom: 100%;
     left: 0;
-    right: 0;
-    height: 10px;
-    background-image: linear-gradient(to right, #777 1px, transparent 1px);
-    background-size: calc(100% / 5) 100%; /* Adjust the number of steps by changing the divisor */
-    background-repeat: repeat-x;
+    vertical-align: middle;
+    line-height: 30px;
 }
-
-input[type="range"]::-webkit-slider-thumb {
-    -webkit-appearance: none; /* Override default thumb */
-    appearance: none; /* Override default thumb */
-    background: url('effect/clap.png') no-repeat center; /* Use only the image */
-    background-size: contain; /* Scale the image to fit the thumb area */
-    width: 40px; /* Set thumb width */
-    height: 40px; /* Set thumb height */
-    margin-top: -15px; /* Adjust to vertically center on the track */
-    border: none; /* Remove border */
-    box-shadow: none; /* Remove shadow */
-    cursor: pointer; /* Enable interaction */
-}
-
-/* Step markers styling for Firefox */
-input[type="range"]::-moz-range-track {
-    background: #ddd; /* Track background */
-    height: 10px; /* Track height */
-    border-radius: 5px; /* Rounded edges */
-}
-
-input[type="range"]::-moz-range-track::before {
-    content: '';
+.__range-step-popup output:after {
+    content: "";
     position: absolute;
-    top: -4px;
-    left: 0;
-    right: 0;
-    height: 10px;
-    background-image: linear-gradient(to right, #777 1px, transparent 1px);
-    background-size: calc(100% / 5) 100%;
-    background-repeat: repeat-x;
-}
-
-/* Step markers for Internet Explorer and Edge */
-input[type="range"]::-ms-track {
-    background: transparent; /* Remove default styling */
-    height: 10px; /* Track height */
-    border-color: transparent; /* Remove borders */
-    color: transparent; /* Remove color */
-}
-
-/* Add round shapes on the track at intervals */
-input[type="range"]::-ms-track::before {
-    content: '';
-    position: absolute;
-    top: -4px;
-    left: 0;
-    right: 0;
-    height: 10px;
-    background-image: linear-gradient(to right, #777 1px, transparent 1px);
-    background-size: calc(100% / 5) 100%;
-    background-repeat: repeat-x;
+    width: 0;
+    height: 0;
+    border-top: 10px solid green;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    top: 90%;
+    left: 50%;
+    margin-left: -10px;
+    margin-top: -1px;
 }
 
 
