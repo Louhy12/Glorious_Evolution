@@ -1,0 +1,497 @@
+/* General body and page styling */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Abril Fatface', cursive; /* Apply to the whole body (optional) */
+    background-image: url('images/film_stock.png'); /* Set film stock image as background */
+    background-size: cover; /* Make sure the background covers the entire page */
+    background-position: center; /* Center the background image */
+    background-repeat: repeat-y; /* Repeating the background image */
+    height: 100vh; /* Ensure the body takes the full viewport height */
+}
+
+/* Container for the film reel */
+.film-reel {
+    display: flex;
+    flex-direction: column;  /* Stack frames vertically */
+    align-items: center;
+    margin-top: 20px; /* Adjust as needed */
+}
+
+/* Styling for each film frame */
+.frame {
+    position: relative;
+    width: 80%; /* Adjust the width to suit your design */
+    height: 600px; /* Adjust the height to suit your design */
+    margin: 20px 0;
+    background-color: #ffffff; /* Light gray background inside each frame */
+    border: 10px solid black; /* Black border around each frame */
+    border-radius: 5px; /* Slightly rounded corners */
+    overflow: hidden;
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Title text in the first frame */
+.first-frame .title {
+    font-family: 'Abril Fatface', cursive; /* Apply Abril Fatface font */
+    font-size: 3.5rem; /* Huge size for the title */
+    text-align: center;
+    color: #000;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    margin: 0;
+    padding: 0;
+    line-height: 1.2;
+}
+
+/* Content inside the frame */
+.frame-content {
+    padding: 20px;
+    background-color: #ffffff; /* Light gray background for content */
+    height: 100%;
+    overflow: auto; /* If content exceeds frame, scroll */
+}
+
+/* Styling for the frame title */
+.frame-title {
+    font-family: 'Abril Fatface', cursive; /* Use Abril Fatface for the title */
+    font-size: 2rem; /* Adjust title size */
+    color: #000; /* Black text color */
+    text-align: center; /* Center the title */
+    margin-bottom: 20px; /* Add space below the title */
+    z-index: 2; /* Ensure it appears above the noise video */
+}
+
+/* Styling for the frame content */
+.frame-content p {
+    font-family: Arial, sans-serif; /* Use a readable font for the paragraph */
+    font-size: 1rem; /* Adjust paragraph font size */
+    color: #333; /* Dark gray text color */
+    line-height: 1.6; /* Improve readability */
+    text-align: justify; /* Justify text for a cleaner look */
+    z-index: 2; /* Ensure text appears above the video */
+}
+
+/* Styling for the map-slider container */
+.map-slider {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Slider styling */
+#map-slider {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    z-index: 3; /* Ensure slider stays above both map and video */
+    max-width: 500px; /* Optional: Set max width for the slider */
+}
+
+/* Position the map image inside the slider container */
+.map-image {
+    width: 100%;
+    height: 100%; /* Make the map fill the container */
+    object-fit: contain; /* Ensures the map retains its aspect ratio */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1; /* Map behind the video */
+}
+
+/* Styling for the map-slider container */
+.map-slider {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Noise video styling to ensure it stays on top but doesn't block the map */
+.noise-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Make sure the video covers the entire frame */
+    opacity: 0.2; /* Adjust opacity to allow map visibility */
+    z-index: 2; /* Video above the map */
+    pointer-events: none; /* Make sure the video does not block the links */
+}
+
+/* Slider styling */
+#map-slider {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    z-index: 3; /* Ensure slider stays above both map and video */
+    max-width: 500px; /* Optional: Set max width for the slider */
+}
+
+/* Position the map image inside the slider container */
+.map-image {
+    width: 100%;
+    height: 100%; /* Make the map fill the container */
+    object-fit: contain; /* Ensures the map retains its aspect ratio */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1; /* Map behind the video */
+}
+
+/* Universal Slider Styling */
+input[type="range"] {
+    -webkit-appearance: none; /* Remove default styling for WebKit browsers */
+    appearance: none; /* Remove default styling */
+    width: 100%; /* Full width */
+    height: 10px; /* Height of the track */
+    background: #ddd; /* Track background color */
+    outline: none; /* Remove outline */
+    border-radius: 5px; /* Rounded track edges */
+    position: relative;
+}
+
+/* Custom Step Styling for WebKit Browsers */
+input[type="range"]::-webkit-slider-runnable-track {
+    background: #ddd; /* Track background */
+    height: 10px; /* Track height */
+    border-radius: 5px; /* Rounded edges */
+    cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-runnable-track::before {
+    content: ''; 
+    position: absolute;
+    top: -4px;
+    left: 0;
+    right: 0;
+    height: 10px;
+    background-image: linear-gradient(to right, #777 1px, transparent 1px);
+    background-size: calc(100% / 5) 100%; /* Adjust the number of steps by changing the divisor */
+    background-repeat: repeat-x;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default thumb */
+    appearance: none; /* Override default thumb */
+    background: url('effect/clap.png') no-repeat center; /* Use only the image */
+    background-size: contain; /* Scale the image to fit the thumb area */
+    width: 40px; /* Set thumb width */
+    height: 40px; /* Set thumb height */
+    margin-top: -15px; /* Adjust to vertically center on the track */
+    border: none; /* Remove border */
+    box-shadow: none; /* Remove shadow */
+    cursor: pointer; /* Enable interaction */
+}
+
+/* Step markers styling for Firefox */
+input[type="range"]::-moz-range-track {
+    background: #ddd; /* Track background */
+    height: 10px; /* Track height */
+    border-radius: 5px; /* Rounded edges */
+}
+
+input[type="range"]::-moz-range-track::before {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: 0;
+    right: 0;
+    height: 10px;
+    background-image: linear-gradient(to right, #777 1px, transparent 1px);
+    background-size: calc(100% / 5) 100%;
+    background-repeat: repeat-x;
+}
+
+/* Step markers for Internet Explorer and Edge */
+input[type="range"]::-ms-track {
+    background: transparent; /* Remove default styling */
+    height: 10px; /* Track height */
+    border-color: transparent; /* Remove borders */
+    color: transparent; /* Remove color */
+}
+
+/* Add round shapes on the track at intervals */
+input[type="range"]::-ms-track::before {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: 0;
+    right: 0;
+    height: 10px;
+    background-image: linear-gradient(to right, #777 1px, transparent 1px);
+    background-size: calc(100% / 5) 100%;
+    background-repeat: repeat-x;
+}
+
+
+/* Optional: Adding hover effect for film frames */
+.frame:hover {
+    transform: scale(1.02); /* Slight zoom on hover */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Related articles title */
+.frame-content h3 {
+    font-family: Arial, sans-serif; /* Match with body text */
+    font-size: 1.2rem;
+    color: #444; /* Slightly darker gray for emphasis */
+    margin-top: 20px; /* Add spacing above */
+    margin-bottom: 10px;
+}
+
+/* Styling the links list */
+.links-list {
+    list-style-type: none; /* Remove default list bullets */
+    padding: 0; /* Remove padding */
+    margin: 0;
+}
+
+/* Styling individual links */
+.links-list li {
+    margin-bottom: 10px; /* Add space between links */
+}
+
+/* Styling individual links container */
+.links-container {
+    position: absolute; /* Absolute positioning relative to the frame */
+    top: 10px; /* Adjust position from the top */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3; /* Ensure links are above the video */
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.7); /* Optional: background with transparency */
+    border-radius: 5px;
+    width: 90%; /* Adjust width as needed */
+    text-align: center;
+    z-index: 3; /* Ensure links are above the video */
+}
+
+/* Styling individual links */
+.links-container a {
+    font-family: Arial, sans-serif;
+    font-size: 1.2rem;
+    color: #0066cc; /* Link color */
+    text-decoration: none;
+    transition: color 0.3s ease;
+    z-index: 4; /* Ensure links have the highest z-index */
+}
+
+.links-container a:hover {
+    color: #003366; /* Darker blue on hover */
+    text-decoration: underline;
+}
+
+/* List styling for the diversity criteria */
+ul {
+    margin: 20px 0;
+    padding-left: 20px;
+}
+
+/* Sub-list styling for nested items */
+ul ul {
+    margin-top: 10px;
+}
+
+/* Strong emphasis for sub-headings in lists */
+ul li strong {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+/* General paragraph styling */
+p {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+/* Apply Arial font to the specific sections */
+.arial-font {
+    font-family: 'Arial', sans-serif;
+}
+
+/* Optional: Add a hover effect for the frame */
+.frame:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Movie sections */
+.movie {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    align-items: center;
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.9); /* Slight background transparency */
+    border-radius: 5px;
+}
+
+.movie-left {
+    width: 45%;
+    text-align: center;
+}
+
+.movie-image {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.movie-right {
+    width: 50%;
+    padding-left: 20px;
+}
+
+.movie-right p {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+/* Optional: Style for plot and details */
+.movie-right strong {
+    font-size: 1.1rem;
+    color: #333;
+}
+
+/* Style for the quiz frame */
+.quiz-frame {
+    width: 60%;                /* Adjust the width of the frame */
+    margin: 30px auto;         /* Center the frame horizontally */
+    padding: 20px;             /* Space inside the frame */
+    border: 5px solid #000;    /* Black border around the frame */
+    border-radius: 10px;       /* Rounded corners for the frame */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow effect for depth */
+    background-color: #000000; 
+    text-align: center;        /* Center text inside the frame */
+    position: relative;        /* Ensure we can position the results above this */
+    z-index: 1;
+}
+
+/* Style for the results container */
+.results-container {
+    position: absolute; /* Position the results bar above the quiz content */
+    top: 20px;          /* Space from the top of the frame */
+    left: 0;
+    width: 80%;        /* Full width */
+    display: none;      /* Initially hidden */
+    z-index: 2;         /* Ensures it's above the quiz buttons */
+}
+
+/* Result bars styling (Restored original color scheme) */
+.result-bar {
+    font-size: 1rem;
+    padding: 5px;
+    margin: 5px 0;
+    color: white;
+    background-color: #606060;
+    border-radius: 5px;
+    text-align: center;
+    transition: width 0.5s;
+}
+
+/* Style for the quiz question and buttons */
+.quiz-question p {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #FFFFFF;
+}
+
+.quiz-btn {
+    font-size: 18px;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #303030;  
+    color: white;
+    transition: background-color 0.3s;
+    z-index: 3; 
+}
+
+.quiz-btn:hover {
+    background-color:  #404040;
+}
+
+/* Style for the image container */
+.image-container {
+    margin-top: 20px;           /* Space above the image */
+    z-index:1;
+}
+
+.image {
+    max-width: 100%;            /* Make image fill the width of its container */
+    height: auto;               /* Maintain aspect ratio of the image */
+    border-radius: 5px;         /* Optional: Round corners of the image */
+}
+
+/* Scroll indicator container */
+.scroll-indicator {
+    text-align: center;
+    margin-top: 10px; /* Space above the indicator */
+    animation: fadeInOut 2s infinite; /* Add a pulsing animation for visibility */
+}
+
+/* Scroll text styling */
+.scroll-text {
+    font-size: 1rem;
+    color: #333; /* Dark gray for readability */
+    margin-bottom: 5px;
+}
+
+/* Arrow styling */
+.arrow {
+    font-size: 2rem; /* Larger font for visibility */
+    color: #333; /* Match the text color */
+}
+
+/* Animation for the arrow to fade in and out */
+@keyframes fadeInOut {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+* Trend Images Styling */
+.trend-images {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+    justify-content: center;
+}
+
+.trend-images img {
+    max-width: 45%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.trend-images img:hover {
+    transform: scale(1.05);
+}
