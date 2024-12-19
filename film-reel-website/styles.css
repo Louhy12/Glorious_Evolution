@@ -164,14 +164,6 @@ input[type="range"] {
     border-radius: 5px; /* Rounded track edges */
 }
 
-/* Track Styling for WebKit Browsers */
-input[type="range"]::-webkit-slider-runnable-track {
-    background: #ddd; /* Track background */
-    height: 10px; /* Track height */
-    border-radius: 5px; /* Rounded edges */
-    cursor: pointer; /* Pointer cursor */
-}
-
 /* Custom Thumb for WebKit Browsers (Chrome, Safari, Edge) */
 input[type="range"]::-webkit-slider-thumb {
     -webkit-appearance: none; /* Override default thumb */
@@ -180,10 +172,54 @@ input[type="range"]::-webkit-slider-thumb {
     background-size: contain; /* Scale the image to fit the thumb area */
     width: 40px; /* Set thumb width */
     height: 40px; /* Set thumb height */
+    margin-top: -15px; /* Adjust to vertically center on the track (half of thumb height - half of track height) */
     border: none; /* Remove border */
     box-shadow: none; /* Remove shadow */
     cursor: pointer; /* Enable interaction */
     position: relative; /* Ensure proper positioning */
+}
+
+/* Custom Thumb for Firefox */
+input[type="range"]::-moz-range-thumb {
+    background: url('effect/clap.png') no-repeat center; /* Use only the image */
+    background-size: contain; /* Scale the image to fit the thumb area */
+    width: 40px; /* Set thumb width */
+    height: 40px; /* Set thumb height */
+    margin-top: -15px; /* Adjust to vertically center on the track */
+    border: none; /* Remove border */
+    box-shadow: none; /* Remove shadow */
+    cursor: pointer; /* Enable interaction */
+}
+
+/* Custom Thumb for Internet Explorer and Edge */
+input[type="range"]::-ms-thumb {
+    background: url('effect/clap.png') no-repeat center; /* Use only the image */
+    background-size: contain; /* Scale the image to fit the thumb area */
+    width: 40px; /* Set thumb width */
+    height: 40px; /* Set thumb height */
+    margin-top: -15px; /* Adjust to vertically center on the track */
+    border: none; /* Remove border */
+    box-shadow: none; /* Remove shadow */
+    cursor: pointer; /* Enable interaction */
+}
+
+/* Universal Slider Styling */
+input[type="range"] {
+    -webkit-appearance: none; /* Remove default styling for WebKit browsers */
+    appearance: none; /* Remove default styling */
+    width: 100%; /* Full width */
+    height: 10px; /* Height of the track */
+    background: #ddd; /* Track background color */
+    outline: none; /* Remove outline */
+    border-radius: 5px; /* Rounded track edges */
+}
+
+/* Track Styling for WebKit Browsers */
+input[type="range"]::-webkit-slider-runnable-track {
+    background: #ddd; /* Track background */
+    height: 10px; /* Track height */
+    border-radius: 5px; /* Rounded edges */
+    cursor: pointer; /* Pointer cursor */
 }
 
 /* Track Styling for Firefox */
@@ -193,34 +229,12 @@ input[type="range"]::-moz-range-track {
     border-radius: 5px; /* Rounded edges */
 }
 
-/* Custom Thumb for Firefox */
-input[type="range"]::-moz-range-thumb {
-    background: url('effect/clap.png') no-repeat center; /* Use only the image */
-    background-size: contain; /* Scale the image to fit the thumb area */
-    width: 40px; /* Set thumb width */
-    height: 40px; /* Set thumb height */
-    border: none; /* Remove border */
-    box-shadow: none; /* Remove shadow */
-    cursor: pointer; /* Enable interaction */
-}
-
 /* Track Styling for Internet Explorer and Edge */
 input[type="range"]::-ms-track {
     background: transparent; /* Remove default styling */
     height: 10px; /* Track height */
     border-color: transparent; /* Remove borders */
     color: transparent; /* Remove color */
-}
-
-/* Custom Thumb for Internet Explorer and Edge */
-input[type="range"]::-ms-thumb {
-    background: url('effect/clap.png') no-repeat center; /* Use only the image */
-    background-size: contain; /* Scale the image to fit the thumb area */
-    width: 40px; /* Set thumb width */
-    height: 40px; /* Set thumb height */
-    border: none; /* Remove border */
-    box-shadow: none; /* Remove shadow */
-    cursor: pointer; /* Enable interaction */
 }
 
 /* Adjust for Safari Quirks */
