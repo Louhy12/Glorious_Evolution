@@ -92,28 +92,36 @@ const submitAnswer = async (answer) => {
     }
 };
 
-// Fetch quiz stats from the backend
 const fetchStats = async () => {
     try {
         const response = await fetch(`${BACKEND_URL}/stats`);
         const data = await response.json();
 
+        // Extract counts for fact and fiction
         const factCount = data.find(item => item._id === 'fact')?.count || 0;
         const fictionCount = data.find(item => item._id === 'fiction')?.count || 0;
 
+        // Calculate total and percentages
         const total = factCount + fictionCount;
         const factPercentage = total > 0 ? (factCount / total) * 100 : 0;
         const fictionPercentage = total > 0 ? (fictionCount / total) * 100 : 0;
 
-        document.getElementById('fact-bar').style.width = `${factPercentage}%`;
-        document.getElementById('fact-bar').textContent = `Fact: ${factPercentage.toFixed(1)}%`;
+        // Update progress bars dynamically
+        const factBar = document.getElementById('fact-bar');
+        factBar.style.width = `${factPercentage}%`;
+        factBar.textContent = `Fact: ${factPercentage.toFixed(1)}%`;
 
-        document.getElementById('fiction-bar').style.width = `${fictionPercentage}%`;
-        document.getElementById('fiction-bar').textContent = `Fiction: ${fictionPercentage.toFixed(1)}%`;
+        const fictionBar = document.getElementById('fiction-bar');
+        fictionBar.style.width = `${fictionPercentage}%`;
+        fictionBar.textContent = `Fiction: ${fictionPercentage.toFixed(1)}%`;
     } catch (error) {
         console.error('Error fetching stats:', error);
+        // Handle error by displaying a default message
+        document.getElementById('fact-bar').textContent = 'Fact: Error';
+        document.getElementById('fiction-bar').textContent = 'Fiction: Error';
     }
 };
+
 
 // Add event listeners to the quiz buttons
 document.getElementById('fact-button').addEventListener('click', () => {
