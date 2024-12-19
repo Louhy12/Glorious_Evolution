@@ -159,16 +159,15 @@ input[type="range"] {
     width: 100%; /* Full width */
     height: 10px; /* Height of the track */
     background: linear-gradient(to right, 
-        #ddd 0%,        /* Start of track */
-        #ddd 0%,       /* First tick at 10% */
-        transparent 0%, 
+        #ddd 0%, 
+        transparent 20%, 
+        #ddd 20%, 
         transparent 50%, 
-        #ddd 50%,       /* Second tick at 30% */
-        transparent 50%, 
-        transparent 100%, 
-        #ddd 100%,       /* Third tick at 60% */
-        transparent 100%, 
-        transparent 100% /* End of track */
+        #ddd 50%, 
+        transparent 80%, 
+        #ddd 80%, 
+        transparent 100%);
+
     );
     outline: none; /* Remove outline */
     border-radius: 5px; /* Rounded track edges */
