@@ -22,17 +22,19 @@ MongoClient.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true 
 
 // Endpoint to submit quiz answers
 app.post('/submit', async (req, res) => {
+    console.log('Received POST /submit with body:', req.body); // Add this line
     const { answer } = req.body;
-
     if (!answer) return res.status(400).send('Answer is required');
 
     try {
         await db.collection('responses').insertOne({ answer });
         res.status(201).send('Answer submitted successfully');
     } catch (error) {
+        console.error('Error storing answer:', error); // Log error details
         res.status(500).send('Error storing answer');
     }
 });
+
 
 // Endpoint to get quiz stats
 app.get('/stats', async (req, res) => {
