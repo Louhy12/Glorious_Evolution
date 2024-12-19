@@ -43,6 +43,40 @@ function initializeSliders() {
     });
 }
 
+document.querySelectorAll(".__range-step").forEach(function (ctrl) {
+    var el = ctrl.querySelector('input');
+    var output = ctrl.querySelector('output');
+    el.oninput = function () {
+        // Colorize the track
+        var valPercent = (el.valueAsNumber - parseInt(el.min)) / (parseInt(el.max) - parseInt(el.min));
+        var style =
+            'background-image: -webkit-gradient(linear, 0% 0%, 100% 0%, color-stop(' +
+            valPercent +
+            ', green), color-stop(' +
+            valPercent +
+            ', #aaa));';
+        el.style = style;
+
+        // Popup for stepped ranges
+        if (ctrl.classList.contains('__range-step-popup')) {
+            var selectedOpt = ctrl.querySelector('option[value="' + el.value + '"]');
+            if (selectedOpt) {
+                output.innerText = selectedOpt.text;
+                output.style.left = ((selectedOpt.offsetLeft + selectedOpt.offsetWidth / 2) - output.offsetWidth / 2) + 'px';
+            }
+        }
+    };
+    el.oninput();
+});
+
+window.onresize = function () {
+    document.querySelectorAll(".__range").forEach(function (ctrl) {
+        var el = ctrl.querySelector('input');
+        el.oninput();
+    });
+};
+
+
 // Track votes for 'fact' and 'fiction'
 let votes = { fact: 0, fiction: 0 };
 
