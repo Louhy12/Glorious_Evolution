@@ -123,7 +123,12 @@ const fetchStats = async () => {
 };
 
 
-// Add event listeners to the quiz buttons
+// Debugging: Simpler `submitAnswer` function
+const submitAnswer = (answer) => {
+    console.log(`Answer submitted: ${answer}`);
+};
+
+// Attach event listeners to buttons
 document.getElementById('fact-button').addEventListener('click', () => {
     submitAnswer('fact');
 });
@@ -131,6 +136,7 @@ document.getElementById('fact-button').addEventListener('click', () => {
 document.getElementById('fiction-button').addEventListener('click', () => {
     submitAnswer('fiction');
 });
+
 
 // Fetch stats when the page loads
 window.onload = fetchStats;
