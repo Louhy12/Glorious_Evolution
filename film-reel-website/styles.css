@@ -108,29 +108,6 @@ body {
     z-index: 1; /* Map behind the video */
 }
 
-/* Black slider thumb for WebKit browsers (Chrome, Safari, Edge) */
-#map-slider::-webkit-slider-thumb {
-    width: 20px; /* Thumb width */
-    height: 20px; /* Thumb height */
-    border-radius: 50%; /* Make it round */
-    cursor: pointer; /* Interactive cursor */
-    border: 2px solid #fff; /* Optional: Add a white border for visibility */
-    background-color: black !important; /* Force black color */
-}
-
-/* Noise video styling to ensure it stays on top but doesn't block the map */
-.noise-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Make sure the video covers the entire frame */
-    opacity: 0.2; /* Adjust opacity to allow map visibility */
-    z-index: 2; /* Video above the map */
-    pointer-events: none; /* Make sure the video does not block the links */
-}
-
 /* Styling for the map-slider container */
 .map-slider {
     position: relative;
