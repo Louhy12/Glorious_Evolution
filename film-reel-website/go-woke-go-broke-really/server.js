@@ -8,14 +8,14 @@ const port = process.env.PORT || 3000;
 // Middleware
 app.use(bodyParser.json());
 
-// MongoDB URI (Replace with your actual URI)
-const mongoURI = process.env.MONGO_URI || 'your-mongodb-uri';
+// MongoDB Connection String
+const mongoURI = 'mongodb+srv://pikapika:Ux8IK6NjjqKbEJd7@quizresponsesada.mdeyb.mongodb.net/QuizResponsesADA?retryWrites=true&w=majority';
 let db;
 
 // Connect to MongoDB
 MongoClient.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
     .then((client) => {
-        db = client.db('quiz'); // Replace with your database name
+        db = client.db('QuizResponsesADA'); // Replace with your database name
         console.log('Connected to MongoDB');
     })
     .catch((error) => console.error('Error connecting to MongoDB:', error));
