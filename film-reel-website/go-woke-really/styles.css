@@ -76,16 +76,6 @@ body {
     z-index: 2; /* Ensure text appears above the video */
 }
 
-/* Styling for the map-slider container */
-.map-slider {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 /* Slider styling */
 #map-slider {
     position: absolute;
@@ -97,28 +87,7 @@ body {
     max-width: 500px; /* Optional: Set max width for the slider */
 }
 
-/* Position the map image inside the slider container */
-.map-image {
-    width: 100%;
-    height: 100%; /* Make the map fill the container */
-    object-fit: contain; /* Ensures the map retains its aspect ratio */
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1; /* Map behind the video */
-}
-
-/* Styling for the map-slider container */
-.map-slider {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* Noise video styling to ensure it stays on top but doesn't block the map */
+/* Noise video styling */
 .noise-video {
     position: absolute;
     top: 0;
@@ -131,28 +100,7 @@ body {
     pointer-events: none; /* Make sure the video does not block the links */
 }
 
-/* Slider styling */
-#map-slider {
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80%;
-    z-index: 3; /* Ensure slider stays above both map and video */
-    max-width: 500px; /* Optional: Set max width for the slider */
-}
-
-/* Position the map image inside the slider container */
-.map-image {
-    width: 100%;
-    height: 100%; /* Make the map fill the container */
-    object-fit: contain; /* Ensures the map retains its aspect ratio */
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1; /* Map behind the video */
-}
-
+/* Slider track with custom ticks */
 input[type="range"] {
     -webkit-appearance: none; /* Remove default styling for WebKit browsers */
     appearance: none; /* Remove default styling */
@@ -160,67 +108,49 @@ input[type="range"] {
     height: 10px; /* Height of the track */
     background: linear-gradient(to right, 
         #ddd 0%, 
+        #ddd 20%, /* Tick at 20% */
         transparent 20%, 
-        #ddd 20%, 
         transparent 50%, 
-        #ddd 50%, 
+        #ddd 50%, /* Tick at 50% */
+        transparent 50%, 
         transparent 80%, 
-        #ddd 80%, 
-        transparent 100%);
-
+        #ddd 80%  /* Tick at 80% */
     );
     outline: none; /* Remove outline */
     border-radius: 5px; /* Rounded track edges */
 }
 
-/* Custom Thumb for WebKit Browsers (Chrome, Safari, Edge) */
+/* Custom Thumb for WebKit Browsers */
 input[type="range"]::-webkit-slider-thumb {
-    -webkit-appearance: none; /* Override default thumb */
-    appearance: none; /* Override default thumb */
-    background: url('effect/clap.png') no-repeat center; /* Use only the image */
-    background-size: contain; /* Scale the image to fit the thumb area */
-    width: 40px; /* Set thumb width */
-    height: 40px; /* Set thumb height */
-    margin-top: -15px; /* Adjust to vertically center on the track (half of thumb height - half of track height) */
-    border: none; /* Remove border */
-    box-shadow: none; /* Remove shadow */
-    cursor: pointer; /* Enable interaction */
-    position: relative; /* Ensure proper positioning */
+    -webkit-appearance: none;
+    appearance: none;
+    background: url('effect/clap.png') no-repeat center; /* Thumb image */
+    background-size: contain; /* Scale image */
+    width: 40px; /* Thumb width */
+    height: 40px; /* Thumb height */
+    margin-top: -15px; /* Vertically center thumb */
+    border: none;
+    cursor: pointer;
 }
 
 /* Custom Thumb for Firefox */
 input[type="range"]::-moz-range-thumb {
-    background: url('effect/clap.png') no-repeat center; /* Use only the image */
-    background-size: contain; /* Scale the image to fit the thumb area */
-    width: 40px; /* Set thumb width */
-    height: 40px; /* Set thumb height */
-    margin-top: -15px; /* Adjust to vertically center on the track */
-    border: none; /* Remove border */
-    box-shadow: none; /* Remove shadow */
-    cursor: pointer; /* Enable interaction */
+    background: url('effect/clap.png') no-repeat center;
+    background-size: contain;
+    width: 40px;
+    height: 40px;
+    border: none;
+    cursor: pointer;
 }
 
 /* Custom Thumb for Internet Explorer and Edge */
 input[type="range"]::-ms-thumb {
-    background: url('effect/clap.png') no-repeat center; /* Use only the image */
-    background-size: contain; /* Scale the image to fit the thumb area */
-    width: 40px; /* Set thumb width */
-    height: 40px; /* Set thumb height */
-    margin-top: -15px; /* Adjust to vertically center on the track */
-    border: none; /* Remove border */
-    box-shadow: none; /* Remove shadow */
-    cursor: pointer; /* Enable interaction */
-}
-
-/* Universal Slider Styling */
-input[type="range"] {
-    -webkit-appearance: none; /* Remove default styling for WebKit browsers */
-    appearance: none; /* Remove default styling */
-    width: 100%; /* Full width */
-    height: 10px; /* Height of the track */
-    background: #ddd; /* Track background color */
-    outline: none; /* Remove outline */
-    border-radius: 5px; /* Rounded track edges */
+    background: url('effect/clap.png') no-repeat center;
+    background-size: contain;
+    width: 40px;
+    height: 40px;
+    border: none;
+    cursor: pointer;
 }
 
 /* Track Styling for WebKit Browsers */
