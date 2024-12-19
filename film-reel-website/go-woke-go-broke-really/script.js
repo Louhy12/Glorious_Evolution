@@ -70,6 +70,64 @@ function vote(choice) {
     document.querySelector('.results-container').style.display = 'block';
 }
 
+const BACKEND_URL = 'http://localhost:3000'; // Replace with your backend URL when deployed
+
+// Submit an answer to the backend
+const submitAnswer = async (answer) => {
+    try {
+        const response = await fetch(`${BACKEND_URL}/submit`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ answer }),
+        });
+
+        if (response.ok) {
+            console.log('Answer submitted successfully');
+            fetchStats(); // Update stats after submission
+        } else {
+            console.error('Failed to submit answer');
+        }
+    } catch (error) {
+        console.error('Error submitting answer:', error);
+    }
+};
+
+// Fetch quiz stats from the backend
+const fetchStats = async () => {
+    try {
+        const response = await fetch(`${BACKEND_URL}/stats`);
+        const data = await response.json();
+
+        const factCount = data.find(item => item._id === 'fact')?.count || 0;
+        const fictionCount = data.find(item => item._id === 'fiction')?.count || 0;
+
+        const total = factCount + fictionCount;
+        const factPercentage = total > 0 ? (factCount / total) * 100 : 0;
+        const fictionPercentage = total > 0 ? (fictionCount / total) * 100 : 0;
+
+        document.getElementById('fact-bar').style.width = `${factPercentage}%`;
+        document.getElementById('fact-bar').textContent = `Fact: ${factPercentage.toFixed(1)}%`;
+
+        document.getElementById('fiction-bar').style.width = `${fictionPercentage}%`;
+        document.getElementById('fiction-bar').textContent = `Fiction: ${fictionPercentage.toFixed(1)}%`;
+    } catch (error) {
+        console.error('Error fetching stats:', error);
+    }
+};
+
+// Add event listeners to the quiz buttons
+document.getElementById('fact-button').addEventListener('click', () => {
+    submitAnswer('fact');
+});
+
+document.getElementById('fiction-button').addEventListener('click', () => {
+    submitAnswer('fiction');
+});
+
+// Fetch stats when the page loads
+window.onload = fetchStats;
+
+
 // Initialize sliders on DOM load
 document.addEventListener("DOMContentLoaded", initializeSliders);
 
