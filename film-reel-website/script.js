@@ -30,8 +30,6 @@ function initializeSliders() {
         // Ensure slider and image elements exist
         if (slider && image) {
             console.log(`Initializing slider: ${sliderId}, folder: ${folder}`); // Debugging output
-
-            // Update image on slider input
             slider.addEventListener("input", function () {
                 const index = this.value; // Get current slider value
                 const newImagePath = `${folder}/${folder.split('/').pop()}${index}.${extension}`; // Build image path with dynamic extension
@@ -39,89 +37,24 @@ function initializeSliders() {
                 image.src = newImagePath; // Update image source
                 image.alt = `${folder.split('/').pop()} ${index}`; // Update alt text
             });
-
-            // Add mouse and touch drag functionality
-            let isDragging = false;
-
-            slider.addEventListener("mousedown", () => { isDragging = true; });
-            slider.addEventListener("mousemove", (event) => {
-                if (isDragging) {
-                    const sliderRect = slider.getBoundingClientRect();
-                    const mouseX = event.clientX || event.touches?.[0]?.clientX;
-                    const value = Math.round(
-                        ((mouseX - sliderRect.left) / sliderRect.width) * (slider.max - slider.min) + parseInt(slider.min, 10)
-                    );
-                    slider.value = Math.min(Math.max(value, slider.min), slider.max); // Clamp value
-                    slider.dispatchEvent(new Event("input")); // Trigger input event to update the image
-                }
-            });
-            slider.addEventListener("mouseup", () => { isDragging = false; });
-            slider.addEventListener("touchstart", () => { isDragging = true; });
-            slider.addEventListener("touchmove", (event) => {
-                if (isDragging) {
-                    const sliderRect = slider.getBoundingClientRect();
-                    const touchX = event.touches[0].clientX;
-                    const value = Math.round(
-                        ((touchX - sliderRect.left) / sliderRect.width) * (slider.max - slider.min) + parseInt(slider.min, 10)
-                    );
-                    slider.value = Math.min(Math.max(value, slider.min), slider.max); // Clamp value
-                    slider.dispatchEvent(new Event("input")); // Trigger input event to update the image
-                }
-            });
-            slider.addEventListener("touchend", () => { isDragging = false; });
         } else {
             console.error(`Slider or image not found for ID: ${sliderId}`); // Debugging output
         }
     });
 }
 
-// Add drag-and-slide functionality for all sliders
-document.querySelectorAll('input[type="range"]').forEach(slider => {
-    let isDragging = false;
+let factCount = 0;
+let fictionCount = 0;
 
-    slider.addEventListener('mousedown', () => {
-        isDragging = true;
-    });
-
-    slider.addEventListener('mousemove', event => {
-        if (isDragging) {
-            const rect = slider.getBoundingClientRect();
-            const offsetX = event.clientX - rect.left;
-            const value = Math.round((offsetX / rect.width) * (slider.max - slider.min) + parseInt(slider.min, 10));
-            slider.value = Math.max(Math.min(value, slider.max), slider.min);
-            slider.dispatchEvent(new Event('input')); // Trigger the input event
-        }
-    });
-
-    slider.addEventListener('mouseup', () => {
-        isDragging = false;
-    });
-
-    slider.addEventListener('mouseleave', () => {
-        isDragging = false; // Stop dragging if cursor leaves slider area
-    });
-
-    // Touch support for mobile devices
-    slider.addEventListener('touchstart', () => {
-        isDragging = true;
-    });
-
-    slider.addEventListener('touchmove', event => {
-        if (isDragging) {
-            const rect = slider.getBoundingClientRect();
-            const touchX = event.touches[0].clientX;
-            const offsetX = touchX - rect.left;
-            const value = Math.round((offsetX / rect.width) * (slider.max - slider.min) + parseInt(slider.min, 10));
-            slider.value = Math.max(Math.min(value, slider.max), slider.min);
-            slider.dispatchEvent(new Event('input')); // Trigger the input event
-        }
-    });
-
-    slider.addEventListener('touchend', () => {
-        isDragging = false;
-    });
-});
-
+function vote(choice) {
+    if (choice === 'fact') {
+        factCount++;
+    } else if (choice === 'fiction') {
+        fictionCount++;
+    }
+    updateChart();
+    showResults();
+}
 
 // Track votes for 'fact' and 'fiction'
 let votes = { fact: 0, fiction: 0 };
