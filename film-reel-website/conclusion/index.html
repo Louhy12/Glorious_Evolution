@@ -129,7 +129,12 @@
                 </p>
 
                 <!-- Slider controls -->
-                <input type="range" id="comment-slider" min="1" max="11" value="1" step="1" list="comment-ticks">
+                <div class="slider-container">
+                    <input type="range" id="comment-slider" min="1" max="11" value="1" step="1">
+                    <div class="slider-ticks" id="slider-ticks">
+                        <!-- Ticks will be dynamically added here if needed -->
+                    </div>
+                </div>
         
                 <!-- Map slider container -->
                 <div class="map-slider">
