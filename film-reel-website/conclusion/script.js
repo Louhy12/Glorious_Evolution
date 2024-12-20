@@ -63,27 +63,40 @@ function addTicks(sliderId, ticksContainerId) {
     const slider = document.getElementById(sliderId);
     const ticksContainer = document.getElementById(ticksContainerId);
     
-    if (!slider || !ticksContainer) return;
+    if (!slider || !ticksContainer) {
+        console.error(`Slider or ticks container not found: ${sliderId}, ${ticksContainerId}`);
+        return;
+    }
 
     const min = parseInt(slider.min, 10);
     const max = parseInt(slider.max, 10);
     const step = parseInt(slider.step, 10) || 1;
 
-    // Calculate the total number of steps
-    const steps = ((max - min) / step) + 1;
+    // Calculate total steps including the min and max
+    const totalSteps = ((max - min) / step) + 1;
 
     // Clear existing ticks
     ticksContainer.innerHTML = '';
 
+    console.log(`Adding ${totalSteps} ticks for slider: ${sliderId}`);
+
     // Add ticks dynamically
-    for (let i = 0; i < steps; i++) {
-        const value = min + i * step; // Calculate the tick value
+    for (let i = 0; i < totalSteps; i++) {
+        const value = min + i * step; // Calculate value for this tick
         const tick = document.createElement('span');
-        tick.style.left = `${(i / (steps - 1)) * 100}%`; // Position ticks evenly
-        tick.setAttribute('data-value', value); // Add the value as an attribute
+        tick.classList.add('tick'); // Add a class for styling (optional)
+        tick.style.left = `${(i / (totalSteps - 1)) * 100}%`; // Evenly distribute ticks
+        tick.setAttribute('data-value', value); // Set tick value as an attribute
+
+        // Add label to the tick (optional)
+        tick.textContent = value; 
+
         ticksContainer.appendChild(tick);
     }
 }
+
+// Call the function for your specific slider
+addTicks('comment-slider', 'slider-ticks');
 
 // Call the function for your specific slider
 addTicks('comment-slider', 'slider-ticks');
