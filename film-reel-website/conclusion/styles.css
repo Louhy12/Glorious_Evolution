@@ -270,22 +270,24 @@ input[type="range"]::-ms-track {
     margin: 20px 0;
 }
 
-/* Position the ticks below the slider */
+/* Position the sticks below or aligned with the slider */
 .ticks {
     display: flex;
     justify-content: space-between;
     position: absolute;
-    top: 30px; /* Adjust as needed to align with slider */
+    top: calc(50% - 5px); /* Adjust '5px' to match half the height of the slider track */
     left: 0;
     right: 0;
+    pointer-events: none; /* Ensure sticks don’t interfere with slider interaction */
 }
 
 .ticks span {
     display: inline-block;
     width: 2px; /* Width of the stick */
-    height: 10px; /* Height of the stick */
+    height: 20px; /* Adjust height to match visual preference */
     background-color: black; /* Stick color */
 }
+
 
 /* Optional: Adding hover effect for film frames */
 .frame:hover {
