@@ -595,4 +595,9 @@ p {
     height: auto;
 }
 
-
+.centered-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0; /* Optional: Add some vertical spacing */
+}
