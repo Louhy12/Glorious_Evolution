@@ -413,7 +413,29 @@
             </video>
             <div class="sprocket"></div>
             <div class="frame-content">
-                <h2 class="frame-title">Matej Part 2</h2> <!-- Title -->
+                <h2 class="frame-title">SuperMan VS SuperWoman: Who's the best cash provider?</h2> <!-- Title -->
+                <p>
+                    So diversity does not impact film revenue? That’s a great point. But how about diversity inside the archetypes? Let’s say we have a woman as a superhero, does it really impact the revenue?
+                    Or a special ethnicity in a non-traditional archetype for them? We have seen previously that there are big disparities in diversity attributes in the archetypes. 
+                    So a handyman is often male and a secretary female in movies, but does this contribute to the revenue? We will analyze if stereotypical archetypes do better in film revenue than non-stereotypical archetypes.
+                </p>
+                <p>
+                    We first did a linear regression with the archetypes predicting the movie revenue. As done in the previous analysis, the linear regression did not predict directly the movie revenue but the residues of release date predicting revenue. 
+                    This is done to adjust for the release date.  We retained the p-values for each archetype. Mind you, we are trying to find out if it statistically influences the revenue, not by how much. 
+                    Then, for each archetype, we did a chi2 test to observe if there is a significant drift in proportions of genders and ethnicities. Finally we plotted the p-values of the diversity in archetypes against the film revenue and did a linear regression. 
+                    The linear regression is important for its p-value. If the p-value is less than 0.5, it means that disparities in roles have an influence on the film revenue, otherwise, it means that there is no significant relationship.
+                </p>
+                <div class="centered-image">
+                    <img src="revenue/revenue5.png" alt="hero" style="width: 100%; height: auto;">
+                </div>
+                <p>
+                    Let's look at the graphs now, particularly the p-values. The p-value when looking at the gender disparities is 0.505. Which is not significant. 
+                    This means that whether a male or female incarnates an archetype it will not have a significant role in the revenue of the movie. 
+                    Put simply, the fact that the superhero in the movie is male or fema does not play a significant role for the revenue. 
+                </p>
+                 <div class="centered-image">
+                    <img src="revenue/revenue6.png" alt="eth" style="width: 100%; height: auto;">
+                </div>               
             </div>
         </div>
 
