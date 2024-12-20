@@ -48,6 +48,16 @@ body {
     line-height: 1.2;
 }
 
+.bottom-text {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 14px;
+    color: #A9A9A9;
+    text-align: center;
+}
+
 /* Content inside the frame */
 .frame-content {
     padding: 20px;
