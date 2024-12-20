@@ -10,6 +10,19 @@ body {
     height: 100vh; /* Ensure the body takes the full viewport height */
 }
 
+.frame-authors {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    font-size: 14px; /* Adjust as needed */
+    color: white; /* Ensure it contrasts with the background */
+    background-color: rgba(0, 0, 0, 0.5); /* Optional: adds a semi-transparent background */
+    padding: 5px 10px;
+    border-radius: 5px; /* Optional: for rounded corners */
+    z-index: 2; /* Ensures it appears above other elements */
+}
+
+
 /* Container for the film reel */
 .film-reel {
     display: flex;
