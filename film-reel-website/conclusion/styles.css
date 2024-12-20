@@ -135,7 +135,7 @@ body {
 #map-slider {
     position: absolute;
     bottom: 10px;
-    left: 50%;
+    left: 100%;
     transform: translateX(-50%);
     width: 80%;
     z-index: 3; /* Ensure slider stays above both map and video */
