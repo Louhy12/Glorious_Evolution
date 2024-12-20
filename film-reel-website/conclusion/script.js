@@ -68,23 +68,23 @@ function addTicks(sliderId, ticksContainerId) {
     const min = parseInt(slider.min, 10);
     const max = parseInt(slider.max, 10);
     const step = parseInt(slider.step, 10) || 1;
-    const range = max - min;
+    const rangeSteps = (max - min) / step;
 
     // Clear existing ticks
     ticksContainer.innerHTML = '';
 
-    for (let i = min; i <= max; i += step) {
+    // Add ticks, ensuring one for each step
+    for (let i = 0; i <= rangeSteps; i++) {
+        const value = min + i * step; // Calculate tick value
         const tick = document.createElement('span');
-        tick.style.left = `${((i - min) / range) * 100}%`;
-        tick.setAttribute('data-value', i); // Optional: Label for tick
+        tick.style.left = `${(i / rangeSteps) * 100}%`;
+        tick.setAttribute('data-value', value); // Optional: Label for tick
         ticksContainer.appendChild(tick);
     }
 }
 
 // Call the function for your slider
 addTicks('comment-slider', 'slider-ticks');
-
-
 
 // Track votes for 'fact' and 'fiction'
 let votes = { fact: 0, fiction: 0 };
