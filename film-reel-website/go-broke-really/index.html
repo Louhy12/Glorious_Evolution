@@ -234,13 +234,78 @@
             </video>
             <div class="sprocket"></div>
             <div class="frame-content">
-                <h2 class="frame-title">Variable Selection (or Discrimination😉))</h2> <!-- Title -->
+                <h2 class="frame-title">Variable Selection (or Discrimination😉)</h2> <!-- Title -->
                 <p>
                     Our dataset had multicolinearity issues. Hence before doing any regression we first had to select the most important features in our dataset. 
                     To achieve this we used the LASSO with cross-validation to select features of interest for estimating the Box-Office. 
                     It was of interest that all the diversities scores where selected by the Lasso CV.
                 </p>
-                <img src="revenue/revenue3.png" alt="Revenue vs Diversity" style="width: 100%; height: auto;">
+                <img src="revenue/revenue3.jpeg" alt="Revenue vs Diversity" style="width: 100%; height: auto;">
+            </div>
+        </div>
+
+        <!-- Frame 18: Maurice Part 3 -->
+        <div class="frame">
+            <video class="noise-video" autoplay loop muted>
+                <source src="videos/noise.mp4" type="video/mp4"> <!-- Path to your noise video -->
+            </video>
+            <div class="sprocket"></div>
+            <div class="frame-content">
+                <h2 class="frame-title"></h2> <!-- Title -->
+                <p>
+                   Then the residual analysis permitted the following results:
+                </p>
+                
+                <table>
+                        <caption>Residual Regression</caption>
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>coef</th>
+                                <th>P &gt; |t|</th>
+                                <th>[0.025</th>
+                                <th>0.975]</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>age residual coefficient</strong></td>
+                                <td>0.0961</td>
+                                <td>0.000</td>
+                                <td>0.044</td>
+                                <td>0.149</td>
+                            </tr>
+                            <tr>
+                                <td><strong>height residual coefficient</strong></td>
+                                <td>0.0811</td>
+                                <td>0.002</td>
+                                <td>0.029</td>
+                                <td>0.133</td>
+                            </tr>
+                            <tr>
+                                <td><strong>ethnicity residual coefficient</strong></td>
+                                <td>0.0593</td>
+                                <td>0.043</td>
+                                <td>0.002</td>
+                                <td>0.117</td>
+                            </tr>
+                            <tr>
+                                <td><strong>gender residual coefficient</strong></td>
+                                <td>0.0009</td>
+                                <td>0.971</td>
+                                <td>-0.051</td>
+                                <td>0.053</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Foreign Actor Proportion residual coefficient</strong></td>
+                                <td>-0.0750</td>
+                                <td>0.006</td>
+                                <td>-0.129</td>
+                                <td>-0.021</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
             </div>
         </div>
 
