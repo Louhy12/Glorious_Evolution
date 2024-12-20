@@ -59,6 +59,33 @@ function initializeSliders() {
     });
 }
 
+function addTicks(sliderId, ticksContainerId) {
+    const slider = document.getElementById(sliderId);
+    const ticksContainer = document.getElementById(ticksContainerId);
+    
+    if (!slider || !ticksContainer) return;
+
+    const min = parseInt(slider.min, 10);
+    const max = parseInt(slider.max, 10);
+    const step = parseInt(slider.step, 10) || 1;
+    const range = max - min;
+
+    // Clear existing ticks
+    ticksContainer.innerHTML = '';
+
+    for (let i = min; i <= max; i += step) {
+        const tick = document.createElement('span');
+        tick.style.left = `${((i - min) / range) * 100}%`;
+        tick.setAttribute('data-value', i); // Optional: Label for tick
+        ticksContainer.appendChild(tick);
+    }
+}
+
+// Call the function for your slider
+addTicks('comment-slider', 'slider-ticks');
+
+
+
 // Track votes for 'fact' and 'fiction'
 let votes = { fact: 0, fiction: 0 };
 
