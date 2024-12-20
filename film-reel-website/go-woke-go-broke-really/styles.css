@@ -30,19 +30,17 @@ body {
     overflow: hidden;
     padding: 20px;
     font-family: 'Arial', sans-serif;
+    display: flex; /* Enable flexbox */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
 }
 
 /* Title and subtitle wrapper in the first frame */
 .first-frame .text-wrapper {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    z-index: 2;
+    text-align: center; /* Center-align the text within the wrapper */
     display: flex;
     flex-direction: column; /* Stack title and subtitle vertically */
-    align-items: center; /* Center-align the text */
+    align-items: center; /* Center-align the content */
     gap: 10px; /* Add spacing between the title and subtitle */
 }
 
@@ -81,7 +79,6 @@ body {
     margin-bottom: 20px; /* Add space below the title */
     z-index: 2; /* Ensure it appears above the noise video */
 }
-
 
 /* Styling for the frame content */
 .frame-content p {
