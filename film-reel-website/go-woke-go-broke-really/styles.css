@@ -519,3 +519,61 @@ p {
 .trend-images img:hover {
     transform: scale(1.05);
 }
+
+/* Position fixe en haut à droite */
+.sticky {
+    position: fixed;
+    top: 20px; /* Distance depuis le haut de la page */
+    right: 20px; /* Distance depuis la droite de la page */
+    width: 250px; /* Taille du cadre */
+    z-index: 1000; /* Priorité sur les autres éléments */
+    font-family: Arial, sans-serif; /* Change font to Arial */
+}
+
+/* Styles du bouton collapsible */
+.collapsible {
+    background-color: #696969; /* Couleur du bouton (fond) */
+    color: white; /* Couleur du texte */
+    cursor: pointer;
+    padding: 10px 15px;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 16px;
+    border-radius: 5px; /* Coins arrondis */
+    width: 100%;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Ombre */
+    font-family: Arial, sans-serif; /* Change font to Arial */
+}
+
+.collapsible:hover {
+    background-color: #A0A0A0; /* Changement de couleur au survol */
+}
+
+/* Styles du contenu caché */
+.content {
+    padding: 10px 15px;
+    display: none; /* Caché par défaut */
+    border: 1px solid #F0F0F0; /* Bordure */
+    border-radius: 5px;
+    background-color: #F0F0F0; /* Fond clair personnalisé (exemple: bleu clair) */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Ombre */
+    margin-top: 10px;
+    font-size: 14px;
+    color: #000000; /* Couleur du texte (noir) */
+    font-family: Arial, sans-serif; /* Change font to Arial */
+    overflow: hidden;
+}
+
+/* Transition for smooth opening/closing */
+.content {
+    transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+    max-height: 0;
+    opacity: 0;
+}
+
+.content[style*="display: block"] {
+    max-height: 500px; /* Taille maximale pour l'animation */
+    opacity: 1;
+}
+
