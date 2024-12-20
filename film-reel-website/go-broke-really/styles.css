@@ -526,6 +526,12 @@ p {
     margin-top: 20px;
 }
 
+.table-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
 .pretty-table {
     border-collapse: collapse;
     width: 80%;
@@ -547,6 +553,10 @@ p {
     border: 1px solid #add8e6; /* Baby blue border */
     text-align: center;
     padding: 10px;
+}
+
+.pretty-table td:first-child {
+    text-align: left; /* Left-align text in the first column */
 }
 
 .pretty-table thead th {
