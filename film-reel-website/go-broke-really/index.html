@@ -208,7 +208,22 @@
             </video>
             <div class="sprocket"></div>
             <div class="frame-content">
-                <h2 class="frame-title">Maurice Part 1</h2> <!-- Title -->
+                <h2 class="frame-title">Box Office Revenue VS Diversity - Fight?</h2> <!-- Title -->
+                <p>
+                    The first naive approach would be to regress Box Office revenue on the different diversity scores. 
+                    However, as shown in the previous plots, both diversity scores and Box Office revenue exhibit a positive trend over time. 
+                    This meant that time was a confounding factor that could lead to spurious correlations. 
+                    To account for this time-based trend, we need to adjust for the effect of time in our analysis.
+                </p>
+                <p>
+                    One possible solution is to conduct residual analysis. The core idea behind residual analysis is to first regress both the diversity scores and Box Office revenue on control variables (such as time or other factors that may impact both).
+                    By doing so, we can isolate the variations in diversity scores and Box Office revenue that are not explained by these control variables. 
+                    This helps remove the influence of time, allowing for a clearer examination of the relationship between diversity and Box Office performance.
+                </p>
+                <p>
+                    Once we’ve obtained the residuals (i.e., the portion of the diversity scores and Box Office revenue that is independent of time), we can then perform a linear regression on these residuals. 
+                    This method allows us to more accurately capture the relationship between diversity and Box Office revenue without the confounding influence of the release date or other variables.
+                </p>
             </div>
         </div>
 
@@ -219,7 +234,13 @@
             </video>
             <div class="sprocket"></div>
             <div class="frame-content">
-                <h2 class="frame-title">Maurice Part 2</h2> <!-- Title -->
+                <h2 class="frame-title">Variable Selection (or Discrimination😉))</h2> <!-- Title -->
+                <p>
+                    Our dataset had multicolinearity issues. Hence before doing any regression we first had to select the most important features in our dataset. 
+                    To achieve this we used the LASSO with cross-validation to select features of interest for estimating the Box-Office. 
+                    It was of interest that all the diversities scores where selected by the Lasso CV.
+                </p>
+                <img src="revenue/revenue3.png" alt="Revenue vs Diversity" style="width: 100%; height: auto;">
             </div>
         </div>
 
