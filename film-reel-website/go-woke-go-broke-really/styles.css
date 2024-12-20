@@ -76,6 +76,7 @@ body {
     margin-bottom: 20px; /* Add space below the subtitle */
     z-index: 1; 
     line-height: 1.5; /* Improve readability */
+    position: absolute;
 }
 
 /* Content inside the frame */
