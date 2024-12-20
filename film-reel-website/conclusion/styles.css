@@ -263,6 +263,22 @@ input[type="range"]::-ms-track {
     height: 10px;
 }
 
+/* Styling for the datalist ticks */
+datalist {
+    display: flex;
+    justify-content: space-between;
+    margin-top: -20px; /* Adjust the position above/below the slider track */
+    pointer-events: none; /* Prevent interaction */
+}
+
+datalist option {
+    display: block;
+    width: 1px;
+    height: 10px;
+    background: #000; /* Tick color */
+    margin: 0;
+}
+
 /* Optional: Adding hover effect for film frames */
 .frame:hover {
     transform: scale(1.02); /* Slight zoom on hover */
