@@ -573,3 +573,26 @@ p {
     background-color: #e0f7ff; /* Slightly brighter blue on hover */
     cursor: pointer;
 }
+
+.flex-container {
+    display: flex;
+    gap: 20px; /* Space between table and image */
+    align-items: flex-start; /* Align top edges of table and image */
+    margin-top: 10px;
+}
+
+.table-container {
+    flex: 1; /* Allow the table to take up remaining space */
+}
+
+.image-container {
+    flex: 1; /* Allow the image to take up remaining space */
+    text-align: center; /* Center the image inside its container */
+}
+
+.image-container img {
+    max-width: 100%; /* Ensure image fits within the container */
+    height: auto;
+}
+
+
