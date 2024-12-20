@@ -9,6 +9,28 @@ function autoScroll() {
     if (scrollAmount >= filmReel.scrollHeight) scrollAmount = 0;
 }
 
+function createStickMarks(slider, rangeMin, rangeMax) {
+    const track = slider.closest('.slider-container'); // Get the slider container
+    const rangeStep = (rangeMax - rangeMin) / 2; // Calculate steps (e.g., 3 -> 0, 1, 2, 3)
+    const stickMarksContainer = document.createElement('div');
+    stickMarksContainer.classList.add('slider-track');
+    track.appendChild(stickMarksContainer); // Add to slider container
+
+    // Create stick marks and labels at the corresponding positions
+    for (let i = 0; i <= rangeMax - rangeMin; i++) {
+        const stickMark = document.createElement('div');
+        stickMark.classList.add('stick-mark');
+        stickMark.style.left = `${(i / (rangeMax - rangeMin)) * 100}%`; // Position stick
+
+        const stickLabel = document.createElement('div');
+        stickLabel.classList.add('stick-label');
+        stickLabel.textContent = `${(i / (rangeMax - rangeMin)) * 100}%`; // Percentage label
+        stickLabel.style.left = `${(i / (rangeMax - rangeMin)) * 100}%`; // Position label
+
+        stickMarksContainer.appendChild(stickMark);
+        stickMarksContainer.appendChild(stickLabel);
+    }
+}
 
 function initializeSliders() {
     // Map of slider IDs to folder paths
@@ -31,6 +53,7 @@ function initializeSliders() {
         // Ensure slider and image elements exist
         if (slider && image) {
             console.log(`Initializing slider: ${sliderId}, folder: ${folder}`); // Debugging output
+            createStickMarks(slider, rangeMin, rangeMax); // Create stick marks on the track
             slider.addEventListener("input", function () {
                 const index = this.value; // Get current slider value
                 const newImagePath = `${folder}/${folder.split('/').pop()}${index}.${extension}`; // Build image path with dynamic extension
