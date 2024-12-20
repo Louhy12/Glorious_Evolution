@@ -66,11 +66,16 @@ body {
     line-height: 1.2;
 }
 
-.first-frame .subtitle {
-    font-family: Arial, sans-serif; /* Fallback font for subtitle */
-    font-size: 1rem; /* Adjust font size for subtitle */
-    color: #000;
-    margin: 10px 0 0; /* Space above the subtitle */
+/* Subtitle styling */
+.frame-subtitle {
+    font-family: 'Arial', sans-serif; /* Use Arial or any font of your choice */
+    font-size: 1.5rem; /* Adjust the size to be smaller than the title */
+    color: #555; /* Gray text for subtitles */
+    text-align: center; /* Center-align the subtitle */
+    margin-top: 10px; /* Add some space above the subtitle */
+    margin-bottom: 20px; /* Add space below the subtitle */
+    z-index: 1; 
+    line-height: 1.5; /* Improve readability */
 }
 
 /* Content inside the frame */
