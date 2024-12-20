@@ -57,7 +57,7 @@ body {
 /* Subtitle styling */
 .first-frame .frame-subtitle {
     font-family: 'Arial', sans-serif; /* Use Arial or any font of your choice */
-    font-size: 1.5rem; /* Adjust the size to be smaller than the title */
+    font-size: 0.5rem; /* Adjust the size to be smaller than the title */
     color: #555; /* Gray text for subtitles */
     margin: 0; /* Remove default margins */
     line-height: 1.5; /* Improve readability */
