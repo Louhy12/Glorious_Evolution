@@ -41,7 +41,7 @@ body {
     display: flex;
     flex-direction: column; /* Stack title and subtitle vertically */
     align-items: center; /* Center-align the content horizontally */
-    gap: 35px; /* Add spacing between the title and subtitle */
+    gap: 60px; /* Add spacing between the title and subtitle */
 }
 
 /* Title text styling */
