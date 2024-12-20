@@ -333,6 +333,7 @@ datalist option {
     color: #0066cc; /* Link color */
     text-decoration: none;
     transition: color 0.3s ease;
+    margin-top: -15px;
     z-index: 4; /* Ensure links have the highest z-index */
 }
 
