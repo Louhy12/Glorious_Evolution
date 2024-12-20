@@ -13,7 +13,7 @@ body {
 /* Container for the film reel */
 .film-reel {
     display: flex;
-    flex-direction: column;  /* Stack frames vertically */
+    flex-direction: column; /* Stack frames vertically */
     align-items: center;
     margin-top: 20px; /* Adjust as needed */
 }
@@ -28,14 +28,14 @@ body {
     border: 10px solid black; /* Black border around each frame */
     border-radius: 5px; /* Slightly rounded corners */
     overflow: hidden;
-    padding: 20px;
+    padding: 0; /* Remove internal padding */
     font-family: 'Arial', sans-serif;
     display: flex; /* Enable flexbox */
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
 }
 
-/* Title and subtitle wrapper in the first frame */
+/* Title and subtitle wrapper */
 .first-frame .text-wrapper {
     text-align: center; /* Center-align the text within the wrapper */
     display: flex;
@@ -62,23 +62,6 @@ body {
     line-height: 1.5; /* Improve readability */
 }
 
-/* Content inside the frame */
-.frame-content {
-    padding: 20px;
-    background-color: #ffffff; /* Light gray background for content */
-    height: 100%;
-    overflow: auto; /* If content exceeds frame, scroll */
-}
-
-/* Styling for the frame title */
-.frame-title {
-    font-family: 'Abril Fatface', cursive; /* Use Abril Fatface for the title */
-    font-size: 2rem; /* Adjust title size */
-    color: #000; /* Black text color */
-    text-align: center; /* Center the title */
-    margin-bottom: 20px; /* Add space below the title */
-    z-index: 2; /* Ensure it appears above the noise video */
-}
 
 /* Styling for the frame content */
 .frame-content p {
