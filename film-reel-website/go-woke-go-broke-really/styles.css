@@ -32,22 +32,7 @@ body {
     font-family: 'Arial', sans-serif;
 }
 
-/* Title text in the first frame */
-.first-frame .title {
-    font-family: 'Abril Fatface', cursive; /* Apply Abril Fatface font */
-    font-size: 3.5rem; /* Huge size for the title */
-    text-align: center;
-    color: #000;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 2;
-    margin: 0;
-    padding: 0;
-    line-height: 1.2;
-}
-
+/* Title and subtitle wrapper in the first frame */
 .first-frame .text-wrapper {
     position: absolute;
     top: 50%;
@@ -55,28 +40,28 @@ body {
     transform: translate(-50%, -50%);
     text-align: center;
     z-index: 2;
+    display: flex;
+    flex-direction: column; /* Stack title and subtitle vertically */
+    align-items: center; /* Center-align the text */
+    gap: 10px; /* Add spacing between the title and subtitle */
 }
 
+/* Title text styling */
 .first-frame .title {
     font-family: 'Abril Fatface', cursive; /* Apply Abril Fatface font */
     font-size: 3.5rem; /* Huge size for the title */
     color: #000;
-    margin: 0;
-    padding: 0;
-    line-height: 1.2;
+    margin: 0; /* Remove default margins */
+    line-height: 1.2; /* Adjust line spacing */
 }
 
 /* Subtitle styling */
-.frame-subtitle {
+.first-frame .frame-subtitle {
     font-family: 'Arial', sans-serif; /* Use Arial or any font of your choice */
     font-size: 1.5rem; /* Adjust the size to be smaller than the title */
     color: #555; /* Gray text for subtitles */
-    text-align: center; /* Center-align the subtitle */
-    margin-top: 10px; /* Add some space above the subtitle */
-    margin-bottom: 20px; /* Add space below the subtitle */
-    z-index: 1; 
+    margin: 0; /* Remove default margins */
     line-height: 1.5; /* Improve readability */
-    position: absolute;
 }
 
 /* Content inside the frame */
@@ -96,6 +81,7 @@ body {
     margin-bottom: 20px; /* Add space below the title */
     z-index: 2; /* Ensure it appears above the noise video */
 }
+
 
 /* Styling for the frame content */
 .frame-content p {
