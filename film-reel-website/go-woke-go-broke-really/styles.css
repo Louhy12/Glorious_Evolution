@@ -48,21 +48,29 @@ body {
     line-height: 1.2;
 }
 
-.frame-content {
-    text-align: center; /* Optional: Center-align content */
-    margin: 0 auto; /* Centers the content within the frame */
+.first-frame .text-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 2;
 }
 
-.title {
-    font-size: 24px; /* Adjust font size for title */
-    font-weight: bold; /* Make the title bold */
-    margin-bottom: 10px; /* Add space below the title */
+.first-frame .title {
+    font-family: 'Abril Fatface', cursive; /* Apply Abril Fatface font */
+    font-size: 3.5rem; /* Huge size for the title */
+    color: #000;
+    margin: 0;
+    padding: 0;
+    line-height: 1.2;
 }
 
-.subtitle {
-    font-size: 16px; /* Adjust font size for subtitle */
-    font-weight: normal; /* Ensure subtitle is not bold */
-    margin-top: 0; /* Remove additional margin if needed */
+.first-frame .subtitle {
+    font-family: Arial, sans-serif; /* Fallback font for subtitle */
+    font-size: 1rem; /* Adjust font size for subtitle */
+    color: #000;
+    margin: 10px 0 0; /* Space above the subtitle */
 }
 
 /* Content inside the frame */
