@@ -278,6 +278,7 @@ input[type="range"]::-ms-track {
     top: -15px; /* Adjust as needed to align with slider */
     left: 0;
     right: 0;
+    z-index: 2;
 }
 
 .ticks span {
