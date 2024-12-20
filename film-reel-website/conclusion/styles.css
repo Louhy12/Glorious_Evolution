@@ -445,7 +445,7 @@ p {
     left: 0;
     width: 80%;        /* Full width */
     display: none;      /* Initially hidden */
-    z-index: 2;         /* Ensures it's above the quiz buttons */
+    z-index: 1;         /* Ensures it's above the quiz buttons */
 }
 
 /* Result bars styling (Restored original color scheme) */
