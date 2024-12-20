@@ -68,20 +68,26 @@ function addTicks(sliderId, ticksContainerId) {
     const min = parseInt(slider.min, 10);
     const max = parseInt(slider.max, 10);
     const step = parseInt(slider.step, 10) || 1;
-    const rangeSteps = (max - min) / step;
+
+    // Calculate the total number of steps
+    const steps = ((max - min) / step) + 1;
 
     // Clear existing ticks
     ticksContainer.innerHTML = '';
 
-    // Add ticks, ensuring one for each step
-    for (let i = 0; i <= rangeSteps; i++) {
-        const value = min + i * step; // Calculate tick value
+    // Add ticks dynamically
+    for (let i = 0; i < steps; i++) {
+        const value = min + i * step; // Calculate the tick value
         const tick = document.createElement('span');
-        tick.style.left = `${(i / rangeSteps) * 100}%`;
-        tick.setAttribute('data-value', value); // Optional: Label for tick
+        tick.style.left = `${(i / (steps - 1)) * 100}%`; // Position ticks evenly
+        tick.setAttribute('data-value', value); // Add the value as an attribute
         ticksContainer.appendChild(tick);
     }
 }
+
+// Call the function for your specific slider
+addTicks('comment-slider', 'slider-ticks');
+
 
 // Call the function for your slider
 addTicks('comment-slider', 'slider-ticks');
