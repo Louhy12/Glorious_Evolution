@@ -27,6 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function initializeSliders() {
+    // Map of slider IDs to folder paths
     const sliders = [
         { sliderId: "diversity-slider", imageId: "diversity-image", folder: "map/diversity", extension: "jpg" },
         { sliderId: "height-slider", imageId: "height-image", folder: "map/height", extension: "jpg" },
@@ -35,30 +36,16 @@ function initializeSliders() {
         { sliderId: "ethnicity-slider", imageId: "ethnicity-image", folder: "map/ethnicity", extension: "jpg" },
         { sliderId: "foreign-slider", imageId: "foreign-image", folder: "map/foreign", extension: "jpg" },
         { sliderId: "comment-slider", imageId: "comment-image", folder: "comment", extension: "png" },
-        { sliderId: "movie-slider", imageId: "movie-image", folder: "movie", extension: "png" }
+        { sliderId: "movie-slider", imageId: "movie-image", folder: "movie", extension: "png"} 
     ];
 
     sliders.forEach(({ sliderId, imageId, folder, extension }) => {
         const slider = document.getElementById(sliderId);
         const image = document.getElementById(imageId);
-        const datalist = document.querySelector(`datalist#${slider.getAttribute('list')}`);
 
         // Ensure slider and image elements exist
         if (slider && image) {
             console.log(`Initializing slider: ${sliderId}, folder: ${folder}`); // Debugging output
-            
-            // Populate ticks
-            const min = parseInt(slider.min, 10);
-            const max = parseInt(slider.max, 10);
-            const step = parseInt(slider.step, 10) || 1;
-            datalist.innerHTML = ''; // Clear existing ticks
-
-            for (let i = min; i <= max; i += step) {
-                const option = document.createElement('option');
-                option.value = i;
-                datalist.appendChild(option);
-            }
-
             slider.addEventListener("input", function () {
                 const index = this.value; // Get current slider value
                 const newImagePath = `${folder}/${folder.split('/').pop()}${index}.${extension}`; // Build image path with dynamic extension
