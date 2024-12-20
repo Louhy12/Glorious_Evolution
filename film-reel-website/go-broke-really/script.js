@@ -26,6 +26,23 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+document.addEventListener('DOMContentLoaded', function () {
+    // Sélectionne tous les éléments ayant la classe "collapsible"
+    const collapsible = document.querySelector('.collapsible');
+    const content = document.querySelector('.content');
+
+    // Ajoute un écouteur d'événement au clic
+    collapsible.addEventListener('click', function () {
+        // Si le contenu est déjà visible, on le cache
+        if (content.style.display === 'block') {
+            content.style.display = 'none';
+        } else {
+            // Sinon, on l'affiche
+            content.style.display = 'block';
+        }
+    });
+});
+
 function initializeSliders() {
     // Map of slider IDs to folder paths
     const sliders = [
