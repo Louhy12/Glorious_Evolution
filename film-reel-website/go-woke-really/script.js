@@ -40,26 +40,24 @@ function initializeSliders() {
         { sliderId: "polynomial-slider", imageId: "polynomial-image", folder: "polynomial", extension: "png"} 
     ];
 
-        sliders.forEach(({ sliderId, imageId, folder, extension, sticks }) => {
-            const slider = document.getElementById(sliderId);
-            const image = document.getElementById(imageId);
-    
-            // Ensure slider and image elements exist
-            if (slider && image) {
-                slider.addEventListener("input", function () {
-                    const value = parseInt(this.value, 10);
-                    const closestStick = sticks.reduce((prev, curr) => 
-                        Math.abs(curr - value) < Math.abs(prev - value) ? curr : prev
-                    );
-                    slider.value = closestStick; // Snap to the closest sticky position
-    
-                    const newImagePath = `${folder}/${folder.split('/').pop()}${closestStick}.${extension}`;
-                    image.src = newImagePath; // Update image source
-                    image.alt = `${folder.split('/').pop()} ${closestStick}`; // Update alt text
-                });
-            } else {
-                console.error(`Slider or image not found for ID: ${sliderId}`);
-            }
+    sliders.forEach(({ sliderId, imageId, folder, extension }) => {
+        const slider = document.getElementById(sliderId);
+        const image = document.getElementById(imageId);
+
+        // Ensure slider and image elements exist
+        if (slider && image) {
+            console.log(`Initializing slider: ${sliderId}, folder: ${folder}`); // Debugging output
+            slider.addEventListener("input", function () {
+                const index = this.value; // Get current slider value
+                const newImagePath = `${folder}/${folder.split('/').pop()}${index}.${extension}`; // Build image path with dynamic extension
+                console.log(`Slider ${sliderId}: Updating to ${newImagePath}`); // Debugging output
+                image.src = newImagePath; // Update image source
+                image.alt = `${folder.split('/').pop()} ${index}`; // Update alt text
+            });
+        } else {
+            console.error(`Slider or image not found for ID: ${sliderId}`); // Debugging output
+        }
+    });
 }
 
 // Track votes for 'fact' and 'fiction'
