@@ -263,6 +263,24 @@ input[type="range"]::-ms-track {
     height: 10px;
 }
 
+/* Position the ticks below the slider */
+.ticks {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    top: -15px; /* Adjust as needed to align with slider */
+    left: 0;
+    right: 0;
+    z-index: 2;
+}
+
+.ticks span {
+    display: inline-block;
+    width: 2px; /* Width of the stick */
+    height: 10px; /* Height of the stick */
+    background-color: black; /* Stick color */
+}
+
 /* Optional: Adding hover effect for film frames */
 .frame:hover {
     transform: scale(1.02); /* Slight zoom on hover */
