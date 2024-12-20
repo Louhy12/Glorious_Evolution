@@ -270,22 +270,22 @@ input[type="range"]::-ms-track {
     margin: 20px 0;
 }
 
-/* Position the sticks below or aligned with the slider */
+/* Ticks aligned on the track */
 .ticks {
-    display: flex;
-    justify-content: space-between;
     position: absolute;
-    top: calc(50% - 5px); /* Adjust '5px' to match half the height of the slider track */
+    top: 50%; /* Align with the middle of the slider */
     left: 0;
     right: 0;
-    pointer-events: none; /* Ensure sticks don’t interfere with slider interaction */
+    transform: translateY(-50%); /* Center vertically */
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none; /* Ensure no interference with slider */
 }
 
 .ticks span {
-    display: inline-block;
-    width: 2px; /* Width of the stick */
-    height: 20px; /* Adjust height to match visual preference */
-    background-color: black; /* Stick color */
+    width: 2px; /* Tick width */
+    height: 15px; /* Slightly taller than the track */
+    background-color: black; /* Tick color */
 }
 
 
