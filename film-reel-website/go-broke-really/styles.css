@@ -519,3 +519,47 @@ p {
 .trend-images img:hover {
     transform: scale(1.05);
 }
+
+.table-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.pretty-table {
+    border-collapse: collapse;
+    width: 80%;
+    font-family: Arial, sans-serif;
+    margin: 0 auto;
+    background-color: #f9f9ff; /* Subtle background */
+    border: 2px solid #add8e6; /* Baby blue border */
+}
+
+.pretty-table caption {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #4b4b7e; /* Happy indigo for the caption */
+}
+
+.pretty-table th,
+.pretty-table td {
+    border: 1px solid #add8e6; /* Baby blue border */
+    text-align: center;
+    padding: 10px;
+}
+
+.pretty-table thead th {
+    background-color: #d9eefb; /* Light blue header */
+    color: #003366; /* Darker blue for text */
+    font-weight: bold;
+}
+
+.pretty-table tbody tr:nth-child(even) {
+    background-color: #f2f9ff; /* Light alternate row color */
+}
+
+.pretty-table tbody tr:hover {
+    background-color: #e0f7ff; /* Slightly brighter blue on hover */
+    cursor: pointer;
+}
