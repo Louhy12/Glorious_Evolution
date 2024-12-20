@@ -132,16 +132,12 @@ body {
 }
 
 .loop-video {
-    position: relative;
-    top: 0;
-    left: 0;
-    width: 80%;
-    max-width: 400px; /* Set a maximum width for consistency */
+    width: 100%; /* Make the video responsive */
+    max-width: 800px; /* Set a maximum width for the video */
     height: auto; /* Maintain aspect ratio */
-    margin: 0 auto; /* Center the video horizontally within the frame */
-    border-radius: 10px; /* Optional: Add rounded corners for aesthetics */
-    z-index: 1; /* Video above the map */
-    pointer-events: none; /* Make sure the video does not block the links */
+    border-radius: 10px; /* Optional: Add rounded corners */
+    z-index: 1; /* Ensure video stays above other elements */
+    pointer-events: none; /* Prevent interactions with the video */
 }
 
 /* Slider styling */
