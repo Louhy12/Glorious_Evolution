@@ -6,6 +6,86 @@
     <title>Film Reel Website</title>
     <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet"> <!-- Add this line -->
     <link rel="stylesheet" href="styles.css"> <!-- Link to CSS file -->
+    <title>Residual Regression Table</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        table {
+            width: 90%;
+            max-width: 800px;
+            border-collapse: collapse;
+            margin: 20px auto;
+            background: white;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        caption {
+            font-size: 1.8em;
+            font-weight: bold;
+            padding: 15px;
+            background: #fda085;
+            color: white;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        thead {
+            background: #f6d365;
+            color: #fff;
+        }
+
+        th, td {
+            text-align: center;
+            padding: 12px 15px;
+        }
+
+        th {
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        tbody tr:nth-child(even) {
+            background: #fdf3e6;
+        }
+
+        tbody tr:nth-child(odd) {
+            background: #fff;
+        }
+
+        tbody tr:hover {
+            background: #ffecd2;
+            transform: scale(1.01);
+            transition: 0.2s ease;
+        }
+
+        td {
+            font-size: 0.95em;
+            color: #555;
+        }
+
+        td strong {
+            font-weight: bold;
+            color: #333;
+        }
+
+        @media (max-width: 600px) {
+            table {
+                font-size: 0.8em;
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="film-reel">
@@ -255,13 +335,12 @@
                 <p>
                    Then the residual analysis permitted the following results:
                 </p>
-                
                 <table>
-                        <caption>Residual Regression</caption>
+                        <caption>✨ Residual Regression ✨</caption>
                         <thead>
                             <tr>
                                 <th></th>
-                                <th>coef</th>
+                                <th>Coef</th>
                                 <th>P &gt; |t|</th>
                                 <th>[0.025</th>
                                 <th>0.975]</th>
@@ -269,35 +348,35 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td><strong>age residual coefficient</strong></td>
+                                <td><strong>Age Residual Coefficient</strong></td>
                                 <td>0.0961</td>
                                 <td>0.000</td>
                                 <td>0.044</td>
                                 <td>0.149</td>
                             </tr>
                             <tr>
-                                <td><strong>height residual coefficient</strong></td>
+                                <td><strong>Height Residual Coefficient</strong></td>
                                 <td>0.0811</td>
                                 <td>0.002</td>
                                 <td>0.029</td>
                                 <td>0.133</td>
                             </tr>
                             <tr>
-                                <td><strong>ethnicity residual coefficient</strong></td>
+                                <td><strong>Ethnicity Residual Coefficient</strong></td>
                                 <td>0.0593</td>
                                 <td>0.043</td>
                                 <td>0.002</td>
                                 <td>0.117</td>
                             </tr>
                             <tr>
-                                <td><strong>gender residual coefficient</strong></td>
+                                <td><strong>Gender Residual Coefficient</strong></td>
                                 <td>0.0009</td>
                                 <td>0.971</td>
                                 <td>-0.051</td>
                                 <td>0.053</td>
                             </tr>
                             <tr>
-                                <td><strong>Foreign Actor Proportion residual coefficient</strong></td>
+                                <td><strong>Foreign Actor Proportion Residual Coefficient</strong></td>
                                 <td>-0.0750</td>
                                 <td>0.006</td>
                                 <td>-0.129</td>
