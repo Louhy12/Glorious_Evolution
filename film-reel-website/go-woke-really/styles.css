@@ -554,9 +554,9 @@ p {
 .content {
     padding: 10px 15px;
     display: none; /* Caché par défaut */
-    border: 1px solid #BEBEBE; /* Bordure */
+    border: 1px solid #F0F0F0; /* Bordure */
     border-radius: 5px;
-    background-color: #BEBEBE; /* Fond clair personnalisé (exemple: bleu clair) */
+    background-color: #F0F0F0; /* Fond clair personnalisé (exemple: bleu clair) */
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Ombre */
     margin-top: 10px;
     font-size: 14px;
