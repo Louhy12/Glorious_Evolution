@@ -266,21 +266,23 @@ input[type="range"]::-ms-track {
 /* Ticks container styling */
 .slider-ticks {
     position: relative;
-    top: 50%;
+    top: 50%; /* Adjusted positioning for better alignment */
     left: 0;
     width: 100%;
     height: 10px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* This may be overridden by dynamic positioning in JS */
     pointer-events: none; /* Prevent interfering with slider */
 }
 
+/* Styling each tick */
 .slider-ticks span {
-    position: relative;
-    height: 10px;
-    width: 2px;
-    background: #000;
-    transform: translateY(-50%);
+    position: relative; /* Use absolute positioning for dynamic alignment */
+    bottom: -10px; /* Place ticks below the slider track */
+    height: 10px; /* Height of the tick */
+    width: 2px; /* Width of the tick */
+    background: #000; /* Black color for visibility */
+    transform: translateX(-50%); /* Center-align the ticks */
 }
 
 
