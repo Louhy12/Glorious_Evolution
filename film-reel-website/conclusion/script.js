@@ -36,7 +36,7 @@ function initializeSliders() {
         { sliderId: "ethnicity-slider", imageId: "ethnicity-image", folder: "map/ethnicity", extension: "jpg" },
         { sliderId: "foreign-slider", imageId: "foreign-image", folder: "map/foreign", extension: "jpg" },
         { sliderId: "comment-slider", imageId: "comment-image", folder: "comment", extension: "png" },
-        { sliderId: "movie-slider", imageId: "movie-image", folder: "movie", extension: "png"} 
+        { sliderId: "movie-slider", imageId: "movie-image", folder: "movie", extension: "png" }
     ];
 
     sliders.forEach(({ sliderId, imageId, folder, extension }) => {
@@ -46,6 +46,24 @@ function initializeSliders() {
         // Ensure slider and image elements exist
         if (slider && image) {
             console.log(`Initializing slider: ${sliderId}, folder: ${folder}`); // Debugging output
+            
+            // Generate ticks dynamically
+            const ticksContainer = slider.parentElement.querySelector('.ticks'); // Find the ticks container
+            if (ticksContainer) {
+                const max = parseInt(slider.max, 10);
+                const min = parseInt(slider.min, 10);
+                const step = parseInt(slider.step, 10);
+                const tickCount = (max - min) / step;
+                ticksContainer.innerHTML = ''; // Clear any existing ticks
+
+                for (let i = 0; i <= tickCount; i++) {
+                    const tick = document.createElement('span');
+                    tick.style.left = `${(i / tickCount) * 100}%`; // Position the tick based on percentage
+                    ticksContainer.appendChild(tick);
+                }
+            }
+
+            // Add event listener for slider input
             slider.addEventListener("input", function () {
                 const index = this.value; // Get current slider value
                 const newImagePath = `${folder}/${folder.split('/').pop()}${index}.${extension}`; // Build image path with dynamic extension
