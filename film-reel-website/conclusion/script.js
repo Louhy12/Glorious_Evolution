@@ -39,40 +39,25 @@ function initializeSliders() {
         { sliderId: "movie-slider", imageId: "movie-image", folder: "movie", extension: "png" }
     ];
 
-    sliders.forEach(({ sliderId, imageId, folder, extension }) => {
+    sliders.forEach(({ sliderId }) => {
         const slider = document.getElementById(sliderId);
-        const image = document.getElementById(imageId);
+        const ticksContainer = slider.parentElement.querySelector('.ticks');
 
-        // Ensure slider and image elements exist
-        if (slider && image) {
-            console.log(`Initializing slider: ${sliderId}, folder: ${folder}`); // Debugging output
-            
-            // Generate ticks dynamically
-            const ticksContainer = slider.parentElement.querySelector('.ticks'); // Find the ticks container
-            if (ticksContainer) {
-                const max = parseInt(slider.max, 10);
-                const min = parseInt(slider.min, 10);
-                const step = parseInt(slider.step, 10);
-                const tickCount = (max - min) / step;
-                ticksContainer.innerHTML = ''; // Clear any existing ticks
+        if (slider && ticksContainer) {
+            const min = parseInt(slider.min, 10);
+            const max = parseInt(slider.max, 10);
+            const step = parseInt(slider.step, 10);
+            const tickCount = (max - min) / step;
 
-                for (let i = 0; i <= tickCount; i++) {
-                    const tick = document.createElement('span');
-                    tick.style.left = `${(i / tickCount) * 100}%`; // Position the tick based on percentage
-                    ticksContainer.appendChild(tick);
-                }
+            ticksContainer.innerHTML = ''; // Clear previous ticks
+
+            for (let i = 0; i <= tickCount; i++) {
+                const tick = document.createElement('span');
+                tick.style.position = 'absolute';
+                tick.style.left = `${(i / tickCount) * 100}%`; // Adjust position
+                tick.style.transform = 'translateX(-50%)'; // Center-align tick
+                ticksContainer.appendChild(tick);
             }
-
-            // Add event listener for slider input
-            slider.addEventListener("input", function () {
-                const index = this.value; // Get current slider value
-                const newImagePath = `${folder}/${folder.split('/').pop()}${index}.${extension}`; // Build image path with dynamic extension
-                console.log(`Slider ${sliderId}: Updating to ${newImagePath}`); // Debugging output
-                image.src = newImagePath; // Update image source
-                image.alt = `${folder.split('/').pop()} ${index}`; // Update alt text
-            });
-        } else {
-            console.error(`Slider or image not found for ID: ${sliderId}`); // Debugging output
         }
     });
 }
