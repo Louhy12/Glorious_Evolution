@@ -26,6 +26,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+
 function initializeSliders() {
     // Map of slider IDs to folder paths
     const sliders = [
