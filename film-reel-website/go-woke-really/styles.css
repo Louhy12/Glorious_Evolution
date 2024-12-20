@@ -263,6 +263,32 @@ input[type="range"]::-ms-track {
     height: 10px;
 }
 
+/* Add sticky marks on the slider */
+input[type="range"] {
+    position: relative;
+}
+
+input[type="range"]::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 10px;
+    pointer-events: none;
+    background: repeating-linear-gradient(
+        to right,
+        transparent,
+        transparent 9%,
+        #4b79a1 9%,
+        #4b79a1 10%
+    );
+    background-size: 20% 100%; /* Adjust size to match sticky positions */
+    transform: translateY(-50%);
+    opacity: 0.5;
+}
+
+
 /* Optional: Adding hover effect for film frames */
 .frame:hover {
     transform: scale(1.02); /* Slight zoom on hover */
@@ -576,3 +602,4 @@ p {
     max-height: 500px; /* Taille maximale pour l'animation */
     opacity: 1;
 }
+
