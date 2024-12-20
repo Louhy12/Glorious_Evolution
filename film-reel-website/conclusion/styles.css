@@ -263,24 +263,20 @@ input[type="range"]::-ms-track {
     height: 10px;
 }
 
-/* Style for the datalist container (ticks on the slider track) */
+/* Ticks styling */
 datalist {
     display: flex;
     justify-content: space-between;
-    position: relative;
     width: 100%;
-    margin-top: 0px; /* Adjust position relative to the slider */
-    pointer-events: none; /* Prevent interaction */
+    pointer-events: none;
+    position: absolute;
+    top: 0; /* Adjust this to align with the slider */
 }
 
-/* Style for individual ticks */
 datalist option {
-    display: inline-block;
-    width: 1px; /* Width of each tick */
-    height: 10px; /* Height of each tick */
-    background: #000; /* Color of the ticks */
-    margin: 0; /* Remove margins */
-    pointer-events: none; /* Prevent interaction */
+    width: 2px;
+    height: 20px;
+    background: black;
 }
 
 
