@@ -162,6 +162,7 @@ input[type="range"] {
     background: #ddd; /* Track background color */
     outline: none; /* Remove outline */
     border-radius: 5px; /* Rounded track edges */
+    box-sizing: border-box; /* Ensure consistent width calculation */
 }
 
 /* Custom Thumb for WebKit Browsers (Chrome, Safari, Edge) */
@@ -212,6 +213,7 @@ input[type="range"] {
     background: #ddd; /* Track background color */
     outline: none; /* Remove outline */
     border-radius: 5px; /* Rounded track edges */
+    box-sizing: border-box; /* Ensure consistent width calculation */
 }
 
 /* Track Styling for WebKit Browsers */
