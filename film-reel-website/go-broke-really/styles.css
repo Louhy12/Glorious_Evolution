@@ -278,6 +278,25 @@ input[type="range"]::-ms-track {
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
 }
 
+/* Position the ticks below the slider */
+.ticks {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    top: -15px; /* Adjust as needed to align with slider */
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+
+.ticks span {
+    display: inline-block;
+    width: 2px; /* Width of the stick */
+    height: 10px; /* Height of the stick */
+    background-color: black; /* Stick color */
+}
+
+
 /* Related articles title */
 .frame-content h3 {
     font-family: Arial, sans-serif; /* Match with body text */
