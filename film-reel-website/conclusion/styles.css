@@ -162,7 +162,6 @@ input[type="range"] {
     background: #ddd; /* Track background color */
     outline: none; /* Remove outline */
     border-radius: 5px; /* Rounded track edges */
-    box-sizing: border-box; /* Ensure consistent width calculation */
 }
 
 /* Custom Thumb for WebKit Browsers (Chrome, Safari, Edge) */
@@ -213,7 +212,6 @@ input[type="range"] {
     background: #ddd; /* Track background color */
     outline: none; /* Remove outline */
     border-radius: 5px; /* Rounded track edges */
-    box-sizing: border-box; /* Ensure consistent width calculation */
 }
 
 /* Track Styling for WebKit Browsers */
@@ -272,25 +270,23 @@ input[type="range"]::-ms-track {
     margin: 20px 0;
 }
 
+/* Position the ticks below the slider */
 .ticks {
-    position: absolute;
-    width: 100%; /* Matches the slider width */
-    top: 15px; /* Adjust based on slider thumb size */
-    left: 0;
-    right: 0;
-    height: 10px; /* Match track height */
     display: flex;
     justify-content: space-between;
-    pointer-events: none; /* Ensure ticks don't interfere with slider */
+    position: absolute;
+    top: 30px; /* Adjust as needed to align with slider */
+    left: 0;
+    right: 0;
 }
 
 .ticks span {
-    position: absolute; /* Position ticks along the track */
-    width: 2px; /* Tick width */
-    height: 10px; /* Tick height */
-    background-color: black; /* Tick color */
-    transform: translateX(-50%); /* Center tick on position */
+    display: inline-block;
+    width: 2px; /* Width of the stick */
+    height: 10px; /* Height of the stick */
+    background-color: black; /* Stick color */
 }
+
 
 /* Optional: Adding hover effect for film frames */
 .frame:hover {
