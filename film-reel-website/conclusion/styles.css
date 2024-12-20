@@ -263,28 +263,29 @@ input[type="range"]::-ms-track {
     height: 10px;
 }
 
-/* Ticks container styling */
-.slider-ticks {
+/* Styling the slider container */
+.slider-container {
     position: relative;
-    top: 50%; /* Adjusted positioning for better alignment */
-    left: 0;
     width: 100%;
-    height: 10px;
+    margin: 20px 0;
+}
+
+/* Position the ticks below the slider */
+.ticks {
     display: flex;
-    justify-content: space-between; /* This may be overridden by dynamic positioning in JS */
-    pointer-events: none; /* Prevent interfering with slider */
+    justify-content: space-between;
+    position: relative;
+    top: 30px; /* Adjust as needed to align with slider */
+    left: 0;
+    right: 0;
 }
 
-/* Styling each tick */
-.slider-ticks span {
-    position: relative; /* Use absolute positioning for dynamic alignment */
-    bottom: -10px; /* Place ticks below the slider track */
-    height: 10px; /* Height of the tick */
-    width: 2px; /* Width of the tick */
-    background: #000; /* Black color for visibility */
-    transform: translateX(-50%); /* Center-align the ticks */
+.ticks span {
+    display: inline-block;
+    width: 2px; /* Width of the stick */
+    height: 10px; /* Height of the stick */
+    background-color: black; /* Stick color */
 }
-
 
 /* Optional: Adding hover effect for film frames */
 .frame:hover {
