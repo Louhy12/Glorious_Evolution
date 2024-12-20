@@ -272,6 +272,7 @@ input[type="range"]::-ms-track {
 
 .ticks {
     position: absolute;
+    width: 100%; /* Matches the slider width */
     top: 15px; /* Adjust based on slider thumb size */
     left: 0;
     right: 0;
