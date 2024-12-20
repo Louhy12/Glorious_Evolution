@@ -537,7 +537,7 @@ p {
     cursor: pointer;
     padding: 10px 15px;
     border: none;
-    text-align: left;
+    text-align: center;
     outline: none;
     font-size: 16px;
     border-radius: 5px; /* Coins arrondis */
