@@ -340,7 +340,16 @@
             <div class="sprocket"></div>
             <div class="frame-content">
                 <h2 class="frame-title">Evolution of the most represented archetype over time</h2> <!-- Title -->
-
+                <p>
+                    What about different characters in the movies? We wanted to explore if stereotypical characters are always played by the same ethnicities and genders or if it evenly distributed.
+                    We completed our dataset with a specific archetype the character fits in. 
+                    By merging the two datasets we lost movies that did not have their characters labelled as archetypes. 
+                    We further only selected archetypes with at least 50 corresponding characters, this was done to solidify the statistical significance of further analysis.  After merging, we remained with a total of 4150 characters to analyze. 
+                </p>
+                <p>
+                    Lets first observe how these archetypes evolve over time in series. The bar chart race shows the prevalence of each archetype over time. 
+                    The values are calculated as a sum over the 10 previous years foreach archetype.
+                </p>
                 <!-- Video MP4 addition -->
                 <video class="loop-video" autoplay loop muted>
                     <source src="stereotype/stereotype3.mp4" type="video/mp4"> <!-- Path to your new video -->
@@ -357,10 +366,13 @@
             <div class="frame-content">
                 <h2 class="frame-title">Evolution of the gender-related archetype over time</h2> <!-- Title -->
                 <p>
-                    What about different characters in the movies? We wanted to explore if stereotypical characters are always played by the same ethnicities and genders or if it evenly distributed.
-                    We completed our dataset with a specific archetype the character fits in. 
-                    By merging the two datasets we lost movies that did not have their characters labelled as archetypes. 
-                    We further only selected archetypes with at least 50 corresponding characters, this was done to solidify the statistical significance of further analysis.  After merging, we remained with a total of 4150 characters to analyze. 
+                    For comparison we made the same graph but compared between male and female actors. 
+                    It can be easily visualized that both bar chart races are not at all the same. 
+                    Male and female actors do not play the same roles. 
+                    We can clearly observe some gender specific archetypes like soldier, criminal or swordfighter for males and secretary, student or reporter for females. 
+                    In the more recent years, archetypes such as superhero or vigilante are better represented in both genders but this cannot be said from all archetypes. 
+                    To confirm our suspicions, we computed the chi2 test, giving a score of disproportionality of genders for each archetype. Most of the archetypes were significantly disproportionate. 
+                    Here are the top 5: highschool student, journalist, handyman, secretary and socialite. 
                 </p>
                 <!-- Video MP4 addition -->
                 <video class="loop-video" autoplay loop muted>
@@ -377,11 +389,20 @@
             <div class="sprocket"></div>
             <div class="frame-content">
                 <h2 class="frame-title">Evolution of the ethnicity-related archetype over time</h2> <!-- Title -->
-
+                <p>
+                    And you guessed it, why stop at gender? We also investigated ethnicity.
+                    From the cropped dataset we got from selecting archetypes, we selected the 4 more represented ethnicities and made the same bar chart race for each of them. 
+                    By observing them, we can clearly see that none of them resemble each other, even in more recent years. We did the chi2 tests again to see the distribution in archetypes by ethnicity.  
+                    Again, most of them were very disproportionate.
+                    Here are the top 5: handyman, professor, school teacher, cowboy, gunfighter.
+                </p>
                 <!-- Video MP4 addition -->
                 <video class="loop-video" autoplay loop muted>
                     <source src="stereotype/stereotype1.mp4" type="video/mp4"> <!-- Path to your new video -->
                 </video>
+                <p>
+                    So in conclusion, yeah the archetypes are stereotyped. The proportion of genders and ethnicities in the archetypes does not reflect the proportions of genders and ethnicities in the actor landscape.
+                </p>
             </div>
         </div>
 
