@@ -207,7 +207,7 @@ input[type="range"]::-ms-thumb {
 input[type="range"] {
     -webkit-appearance: none; /* Remove default styling for WebKit browsers */
     appearance: none; /* Remove default styling */
-    width: 50%; /* Full width */
+    width: 100%; /* Full width */
     height: 10px; /* Height of the track */
     background: #ddd; /* Track background color */
     outline: none; /* Remove outline */
